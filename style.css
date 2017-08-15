@@ -1,0 +1,14 @@
+/*
+ Theme Name:   Daisy
+ Description:  a child theme for twentyseventeen
+ Author:       Kristin Yetter
+ Template:     storefront
+ Version:      0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  daisy
+*/
+
+.site-header .custom-logo-link img {
+  width: 500px;
+}
