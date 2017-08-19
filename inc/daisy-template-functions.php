@@ -1,44 +1,83 @@
 <?php
 
-function daisy_bizcard_header() {
-  ?>
-  <header class="entry-header bizcard-entry-header">
-  <?php
-  if ( is_single() ) {
-    if ( has_post_thumbnail()) {
-        the_post_thumbnail( 'full', array('class'=>'bizimg') );
-      }
-      the_content('<h1 class="entry-title bizcard-entry-title">', '</h1>');
 
+//daisy status tag on bizcard
+function bizcard_status_tag(){
+  $status = get_post_status(get_the_ID());
+  switch($status){
+    case('publish'):
+      $color = '#60b861';
+      break;
+    case('pending'):
+      $color = '#df9e06';
+      break;
+    default:
+      $color = '#808080';
+  } ?>
+  <div class="bizcard-status" style = "background: <?php echo $color ?>">
+  <?php
+  if('publish'==get_post_status(get_the_ID())){
+    echo 'Active';
   } else {
-
-    the_content( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+    echo get_post_status(get_the_ID());
   }
-  ?>
-  </header><!-- .entry-header -->
-  <?php
-}
-
-//content for single post
-function daisy_bizcard_content() {
-
-  ?>
-  <div class="entry-content bizcard-entry-content">
-    <?php
-    the_excerpt();
- ?>
-
-    <a href="https://drd.cards/<?php echo esc_html(get_the_title()) ?>">
-    <?php esc_url(the_title("https://drd.cards/","?".get_post_meta(get_the_ID(), 'dd_pin', true))); ?>
-    </a>
-
+   ?>
   </div>
-  <?php
-  wp_link_pages( array(
-    'before' => '<div class="page-links">' . __( 'Pages:', 'daisy' ),
-    'after'  => '</div>',
-  ) );
-  ?>
-  </div><!-- .entry-content -->
-  <?php
+<?php
 }
+
+//include format parameter link or file
+function daisy_vcard_display($format='link'){
+    global $post;
+    $org_vcard = get_post_meta($post->ID,'dd_org-vcard',true);
+
+    if($org_vcard){
+      $vcard = basename($org_vcard, ".vcf");
+    }
+    //make sure there are children
+    if ($children = get_children($post->ID)) {
+
+      foreach($children as $child){
+        if($child->post_title!=$vcard){
+          return; }
+
+        switch($format){
+          case('link'):
+          $content =
+          '<div class="vcard bizcard-edit">
+          <a href="'.$child->guid.'" title="download daisy vCard">'.
+          esc_url("https://drd.cards/".get_the_title($post->ID)."?".get_post_meta($post->ID, 'dd_pin', true)).'</a></div>';
+          break;
+
+          case('file-link');
+          $content = '<a href="'.$child->guid.'" title="download daisy vCard" open>'.basename($child->guid).'</a>';
+          break;
+
+          case('file'):
+          $content = basename($child->guid);
+          break;
+
+          default:
+          $content = "";
+
+        }
+
+        echo $content;
+
+      }
+    }
+}
+
+function daisy_post_navigation(){
+   ?>
+   <div class = "post-navigation">
+     <?php
+     $args = array(
+       'next_text' => '%title',
+       'prev_text' => '%title',
+       );
+     the_post_navigation( $args );
+     ?>
+   </div>
+   <?php
+ }

@@ -26,12 +26,15 @@ $session=Daisy_Session::init();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 			<?php while ( have_posts() ) : the_post();
 
   		the_content();
 
-			endwhile; // End of the loop. ?>
+			endwhile; // End of the loop.
+
+      ?>
+
+
       <pre>
 
         <?php

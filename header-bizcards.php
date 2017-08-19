@@ -18,7 +18,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> style = "background: pink">
+<body <?php body_class(); ?> >
 
 <?php do_action( 'storefront_before_site' ); ?>
 

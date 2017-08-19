@@ -9,6 +9,142 @@
  Text Domain:  daisy
 */
 
+/*#FDE3C2*/
+
+/*	#4a78c5*/
+
+/*	#e5b912*/
+
+/*	#df9e06*/
+
+/*	#fcff0b*/
+
+/*	#60b861*/
+
+/*#9ff966*/
+
+/*	#eff4ec*/
+.daisy-hidden {
+    display: none;
+}
 .site-header .custom-logo-link img {
-  width: 500px;
+    width: 500px;
+}
+.bizcard-edit {
+    position: relative;
+}
+.bizimg.edit-dashicon:after {
+    font-family: 'dashicons'!important;
+    content: "\f464";
+    position: absolute;
+    left: -30px;
+    top: 2px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    line-height: 1em!important;
+    font-size: 18px;
+    z-index: 5;
+    background: #0085ba!important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 3px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 1px rgba(46,68,83,.15);
+    text-align: center;
+    cursor: pointer;
+}
+.bizcard-entry-header {
+    position: relative;
+    height: auto;
+    font-family: sans-serif;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 2rem auto;
+    background: #f0f0f0;
+}
+.bizcard-entry-header .bizimg-div {
+    position: relative;
+}
+.bizcard-entry-header .bizimg-div span {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    line-height: 1.2em!important;
+    font-size: 25px;
+    z-index: 5;
+    background: #0085ba!important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 3px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 1px rgba(46,68,83,.15);
+    text-align: center;
+    cursor: pointer;
+}
+.bizcard-entry-header .bizimg-div span:hover {
+    background: rgb(223, 158, 6) !important;
+}
+.bizcard-entry-header .bizcard-entry-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 0;
+    margin: 0;
+}
+.bizcard-entry-header .bizcard-entry-excerpt {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+.bizcard-entry-header a {
+    display: block;
+}
+.bizcard-entry-header .bizcard-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    background: rgb(96, 184, 97);
+    color: white;
+    padding: 1rem;
+}
+/*input styles to make edit form style close to the bizcard formatting*/
+.bizcard-entry-header input, .bizcard-entry-header textarea {
+    background: #F8F8F8;
+}
+.bizcard-entry-header input:focus, .bizcard-entry-header textarea:focus {
+    border: 2px solid rgb(223, 158, 6);
+    background: white;
+}
+.bizcard-entry-header input#og_title {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.bizcard-entry-header input#og_title:focus {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+.bizcard-entry-header textarea#og_desc {
+    width: 100%;
+    font-size: 1.2rem;
+}
+.bizcard-entry-header textarea#og_desc:focus {
+    font-size: 1rem;
+}
+.bizcard-entry-header #drdcard-link {
+    margin: 1rem 0;
+}
+.bizcard-entry-header #drdcard-link input#drdpin {
+    max-width: 65px;
+}
+.bizcard-entry-header #drdcard-link span {
+    color: rgb(74, 120, 197);
 }

@@ -12,16 +12,17 @@ get_header('bizcards'); ?>
 
 		<?php while ( have_posts() ) : the_post();
 
-			do_action( 'storefront_single_post_before' );
+		get_template_part( 'content', 'bizcard' );
+		?>
 
-			get_template_part( 'content', 'bizcard' );
-
-			do_action( 'storefront_single_post_after' );
-
+		<?php
 		endwhile; // End of the loop. ?>
+
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
 
 <?php
 do_action( 'storefront_sidebar' );
