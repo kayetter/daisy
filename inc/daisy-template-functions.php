@@ -26,8 +26,13 @@ function bizcard_status_tag(){
 <?php
 }
 
-//include format parameter link or file
-function daisy_vcard_display($format='link'){
+//include format parameter
+//    link = anchor tag with drdcard link to download vcard;
+//    file-link = link to file with filename as inner html;
+//    file = filename only or
+//    raw = raw with line breaks
+//   default is filename
+function daisy_vcard_display($format='file'){
     global $post;
     $org_vcard = get_post_meta($post->ID,'dd_org-vcard',true);
 
@@ -41,6 +46,7 @@ function daisy_vcard_display($format='link'){
         if($child->post_title!=$vcard){
           return; }
 
+
         switch($format){
           case('link'):
           $content =
@@ -50,7 +56,12 @@ function daisy_vcard_display($format='link'){
           break;
 
           case('file-link');
-          $content = '<a href="'.$child->guid.'" title="download daisy vCard" open>'.basename($child->guid).'</a>';
+          $content = $child->guid;
+          break;
+
+          case('raw'):
+          //return file contents with line breaks preserved
+          $content = trim(file_get_contents($child->guid));
           break;
 
           case('file'):
@@ -67,6 +78,7 @@ function daisy_vcard_display($format='link'){
       }
     }
 }
+
 
 function daisy_post_navigation(){
    ?>

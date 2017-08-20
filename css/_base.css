@@ -1,3 +1,7 @@
 .daisy-hidden{
-  display: none;
+  display: none!important;
+}
+
+.site-header .custom-logo-link img {
+  width: 500px;
 }

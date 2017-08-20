@@ -1,35 +1,8 @@
 
 
-.site-header .custom-logo-link img {
-  width: 500px;
-}
 
 .bizcard-edit{
   position: relative;
-}
-
-.bizimg.edit-dashicon:after{
-  font-family: 'dashicons'!important;
-  content: "\f464";
-  position: absolute;
-  left: -30px;
-  top: 2px;
-  color: #fff;
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
-  min-height: 30px;
-  line-height: 1em!important;
-  font-size: 18px;
-  z-index: 5;
-  background: #0085ba!important;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 3px;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 1px rgba(46,68,83,.15);
-  text-align: center;
-  cursor: pointer;
 }
 
 
@@ -101,47 +74,6 @@
     padding: 1rem;
 
   }
-
-
- /*input styles to make edit form style close to the bizcard formatting*/
-
- input, textarea {
-   background: $lightestgray;
-   &:focus {
-     border: 2px solid $yellow2;
-     background: white;
-     }
- }
-  input#og_title{
-    width: 100%;
-    font-size: 1.4rem;
-    font-weight: bold;
-    &:focus{
-      font-size: 1.2rem;
-      font-weight: normal;
-    }
-  }
-
-  textarea#og_desc {
-    width: 100%;
-    font-size: 1.2rem;
-    &:focus {
-      font-size: 1rem;
-    }
-
-  }
-  #drdcard-link{
-    margin: 1rem 0;
-    input#drdpin {
-      max-width: 65px;
-    }
-    span {
-      color: $blue;
-    }
-  }
-
-
-
 
 
 }

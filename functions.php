@@ -10,6 +10,7 @@ require 'inc/daisy-template-functions.php';
 function load_daisy_styles(){
 wp_enqueue_style('daisy-fonts', daisy_fonts_url());
 wp_enqueue_style('storefront', get_template_directory_uri()."/style.css");
+wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 }
 
 //add poppins and quicksand
@@ -58,8 +59,3 @@ function daisy_theme_support(){
   add_theme_support('woocommerce');
   add_theme_support( 'custom-header' );
 }
-
-function ouput_bizcard_form(){
- // return get_template_part(DAISY_TEMPLATE_PATH.'new_bizcard_form.php');
- echo "i love this form";
-	}
