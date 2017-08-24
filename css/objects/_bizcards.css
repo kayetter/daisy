@@ -10,15 +10,17 @@
 
   position: relative;
   height: auto;
-  font-family: sans-serif;
+  font-family: $font_ptsans;
   width: 100%;
-  padding: 1rem;
   border-radius: 20px;
   margin: 2rem auto;
   background: $ltgray;
 
   .bizimg-div {
     position: relative;
+    img{
+      margin: .5rem auto;
+    }
     span {
       position: absolute;
       right: 2px;
@@ -46,6 +48,11 @@
     }
   }
 
+  .bizcard-display {
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+  }
+
 
   .bizcard-entry-title {
     font-size: 1.4rem;
@@ -71,8 +78,8 @@
     margin: 1rem;
     background: $grn;
     color: white;
-    padding: 1rem;
-
+    padding: .6180469716em 1.41575em;;
+    z-index: 5;
   }
 
 

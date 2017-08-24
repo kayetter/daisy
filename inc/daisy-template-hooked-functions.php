@@ -4,7 +4,6 @@
 add_filter('the_content', 'daisy_remove_p_tags', 0);
 add_filter('the_content', 'daisy_content_tags', 10);
 
-wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 
 function daisy_content_tags($content){
   if('bizcards'== get_post_type(get_the_ID()) && is_single() && is_main_query() && in_the_loop()){

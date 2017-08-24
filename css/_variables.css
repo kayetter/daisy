@@ -7,5 +7,7 @@ $grn: rgb(96, 184, 97); /*	#60b861*/
 $ltgrn: rgb(159, 249, 102); /*#9ff966*/
 $white: rgb(239, 244, 236); /*	#eff4ec*/
 $ltgray: #f0f0f0;
-$darkgray: #808080;
+$darkgray: rgb(124,124,124);
 $lightestgray: #F8F8F8;
+
+$font_ptsans: 'PT Sans', sans-serif;

@@ -36,15 +36,17 @@
 .bizcard-entry-header {
     position: relative;
     height: auto;
-    font-family: sans-serif;
+    font-family: 'PT Sans',sans-serif;
     width: 100%;
-    padding: 1rem;
     border-radius: 20px;
     margin: 2rem auto;
     background: #f0f0f0;
 }
 .bizcard-entry-header .bizimg-div {
     position: relative;
+}
+.bizcard-entry-header .bizimg-div img {
+    margin: .5rem auto;
 }
 .bizcard-entry-header .bizimg-div span {
     position: absolute;
@@ -70,6 +72,10 @@
 .bizcard-entry-header .bizimg-div span:hover {
     background: rgb(223, 158, 6) !important;
 }
+.bizcard-entry-header .bizcard-display {
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+}
 .bizcard-entry-header .bizcard-entry-title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -90,89 +96,113 @@
     margin: 1rem;
     background: rgb(96, 184, 97);
     color: white;
+    padding: .6180469716em 1.41575em;
+    z-index: 5;
+}
+.daisy-form {
+    position: relative;
+    font-family: 'PT Sans',sans-serif;
     padding: 1rem;
+    padding-top: 0;
+    margin-bottom: 1rem;
 }
 /*input styles to make edit form style close to the bizcard formatting*/
-.form input, .form textarea {
+.daisy-form fieldset {
+    position: relative;
+    background: #f0f0f0;
+    padding: 0;
+    margin: 0;
+}
+.daisy-form input, .daisy-form textarea {
     background: #F8F8F8;
 }
-.form input:focus, .form textarea:focus {
+.daisy-form input:focus, .daisy-form textarea:focus {
     border: 2px solid rgb(223, 158, 6);
     background: white;
 }
-.form input#og_title {
+.daisy-form .drdcard-link input {
+    max-width: 150px;
+    max-height: 1.8rem;
+}
+.daisy-form .drdcard-link input#drdpin {
+    max-width: 65px;
+}
+.daisy-form .drdcard-link span {
+    color: rgb(74, 120, 197);
+}
+.daisy-form input#og_title {
     width: 100%;
     font-size: 1.4rem;
     font-weight: bold;
 }
-.form input#og_title:focus {
+.daisy-form input#og_title:focus {
     font-size: 1.2rem;
     font-weight: normal;
 }
-.form textarea#og_desc {
+.daisy-form textarea#og_desc {
     width: 100%;
     font-size: 1.2rem;
 }
-.form textarea#og_desc:focus {
+.daisy-form textarea#og_desc:focus {
     font-size: 1rem;
 }
-.form #drdcard-link {
-    margin: 1rem 0;
-    padding: 0;
-    background: #f0f0f0;
-}
-.form #drdcard-link input#drdpin {
-    max-width: 65px;
-}
-.form #drdcard-link span {
-    color: rgb(74, 120, 197);
-}
-.form .accordion-edit {
+.daisy-form .daisy-accordion {
     position: relative;
     width: 100%;
-    padding: .5rem;
-    margin: 0;
+    margin-bottom: 2rem;
 }
-.form .accordion-edit .accordion-title {
+.daisy-form .daisy-accordion .accordion-title {
     position: relative;
     display: block;
-    padding: 0;
+    padding-top: 1rem;
     cursor: pointer;
+    font-size: 1rem;
 }
-.form .accordion-icon-down {}
-.form .accordion-icon-down:after {
+.daisy-form .daisy-accordion .accordion-content {
+    padding: 1rem;
+    background: white;
+}
+.daisy-form .daisy-accordion .accordion-content input.daisy-form-item {
+    padding: .25rem;
+}
+.daisy-form .daisy-accordion .accordion-content .daisy-form-item {
+    margin: .25rem 0;
+}
+.daisy-form .accordion-icon-down {
+    border-bottom: 2px solid rgb(124,124,124);
+}
+.daisy-form .accordion-icon-down:hover {
+    color: rgb(223, 158, 6);
+    border-color: rgb(223, 158, 6);
+}
+.daisy-form .accordion-icon-down:after {
     font-family: 'dashicons';
     content: "\f140";
     position: absolute;
-    color: black;
+    color: inherit;
     right: 1rem;
-    top: -10px;
+    top: -5px;
     font-size: 2rem;
 }
-.form .accordion-icon-up {}
-.form .accordion-icon-up:after {
+.daisy-form .accordion-icon-up {
+    border-bottom: 2px solid rgb(74, 120, 197);
+    color: rgb(74, 120, 197);
+}
+.daisy-form .accordion-icon-up:hover {
+    color: rgb(223, 158, 6);
+    border-color: rgb(223, 158, 6);
+}
+.daisy-form .accordion-icon-up:after {
     font-family: 'dashicons';
     content: "\f142";
     position: absolute;
-    color: black;
+    color: inherit;
     right: 1rem;
-    top: -10px;
+    top: -5px;
     font-size: 2rem;
 }
-.form label.choose-file-label {/*display: inline-block;
-    background: $blue;
-    padding: 0 1rem .75rem .5rem;
-    width: auto;
-    color: white;*//*&:before {
-      font-family: 'dashicons';
-      position: relative;
-      top: 2px;
-      content: "\f317";
-      color: white;
-      font-size: 1.5rem;
-    }*/
-}
-.form input[type="file"] {
+/*style input box so it is not on screen but still in dom*/
+.daisy-form input[type="file"] {
     height: .1px;
     width: .1px;
     position: fixed;
@@ -182,10 +212,17 @@
     opacity: 0;
     z-index: -1;
 }
-.form input[type="file"] + label {
+/*style to change cursor when you hover over label*/
+.daisy-form input[type="file"] + label {
     cursor: pointer;
 }
-.form .icon-action-group {
+.daisy-form #drdcard-vcard p {
+    text-align: center;
+    padding: .5rem;
+    color: rgb(74, 120, 197);
+    margin: 0 auto;
+}
+.daisy-form .icon-action-group {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -194,7 +231,7 @@
         justify-content: space-around;
     min-height: 100px;
 }
-.form .icon-action-group .dashicon-div {
+.daisy-form .icon-action-group .dashicon-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -208,20 +245,33 @@
             justify-content: center;
     cursor: pointer;
 }
-.form .icon-action-group .dashicon-div span {
+.daisy-form .icon-action-group .dashicon-div span {
     display: block;
     text-align: center;
     cursor: pointer;
     color: inherit;
 }
-.form .icon-action-group .dashicon-div .dashicons {
+.daisy-form .icon-action-group .dashicon-div .dashicons {
     min-height: 63px;
     min-width: 63px;
     font-size: 4rem;
 }
-.form .icon-action-group .dashicon-div:hover {
+.daisy-form .icon-action-group .dashicon-div:hover {
     color: rgb(223, 158, 6);
 }
-.form .icon-action-group textarea {
-    padding: 1rem;
+.daisy-form textarea {
+    padding: 0;
+}
+.daisy-form .daisy-form-cancel-anchor {
+    background: #F8F8F8;
+    border-color: #d5d5d5;
+    font-size: 1rem;
+    color: #333333;
+    cursor: pointer;
+    padding: .6180469716em 1.41575em;
+    font-weight: 600;
+    display: inline-block;
+}
+.daisy-form .daisy-form-cancel-anchor:hover {
+    background-color: #d5d5d5;
 }

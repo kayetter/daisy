@@ -3,7 +3,7 @@
 add_action( 'wp_enqueue_scripts', 'load_daisy_styles' );
 
 require 'inc/daisy-functions.php';
-require 'inc/daisy-template-hooks.php';
+require 'inc/daisy-template-hooked-functions.php';
 require 'inc/daisy-template-functions.php';
 
 
@@ -11,6 +11,7 @@ function load_daisy_styles(){
 wp_enqueue_style('daisy-fonts', daisy_fonts_url());
 wp_enqueue_style('storefront', get_template_directory_uri()."/style.css");
 wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
+wp_enqueue_style('load-ptsans', 'https://fonts.googleapis.com/css?family=PT+Sans');
 }
 
 //add poppins and quicksand

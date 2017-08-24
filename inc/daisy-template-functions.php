@@ -32,52 +32,6 @@ function bizcard_status_tag(){
 //    file = filename only or
 //    raw = raw with line breaks
 //   default is filename
-function daisy_vcard_display($format='file'){
-    global $post;
-    $org_vcard = get_post_meta($post->ID,'dd_org-vcard',true);
-
-    if($org_vcard){
-      $vcard = basename($org_vcard, ".vcf");
-    }
-    //make sure there are children
-    if ($children = get_children($post->ID)) {
-
-      foreach($children as $child){
-        if($child->post_title!=$vcard){
-          return; }
-
-
-        switch($format){
-          case('link'):
-          $content =
-          '<div class="vcard bizcard-edit">
-          <a href="'.$child->guid.'" title="download daisy vCard">'.
-          esc_url("https://drd.cards/".get_the_title($post->ID)."?".get_post_meta($post->ID, 'dd_pin', true)).'</a></div>';
-          break;
-
-          case('file-link');
-          $content = $child->guid;
-          break;
-
-          case('raw'):
-          //return file contents with line breaks preserved
-          $content = trim(file_get_contents($child->guid));
-          break;
-
-          case('file'):
-          $content = basename($child->guid);
-          break;
-
-          default:
-          $content = "";
-
-        }
-
-        echo $content;
-
-      }
-    }
-}
 
 
 function daisy_post_navigation(){

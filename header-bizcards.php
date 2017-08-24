@@ -15,10 +15,23 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+<!-- Function hooked to daisy_bizcard_header -->
+<?php
+wp_head();
+
+/**
+ * Functions hooked into daisy_bizcard_header
+ *
+ * @hooked daisy_retrieve_session, 10
+ *
+ */
+do_action('daisy_bizcard_header');
+
+
+?>
 </head>
 
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?> style="background:pink" >
 
 <?php do_action( 'storefront_before_site' ); ?>
 
