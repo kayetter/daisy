@@ -1,7 +1,7 @@
 .daisy-form {
   position: relative;
   font-family: $font_ptsans;
-  padding: 1rem;
+  padding: 1rem 0;
   padding-top: 0;
   margin-bottom: 1rem;
 
@@ -13,24 +13,34 @@
     margin: 0;
   }
 
- input, textarea {
+  .new-bizcard-fieldset {
+    margin: 1rem auto;
+  }
+
+ input, textarea, a {
    background: $lightestgray;
+   &::placeholder {
+     color: $white;
+        }
+   &:placeholder-shown{
+     background: white;
+   }
    &:focus {
      border: 2px solid $yellow2;
      background: white;
      }
- }
+
+   }
 
  .drdcard-link {
    input {
      max-width: 150px;
-     max-height: 1.8rem;
    }
    input#drdpin {
      max-width: 65px;
    }
    span {
-     color: $blue;
+     color: $darkgray;
    }
  }
 
@@ -67,15 +77,14 @@
     .accordion-content {
     padding: 1rem;
     background: white;
-
-      input.daisy-form-item {
-        padding: .25rem;
-      }
-      .daisy-form-item {
-        margin: .25rem 0;
-      }
-
     }
+  }
+
+  input.daisy-form-item {
+    padding: .25rem;
+  }
+  .daisy-form-item {
+    margin: .25rem 0;
   }
 
   .accordion-icon-down {
@@ -114,22 +123,6 @@
   }
 
 
- /*style input box so it is not on screen but still in dom*/
-  input[type="file"] {
-    height: .1px;
-    width: .1px;
-    position: fixed;
-    left: -99999;
-    padding:0;
-    margin: 0;
-    opacity: 0;
-    z-index: -1;
-  }
-  /*style to change cursor when you hover over label*/
-  input[type="file"] + label {
-    cursor: pointer;
-  }
-
   #drdcard-vcard p {
     text-align: center;
     padding: .5rem;
@@ -140,52 +133,63 @@
   .icon-action-group {
     position: relative;
     display:flex;
+    align-items: flex-start;
     justify-content: space-around;
     min-height: 100px;
 
 
-    .dashicon-div {
+    .dashicon-ul {
+      position: relative;
       display: flex;
+      padding: 0;
       color: $blue;
       flex-direction: column;
-      justify-content: center;
+      margin-top: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+      list-style: none;
       cursor: pointer;
-      span {
-        display: block;
-        text-align: center;
-        cursor: pointer;
-        color: inherit;
-      }
+        li{
+          margin: 0 auto;
+          padding: 0;
+          text-align: center;
+        }
 
-      .dashicons{
+      .dashicons, .fa{
         min-height: 63px;
         min-width: 63px;
         font-size: 4rem;
       }
 
+
       &:hover {
         color: $yellow2;
       }
+
+      .remove-file {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+      }
    }
+ }
+ .new-bizcard-icons{
+   width: 75%;
+   margin: 0 auto;
  }
 
  textarea {
-   padding: 0;
+   padding: 0 5px;
  }
 
-  .daisy-form-cancel-anchor {
-    background: $lightestgray;
-    &:hover {
-      background-color: #d5d5d5;
-    }
-    border-color: #d5d5d5;
-    font-size: 1rem;
-    color: #333333;
-    cursor: pointer;
-    padding: .6180469716em 1.41575em;
-    font-weight: 600;
-    display: inline-block;
+}
+
+#create-bizcard-form {
+
+ input[required], textarea[required]{
+   border: 2px solid $blue;
+   &:hover {
+     border: 2px solid $yellow2;
+   }
   }
-
-
 }

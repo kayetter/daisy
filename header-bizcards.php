@@ -15,14 +15,14 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<!-- Function hooked to daisy_bizcard_header -->
+
 <?php
 wp_head();
 
 /**
- * Functions hooked into daisy_bizcard_header
  *
- * @hooked daisy_retrieve_session, 10
+ * @hooked daisy_enqueue_edit_bizcard'), 0 (daisy.php)
+ * @hooked daisy_retrieve_session, 0 (daisy.php)
  *
  */
 do_action('daisy_bizcard_header');
@@ -31,7 +31,7 @@ do_action('daisy_bizcard_header');
 ?>
 </head>
 
-<body <?php body_class(); ?> style="background:pink" >
+<body <?php body_class(); ?>  >
 
 <?php do_action( 'storefront_before_site' ); ?>
 
@@ -58,6 +58,15 @@ do_action('daisy_bizcard_header');
 			remove_action('storefront_header', 'storefront_header_cart', 60 );
 			remove_action('storefront_header', 'storefront_product_search', 40 );
 			do_action( 'storefront_header' ); ?>
+		<div class="user-label">
+			<h4>Welcome
+				<?php
+
+				global $current_user;
+				echo $current_user->user_nicename;
+
+				?></h4>
+		</div>
 
 		</div>
 	</header><!-- #masthead -->
@@ -78,6 +87,7 @@ do_action('daisy_bizcard_header');
 		 * Functions hooked in to storefront_content_top
 		 *
 		 * @hooked woocommerce_breadcrumb - 10
+		 	@hooked daisy_verify_user' - 0
 		 */
 	  remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10);
 		do_action( 'storefront_content_top' );

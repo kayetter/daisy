@@ -4,10 +4,6 @@
  *
  * @package storefront
  */
-if(isset($_POST['update'])){
-  Daisy_Bizcard::daisy_update_bizcard();
-}
-
 
 get_header('bizcards'); ?>
 
@@ -20,7 +16,7 @@ get_header('bizcards'); ?>
 
     while ( have_posts() ) : the_post();
 
-		get_template_part( 'content', 'bizcard' );
+		get_template_part( 'content', 'bizcards' );
 		?>
 
 		<?php
@@ -29,6 +25,8 @@ get_header('bizcards'); ?>
 		<pre>
 			<?php
 			global $current_user;
+			echo DAISY_INC_URL."<br>";
+			echo DAISY_INC_PATH."<br>";
 
 			if(isset($_POST['post_id'])){
 				print_r(get_post($_POST['post_id']));
@@ -42,14 +40,21 @@ get_header('bizcards'); ?>
       echo "----------------errors-----------------<br>";
     	print_r($errors);
 
-      echo "----------------seession-----------------<br>";
+      echo "----------------session-----------------<br>";
 			print_r($_SESSION);
-      echo $_SESSION['vcard_post_id'] == $_SESSION['vcard-set-raw']? "true":"false";
-      unset($_SESSION);
+			unset($_SESSION['complete']);
+			unset($_SESSION['vcard-set-raw']);
+			unset($_SESSION['vcard_post_is_set']);
+			unset($_SESSION['child']);
+			unset($_SESSION['org-vcard']);
+			unset($_SESSION['message']);
+
+			echo "post_meta".get_post_meta(33, '_wp_attached_file', true);
 
       echo "<br>";
       print_r(get_allowed_mime_types());
       echo "<br>";
+			echo $pagenow;
 
 			 ?>
 		</pre>

@@ -30,6 +30,9 @@
 .site-header .custom-logo-link img {
     width: 500px;
 }
+.border-blue {
+    border: 2px solid rgb(74, 120, 197);
+}
 .bizcard-edit {
     position: relative;
 }
@@ -41,18 +44,50 @@
     border-radius: 20px;
     margin: 2rem auto;
     background: #f0f0f0;
+    padding: 1rem 2rem;
 }
-.bizcard-entry-header .bizimg-div {
+.bizcard-entry-header h4 {
+    color: rgb(124,124,124);
+    border-bottom: 2px solid rgb(124,124,124);
     position: relative;
 }
-.bizcard-entry-header .bizimg-div img {
-    margin: .5rem auto;
-}
-.bizcard-entry-header .bizimg-div span {
+.bizcard-entry-header h4 span {
     position: absolute;
-    right: 2px;
-    bottom: 2px;
-    color: #fff;
+    right: 10px;
+    bottom: -7px;
+    color: rgb(74, 120, 197);
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    line-height: 1.2em!important;
+    font-size: 25px;
+    z-index: 5;/*background: #0085ba!important;
+      border-radius: 50%;*/
+    box-sizing: border-box;
+    padding: 3px;/*border: 2px solid #fff;*//*box-shadow: 0 2px 1px rgba(46,68,83,.15);*/
+    text-align: center;
+    cursor: pointer;
+}
+.bizcard-entry-header h4 span:hover {
+    color: rgb(223, 158, 6) !important;
+}
+.bizcard-entry-header .bizimg-select {
+    position: relative;
+}
+.bizcard-entry-header .bizimg-select img {
+    position: relative;
+    margin: .5rem auto;
+    cursor: pointer;
+}
+.bizcard-entry-header .bizimg-select img:hover {
+    border: 2px solid rgb(229, 185, 18);
+}
+.bizcard-entry-header .daisy-edit-icon {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    color: white;
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -69,12 +104,13 @@
     text-align: center;
     cursor: pointer;
 }
-.bizcard-entry-header .bizimg-div span:hover {
+.bizcard-entry-header .daisy-edit-icon:hover {
     background: rgb(223, 158, 6) !important;
 }
 .bizcard-entry-header .bizcard-display {
-    padding: 0 1rem;
+    padding: 0;
     padding-bottom: 1rem;
+    min-height: 7rem;
 }
 .bizcard-entry-header .bizcard-entry-title {
     font-size: 1.4rem;
@@ -86,9 +122,6 @@
     font-size: 1.2rem;
     padding-bottom: 1rem;
 }
-.bizcard-entry-header a {
-    display: block;
-}
 .bizcard-entry-header .bizcard-status {
     position: absolute;
     bottom: 0;
@@ -99,10 +132,26 @@
     padding: .6180469716em 1.41575em;
     z-index: 5;
 }
+.daisy-button-anchor {
+    background: #F8F8F8;
+    display: inline-block;
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    color: #333333;
+    font-size: 100%;
+    line-height: 1.618;
+    cursor: pointer;
+    padding: .6180469716em 1.41575em;
+    font-weight: 600;
+    margin-right: .5rem;
+}
+.daisy-button-anchor:hover {
+    background-color: #d5d5d5;
+}
 .daisy-form {
     position: relative;
     font-family: 'PT Sans',sans-serif;
-    padding: 1rem;
+    padding: 1rem 0;
     padding-top: 0;
     margin-bottom: 1rem;
 }
@@ -113,22 +162,36 @@
     padding: 0;
     margin: 0;
 }
-.daisy-form input, .daisy-form textarea {
+.daisy-form .new-bizcard-fieldset {
+    margin: 1rem auto;
+}
+.daisy-form input, .daisy-form textarea, .daisy-form a {
     background: #F8F8F8;
 }
-.daisy-form input:focus, .daisy-form textarea:focus {
+.daisy-form input::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a::-webkit-input-placeholder {
+    color: rgb(239, 244, 236);
+}
+.daisy-form input:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a:-ms-input-placeholder {
+    color: rgb(239, 244, 236);
+}
+.daisy-form input::placeholder, .daisy-form textarea::placeholder, .daisy-form a::placeholder {
+    color: rgb(239, 244, 236);
+}
+.daisy-form input:placeholder-shown, .daisy-form textarea:placeholder-shown, .daisy-form a:placeholder-shown {
+    background: white;
+}
+.daisy-form input:focus, .daisy-form textarea:focus, .daisy-form a:focus {
     border: 2px solid rgb(223, 158, 6);
     background: white;
 }
 .daisy-form .drdcard-link input {
     max-width: 150px;
-    max-height: 1.8rem;
 }
 .daisy-form .drdcard-link input#drdpin {
     max-width: 65px;
 }
 .daisy-form .drdcard-link span {
-    color: rgb(74, 120, 197);
+    color: rgb(124,124,124);
 }
 .daisy-form input#og_title {
     width: 100%;
@@ -162,10 +225,10 @@
     padding: 1rem;
     background: white;
 }
-.daisy-form .daisy-accordion .accordion-content input.daisy-form-item {
+.daisy-form input.daisy-form-item {
     padding: .25rem;
 }
-.daisy-form .daisy-accordion .accordion-content .daisy-form-item {
+.daisy-form .daisy-form-item {
     margin: .25rem 0;
 }
 .daisy-form .accordion-icon-down {
@@ -201,21 +264,6 @@
     top: -5px;
     font-size: 2rem;
 }
-/*style input box so it is not on screen but still in dom*/
-.daisy-form input[type="file"] {
-    height: .1px;
-    width: .1px;
-    position: fixed;
-    left: -99999;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    z-index: -1;
-}
-/*style to change cursor when you hover over label*/
-.daisy-form input[type="file"] + label {
-    cursor: pointer;
-}
 .daisy-form #drdcard-vcard p {
     text-align: center;
     padding: .5rem;
@@ -227,51 +275,64 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     min-height: 100px;
 }
-.daisy-form .icon-action-group .dashicon-div {
+.daisy-form .icon-action-group .dashicon-ul {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 0;
     color: rgb(74, 120, 197);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    margin-top: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    list-style: none;
     cursor: pointer;
 }
-.daisy-form .icon-action-group .dashicon-div span {
-    display: block;
+.daisy-form .icon-action-group .dashicon-ul li {
+    margin: 0 auto;
+    padding: 0;
     text-align: center;
-    cursor: pointer;
-    color: inherit;
 }
-.daisy-form .icon-action-group .dashicon-div .dashicons {
+.daisy-form .icon-action-group .dashicon-ul .dashicons, .daisy-form .icon-action-group .dashicon-ul .fa {
     min-height: 63px;
     min-width: 63px;
     font-size: 4rem;
 }
-.daisy-form .icon-action-group .dashicon-div:hover {
+.daisy-form .icon-action-group .dashicon-ul .remove-file {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+.daisy-form .icon-action-group .dashicon-ul:hover {
     color: rgb(223, 158, 6);
 }
+.daisy-form .new-bizcard-icons {
+    width: 75%;
+    margin: 0 auto;
+}
 .daisy-form textarea {
-    padding: 0;
+    padding: 0 5px;
 }
-.daisy-form .daisy-form-cancel-anchor {
-    background: #F8F8F8;
-    border-color: #d5d5d5;
-    font-size: 1rem;
-    color: #333333;
-    cursor: pointer;
-    padding: .6180469716em 1.41575em;
-    font-weight: 600;
-    display: inline-block;
+#create-bizcard-form input[required], #create-bizcard-form textarea[required] {
+    border: 2px solid rgb(74, 120, 197);
 }
-.daisy-form .daisy-form-cancel-anchor:hover {
-    background-color: #d5d5d5;
+#create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover {
+    border: 2px solid rgb(223, 158, 6);
 }
+
+/*# sourceMappingURL=../daisy/css/maps/style.css.map */

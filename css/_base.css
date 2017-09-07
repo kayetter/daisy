@@ -5,3 +5,8 @@
 .site-header .custom-logo-link img {
   width: 500px;
 }
+
+.border-blue {
+  border: 2px solid $blue;
+
+}
