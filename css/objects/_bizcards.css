@@ -9,6 +9,7 @@
 .bizcard-entry-header{
 
   position: relative;
+  max-width: 550px;
   height: auto;
   font-family: $font_ptsans;
   width: 100%;
@@ -47,6 +48,8 @@
       }
     }
   }
+
+
 
   .bizimg-select {
     position: relative;
