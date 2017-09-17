@@ -87,7 +87,7 @@ do_action('daisy_bizcard_header');
 		 * Functions hooked in to storefront_content_top
 		 *
 		 * @hooked woocommerce_breadcrumb - 10
-		 	@hooked daisy_verify_user' - 0
+		 *	@hooked daisy_verify_user' - 0
 		 */
 	  remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10);
 		do_action( 'storefront_content_top' );
