@@ -25,17 +25,28 @@ if(is_user_logged_in()): ?>
 
 			<?php
 			get_template_part( 'loop', 'bizcards' );
-
+			?>
+			<h3>
+				<a href="<?php echo home_url("new-bizcard") ?>">+ </a> Add another <a href="<?php echo home_url("new-bizcard") ?>">Bizcard</a>.
+			</h3>
+			<?php
 		else :
 
-			get_template_part( 'content', 'bizcards' );
+			?>
+			<h3>
+				Click <a href="<?php echo home_url("new-bizcard") ?>">here</a> to get started.
+			</h3>
+
+
+			<?php
 
 		endif;
-		do_action('daisy_print_pre');
+
+
 		?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 
 
 

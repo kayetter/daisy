@@ -48,6 +48,24 @@ if(is_user_logged_in()):
 			// add status tag to bizcard
 			bizcard_status_tag();
 
+			if(current_user_can('delete_plugins')){
+				$post_author = get_user_by('ID',$post->post_author);
+				$wc_order = get_post_meta($post->ID,"wc-order_id",true);
+				$wc_item = get_post_meta($post->ID,"wc-item_id",true);
+
+				?>
+				<p>Post Author: <?php echo $post_author->first_name; ?></p>
+				<p>Post ID: <?php echo $post->ID; ?></p>
+				<?php
+				if("publish"==get_post_status()){
+					?>
+					<p>wc_order: <?php echo $wc_order; ?></p>
+					<p>wc_item: <?php echo $wc_item; ?></p>
+
+					<?php
+				}
+			}
+
 		if(!is_single()){ ?>
 			</a> <?php }
 
@@ -78,6 +96,8 @@ if(is_user_logged_in()):
 		if(is_single()){
 			do_action('daisy_post_navigation');
 		}
+
+
 
 ?>
 

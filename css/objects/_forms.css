@@ -4,6 +4,8 @@
   padding: 1rem 0;
   padding-top: 0;
   margin-bottom: 1rem;
+  counter-reset: fieldset;
+
 
  /*input styles to make edit form style close to the bizcard formatting*/
   fieldset {
@@ -11,20 +13,30 @@
     background: $ltgray;
     padding: 0;
     margin: 0;
+    h4 {
+      color: $yellow;
+      &:before {
+        counter-increment: fieldset;
+        content: counter(fieldset)". ";
+
+      }
+    }
+
+
   }
 
   .new-bizcard-fieldset {
     margin: 1rem auto;
   }
 
- input, textarea, a {
+ input, textarea, a label {
    position: relative;
    background: $lightestgray;
    &::placeholder {
-     color: $white;
+     color: $lightestgray;
         }
    &:placeholder-shown{
-     background: white;
+     background: $white;
    }
    &:focus {
      border: 2px solid $yellow2;
@@ -35,12 +47,14 @@
 
  .drdcard-link {
    input {
+     display: inline-block;
      max-width: 150px;
    }
    input#drdpin {
      max-width: 65px;
    }
    span {
+     display: inline-block;
      color: $darkgray;
    }
  }
@@ -184,9 +198,13 @@
    position: relative;
  }
 
+ input[type=text], label{
+   display: block;
+ }
+
 }
 
-#create-bizcard-form {
+#create-bizcard-form, #create-vcard-form {
 
  input[required], textarea[required]{
 
@@ -194,4 +212,61 @@
      border: 2px solid $yellow2;
    }
   }
+}
+
+#create-vcard-form {
+  box-sizing: border-box;
+  h5 {
+    border-bottom: 1px solid gray;
+    padding-top: 1rem;
+  }
+
+
+  fieldset{
+    padding: 1rem;
+    input {
+      margin: 0 auto;
+      width: 100%;
+      background: $white;
+      &:focus{
+        background: white;
+      }
+    }
+
+
+    .item-input{
+      width: 100%;
+
+    }
+
+    .dyn-prop-item{
+      margin-top: 1rem;
+    }
+
+
+
+    .dyn-type-div{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+    }
+
+    select  {
+      display: inline-block;
+      border: none;
+      background: $lightestgray;
+
+    }
+    button {
+      display:inline-block;
+      padding: 0 .5rem;
+      margin: .5rem;
+      border: none;
+      color: white;
+
+    }
+  }
+
 }

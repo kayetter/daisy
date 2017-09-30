@@ -1,12 +1,49 @@
-.daisy-hidden{
-  display: none!important;
+.col-full{
+  max-width: 80%;
 }
 
-.site-header .custom-logo-link img {
-  width: 500px;
+.daisy-hidden{
+  display: none!important;
 }
 
 .border-blue {
   border: 2px solid $blue;
 
+}
+
+#daisy-table{
+  tr,td,th,tbody,thead{
+    background: none;
+      }
+  td:nth-of-type(1), th:nth-of-type(1)  {
+    visibility: collapse;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+}
+
+.site-main .columns-3
+ul.products li.product{
+  width: 100%;
+  margin: 4% auto;
+  @media (min-width: 768px){
+    width: 42%;
+  }
+}
+
+li.post-207, li.post-208{
+  width:80%;
+}
+
+
+ul.products {
+margin-left: 0;
+margin-bottom: 0;
+clear:none;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+flex-direction: row;
 }

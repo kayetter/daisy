@@ -24,14 +24,54 @@
 /*#9ff966*/
 
 /*	#eff4ec*/
+.col-full {
+    max-width: 80%;
+}
 .daisy-hidden {
     display: none!important;
 }
-.site-header .custom-logo-link img {
-    width: 500px;
-}
 .border-blue {
     border: 2px solid rgb(74, 120, 197);
+}
+#daisy-table tr, #daisy-table td, #daisy-table th, #daisy-table tbody, #daisy-table thead {
+    background: none;
+}
+#daisy-table td:nth-of-type(1), #daisy-table th:nth-of-type(1) {
+    visibility: collapse;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+}
+.site-main .columns-3
+ul.products li.product {
+    width: 100%;
+    margin: 4% auto;
+}
+@media (min-width: 768px) {
+    .site-main .columns-3
+ul.products li.product {
+        width: 42%;
+    }
+}
+li.post-207, li.post-208 {
+    width: 80%;
+}
+ul.products {
+    margin-left: 0;
+    margin-bottom: 0;
+    clear: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 .bizcard-edit {
     position: relative;
@@ -72,6 +112,9 @@
 }
 .bizcard-entry-header h4 span:hover {
     color: rgb(223, 158, 6) !important;
+}
+.bizcard-entry-header p {
+    margin-bottom: 0;
 }
 .bizcard-entry-header .bizimg-select {
     position: relative;
@@ -136,7 +179,8 @@
 .daisy-button-anchor {
     background: #F8F8F8;
     display: inline-block;
-    background-color: #eeeeee;
+    min-width: 40.057px+1.41575em+.5rem;
+    background-color: #F8F8F8;
     border-color: #eeeeee;
     color: #333333;
     font-size: 100%;
@@ -147,7 +191,7 @@
     margin-right: .5rem;
 }
 .daisy-button-anchor:hover {
-    background-color: #d5d5d5;
+    background-color: rgb(74, 120, 197);
 }
 .daisy-form {
     position: relative;
@@ -155,6 +199,7 @@
     padding: 1rem 0;
     padding-top: 0;
     margin-bottom: 1rem;
+    counter-reset: fieldset;
 }
 /*input styles to make edit form style close to the bizcard formatting*/
 .daisy-form fieldset {
@@ -163,36 +208,45 @@
     padding: 0;
     margin: 0;
 }
+.daisy-form fieldset h4 {
+    color: rgb(229, 185, 18);
+}
+.daisy-form fieldset h4:before {
+    counter-increment: fieldset;
+    content: counter(fieldset)". ";
+}
 .daisy-form .new-bizcard-fieldset {
     margin: 1rem auto;
 }
-.daisy-form input, .daisy-form textarea, .daisy-form a {
+.daisy-form input, .daisy-form textarea, .daisy-form a label {
     position: relative;
     background: #F8F8F8;
 }
-.daisy-form input::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a::-webkit-input-placeholder {
-    color: rgb(239, 244, 236);
+.daisy-form input::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a label::-webkit-input-placeholder {
+    color: #F8F8F8;
 }
-.daisy-form input:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a:-ms-input-placeholder {
-    color: rgb(239, 244, 236);
+.daisy-form input:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a label:-ms-input-placeholder {
+    color: #F8F8F8;
 }
-.daisy-form input::placeholder, .daisy-form textarea::placeholder, .daisy-form a::placeholder {
-    color: rgb(239, 244, 236);
+.daisy-form input::placeholder, .daisy-form textarea::placeholder, .daisy-form a label::placeholder {
+    color: #F8F8F8;
 }
-.daisy-form input:placeholder-shown, .daisy-form textarea:placeholder-shown, .daisy-form a:placeholder-shown {
-    background: white;
+.daisy-form input:placeholder-shown, .daisy-form textarea:placeholder-shown, .daisy-form a label:placeholder-shown {
+    background: rgb(239, 244, 236);
 }
-.daisy-form input:focus, .daisy-form textarea:focus, .daisy-form a:focus {
+.daisy-form input:focus, .daisy-form textarea:focus, .daisy-form a label:focus {
     border: 2px solid rgb(223, 158, 6);
     background: white;
 }
 .daisy-form .drdcard-link input {
+    display: inline-block;
     max-width: 150px;
 }
 .daisy-form .drdcard-link input#drdpin {
     max-width: 65px;
 }
 .daisy-form .drdcard-link span {
+    display: inline-block;
     color: rgb(124,124,124);
 }
 .daisy-form input#og_title {
@@ -331,9 +385,63 @@
     padding: 0 5px;
     position: relative;
 }
-#create-bizcard-form input[required], #create-bizcard-form textarea[required] {}
-#create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover {
+.daisy-form input[type=text], .daisy-form label {
+    display: block;
+}
+#create-bizcard-form input[required], #create-bizcard-form textarea[required], #create-vcard-form input[required], #create-vcard-form textarea[required] {}
+#create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover, #create-vcard-form input[required]:hover, #create-vcard-form textarea[required]:hover {
     border: 2px solid rgb(223, 158, 6);
+}
+#create-vcard-form {
+    box-sizing: border-box;
+}
+#create-vcard-form h5 {
+    border-bottom: 1px solid gray;
+    padding-top: 1rem;
+}
+#create-vcard-form fieldset {
+    padding: 1rem;
+}
+#create-vcard-form fieldset input {
+    margin: 0 auto;
+    width: 100%;
+    background: rgb(239, 244, 236);
+}
+#create-vcard-form fieldset input:focus {
+    background: white;
+}
+#create-vcard-form fieldset .item-input {
+    width: 100%;
+}
+#create-vcard-form fieldset .dyn-prop-item {
+    margin-top: 1rem;
+}
+#create-vcard-form fieldset .dyn-type-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+#create-vcard-form fieldset select {
+    display: inline-block;
+    border: none;
+    background: #F8F8F8;
+}
+#create-vcard-form fieldset button {
+    display: inline-block;
+    padding: 0 .5rem;
+    margin: .5rem;
+    border: none;
+    color: white;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

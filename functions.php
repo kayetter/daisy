@@ -60,3 +60,10 @@ function daisy_theme_support(){
   add_theme_support('woocommerce');
   add_theme_support( 'custom-header' );
 }
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns',999);
+
+	function loop_columns() {
+		return 2; // 2 products per row
+	}
