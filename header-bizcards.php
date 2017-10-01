@@ -25,7 +25,7 @@ wp_head();
  * @hooked daisy_retrieve_session, 0 (daisy.php)
  *
  */
-do_action('daisy_bizcard_header');
+// do_action('daisy_bizcard_header');
 
 
 ?>
@@ -91,3 +91,4 @@ do_action('daisy_bizcard_header');
 		 */
 	  remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10);
 		do_action( 'storefront_content_top' );
+		?>

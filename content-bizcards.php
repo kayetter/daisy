@@ -76,7 +76,7 @@ if(is_user_logged_in()):
 		 *
 		 */
 	if(is_single()){
-		do_action('daisy_messages');
+		// do_action('daisy_messages');
 		do_shortcode('[daisy_edit_bizcard_form]');
 		}
 	?>
@@ -94,7 +94,7 @@ if(is_user_logged_in()):
 		 */
 		do_action('daisy_after_bizcard');
 		if(is_single()){
-			do_action('daisy_post_navigation');
+			// do_action('daisy_post_navigation');
 		}
 
 

@@ -5,12 +5,12 @@
  *
  */
 
- if(is_page('daisy-error-log') && get_query_var('dd_clear')=="true"){
-   $contents = "";
-   file_put_contents(DAISY_PLUGIN_DIR."daisy_error_log.txt", $contents);
-   wp_redirect(remove_query_arg('dd_clear'));
-   exit;
- }
+ // if(is_page('daisy-error-log') && get_query_var('dd_clear')=="true"){
+ //   $contents = "";
+ //   file_put_contents(DAISY_PLUGIN_DIR."daisy_error_log.txt", $contents);
+ //   wp_redirect(remove_query_arg('dd_clear'));
+ //   exit;
+ // }
 
  get_header('bizcards'); ?>
 
@@ -24,7 +24,7 @@
      while ( have_posts() ) : the_post();
     if(is_page('new-bizcard')){
       the_title('<h1>','</h1>');
-      get_template_part( 'content', 'submit_form' );
+      get_template_part( 'content',"submit_form");
     }  else {
       get_template_part( 'content', '' );
     }
