@@ -1,3 +1,18 @@
+html {
+  font-size: 62.5%
+}
+
+body {
+  font-size: 1.2rem;
+
+    @media screen and (min-width: 490px){
+      font-size: 1.4rem;
+    }
+    @media screen and (min-width: 960px){
+      font-size: 1.6rem;
+    }
+}
+
 .col-full{
   max-width: 80%;
 }
@@ -46,4 +61,46 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 flex-direction: row;
+}
+
+@keyframes daisy-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.daisy-spinner {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img {
+    margin: auto;
+    animation: daisy-spin 1s linear infinite;
+  }
+}
+
+.daisy-help-tip {
+  text-align: left;
+  position: relative;
+  &:hover {
+
+    color: $yellow2;
+  }
+
+}
+
+#daisy-hover-tip{
+  padding: .25rem;
+  line-height: 1;
+  display: none;
+  background: $helpTip;
+  border: .5px solid $blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 200px;
+  z-index: 999
 }

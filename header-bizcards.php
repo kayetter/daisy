@@ -33,6 +33,8 @@ wp_head();
 
 <body <?php body_class(); ?>  >
 
+<div id="daisy-hover-tip" ></div>
+
 <?php do_action( 'storefront_before_site' ); ?>
 
 <div id="page" class="hfeed site">
@@ -86,7 +88,7 @@ wp_head();
 		/**
 		 * Functions hooked in to storefront_content_top
 		 *
-		 * @hooked woocommerce_breadcrumb - 10
+		 *  @hooked woocommerce_breadcrumb - 10
 		 *	@hooked daisy_verify_user' - 0
 		 */
 	  remove_action( 'storefront_content_top', 'woocommerce_breadcrumb', 10);

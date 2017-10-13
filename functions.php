@@ -62,8 +62,3 @@ function daisy_theme_support(){
 }
 
 // Change number or products per row to 3
-add_filter('loop_shop_columns', 'loop_columns',999);
-
-	function loop_columns() {
-		return 2; // 2 products per row
-	}

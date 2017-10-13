@@ -1,10 +1,20 @@
+.daisy-error{
+  color: red;
+}
+
 .daisy-form {
+  /*counter-reset: fieldset;*/
   position: relative;
   font-family: $font_ptsans;
   padding: 1rem 0;
   padding-top: 0;
   margin-bottom: 1rem;
-  counter-reset: fieldset;
+  /*h4 {
+    color: $yellow;
+    &:before {
+      counter-increment: fieldset;
+      content: counter(fieldset)". ";
+    }*/
 
 
  /*input styles to make edit form style close to the bizcard formatting*/
@@ -13,31 +23,22 @@
     background: $ltgray;
     padding: 0;
     margin: 0;
-    h4 {
-      color: $yellow;
-      &:before {
-        counter-increment: fieldset;
-        content: counter(fieldset)". ";
-
-      }
     }
 
-
+  .label-div{
+    display: flex;
+    justify-content: space-between;
   }
 
-  .new-bizcard-fieldset {
-    margin: 1rem auto;
-  }
+
 
  input, textarea, a label {
    position: relative;
    background: $lightestgray;
    &::placeholder {
-     color: $lightestgray;
+     color: $yellow;
         }
-   &:placeholder-shown{
-     background: $white;
-   }
+
    &:focus {
      border: 2px solid $yellow2;
      background: white;
@@ -45,35 +46,45 @@
 
    }
 
- .drdcard-link {
+ #drdcard-link {
+   padding-top: 1rem;
    input {
      display: inline-block;
-     max-width: 150px;
+     max-width: 200px;
    }
    input#drdpin {
-     max-width: 65px;
+     max-width: 85px;
    }
+
    span {
      display: inline-block;
      color: $darkgray;
+   }
+   #drdcard-link-input span{
+     color: $blue;
+     text-decoration: underline;
+   }
+   label {
+     display: inline-block;
    }
  }
 
   input#og_title{
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 1.4em;
     font-weight: bold;
     &:focus{
-      font-size: 1.2rem;
+      font-size: 1.2em;
       font-weight: normal;
     }
   }
 
-  textarea#og_desc {
+  input#og_desc {
     width: 100%;
-    font-size: 1.2rem;
+    display: block;
+    font-size: 1.2em;
     &:focus {
-      font-size: 1rem;
+      font-size: 1em;
     }
   }
 
@@ -86,12 +97,12 @@
       display: block;
       padding-top: 1rem;
       cursor: pointer;
-      font-size: 1rem;
 
     }
     .accordion-content {
     padding: 1rem;
-    background: white;
+    display: none;
+
     }
   }
 
@@ -115,7 +126,7 @@
       color: inherit;
       right: 1rem;
       top: -5px;
-      font-size: 2rem;
+      font-size: 1.8em;
     }
   }
 
@@ -133,7 +144,7 @@
       color: inherit;
       right: 1rem;
       top: -5px;
-      font-size: 2rem;
+      font-size: 1.8em;
     }
   }
 
