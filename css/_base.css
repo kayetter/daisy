@@ -8,9 +8,7 @@ body {
     @media screen and (min-width: 490px){
       font-size: 1.4rem;
     }
-    @media screen and (min-width: 960px){
-      font-size: 1.6rem;
-    }
+
 }
 
 .col-full{

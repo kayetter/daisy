@@ -8,6 +8,7 @@
   font-family: $font_ptsans;
   padding: 1rem 0;
   padding-top: 0;
+  margin: auto;
   margin-bottom: 1rem;
   /*h4 {
     color: $yellow;
@@ -215,6 +216,7 @@
 
 }
 
+
 #create-bizcard-form, #create-vcard-form {
 
  input[required], textarea[required]{
@@ -223,6 +225,13 @@
      border: 2px solid $yellow2;
    }
   }
+}
+
+#edit-buttons-form{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 3rem;
+
 }
 
 #create-vcard-form {

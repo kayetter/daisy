@@ -25,6 +25,8 @@
 
 /*	#eff4ec*/
 
+/*#6d6d6d*/
+
 /* #FFFFaF */
 html {
     font-size: 62.5%;
@@ -35,11 +37,6 @@ body {
 @media screen and (min-width: 490px) {
     body {
         font-size: 1.4rem;
-    }
-}
-@media screen and (min-width: 960px) {
-    body {
-        font-size: 1.6rem;
     }
 }
 .col-full {
@@ -148,15 +145,15 @@ ul.products {
     max-width: 200px;
     z-index: 999;
 }
-.page .bizcard-entry-header {
-    max-width: 750px;
+.page .bizcard-entry-header img {
+    max-width: 80%;
 }
 .bizcard-edit {
     position: relative;
 }
 .bizcard-entry-header {
     position: relative;
-    max-width: 550px;
+    max-width: 450px;
     font-family: 'PT Sans',sans-serif;
     width: 100%;
     border-radius: 20px;
@@ -258,6 +255,15 @@ ul.products {
     padding: .6180469716em 1.41575em;
     z-index: 5;
 }
+.bizcard-entry-header .drd-link .link-preview {
+    color: rgb(229, 185, 18);
+}
+.bizcard-entry-header .drd-link span {
+    color: rgb(109,109,109);
+}
+.bizcard-entry-header .drd-link span:hover {
+    color: rgb(229, 185, 18);
+}
 .daisy-button-anchor {
     background: #F8F8F8;
     display: inline-block;
@@ -283,6 +289,7 @@ ul.products {
     font-family: 'PT Sans',sans-serif;
     padding: 1rem 0;
     padding-top: 0;
+    margin: auto;
     margin-bottom: 1rem;
 }
 /*input styles to make edit form style close to the bizcard formatting*/
@@ -486,6 +493,15 @@ ul.products {
 #create-bizcard-form input[required], #create-bizcard-form textarea[required], #create-vcard-form input[required], #create-vcard-form textarea[required] {}
 #create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover, #create-vcard-form input[required]:hover, #create-vcard-form textarea[required]:hover {
     border: 2px solid rgb(223, 158, 6);
+}
+#edit-buttons-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 3rem;
 }
 #create-vcard-form {
     box-sizing: border-box;

@@ -15,19 +15,39 @@
 <header class='bizcard-entry-header'>
 
 	<div class = "daisy-spinner daisy-hidden" >
-		<img src="<?php echo DAISY_PLUGIN_URL."/public/assets/images/DDonVinyl64px.png" ?>" alt="dopey daisy spinner" />
+		<img src="<?php echo DAISY_PLUGIN_URL."/public/assets/images/DD64px.png" ?>" alt="dopey daisy spinner" />
 	</div>
 
 	<div class="bizcard-wrapper ">
 		<div class = "daisy-message-div">
 			<?php
 			global $post;
-			if( get_query_var("dd_create") == "success" && get_query_var("p") == $post->ID ): ?>
+			if(get_query_var("dd_create") && is_single()):
+				if( get_query_var("dd_create") == "success"): ?>
 
-			<h4 style="padding: 1rem 0; text-align: center">You have succesfully created a new Bizcard</h4>
+				<h4 style="padding: 1rem 0; text-align: center">You have succesfully created a new Bizcard</h4>
 
-			<?php
-			endif; ?>
+				<?php
+				elseif
+
+				( get_query_var("dd_create") == "update"): ?>
+
+				<h4 style="padding: 1rem 0; text-align: center">You have updated your Bizcard</h4>
+
+				<?php
+				elseif
+
+				( get_query_var("dd_create") == "activate"):
+					$action = get_post_status()=='publish'?"activated":"deactivated";
+				?>
+
+				<h4 style="padding: 1rem 0; text-align: center">You have <?php 	echo $action ?> your Bizcard</h4>
+
+				<?php
+				endif;
+			endif;
+
+			 ?>
 
 		</div>
 
@@ -37,6 +57,8 @@
 			<a class = "bizcard-anchor" href="<?php echo get_permalink($post->ID); ?>	">
 
 		<?php endif;
+
+		// Form directions added if user is on the create new bizcard page
 		if(is_page("new-bizcard")): ?>
 			<ol>
 			 	<li>Add a Biz-image</li>
@@ -45,6 +67,8 @@
 			 	<li>Upload or create a vCard.</li>
 			</ol>
 		<?php endif; ?>
+
+
 		<div class="bizimg-div <?php echo is_page("new-bizcard")?"bizimg-select":"" ?>">
 			<span  title='Change Daisy Bizimg' class="fa fa-camera daisy-edit-icon <?php echo !is_page("new-bizcard")?"daisy-hidden": "" ?>"></span>
 			<?php
@@ -70,10 +94,11 @@
 
 				the_excerpt();
 
+
+
 			if(!is_page("new-bizcard")):
 
-					daisy_vcard_display('link');
-
+				daisy_drdcard_display();
 					// add status tag to bizcard
 					bizcard_status_tag();
 				?>

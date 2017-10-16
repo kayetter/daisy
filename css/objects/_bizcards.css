@@ -1,7 +1,8 @@
-.page{
+.page {
   .bizcard-entry-header{
-    max-width: 750px;
-
+    img{
+      max-width: 80%;
+    }
   }
 }
 
@@ -15,7 +16,7 @@
 
 
   position: relative;
-  max-width: 550px;
+  max-width: 450px;
   font-family: $font_ptsans;
   width: 100%;
   border-radius: 20px;
@@ -132,6 +133,20 @@
     padding: .6180469716em 1.41575em;;
     z-index: 5;
   }
+
+  .drd-link{
+    .link-preview{
+      color: $yellow;
+    }
+    span {
+      color: $fontgray;
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+  }
+
 
 
 }
