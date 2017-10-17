@@ -25,14 +25,14 @@
 			if(get_query_var("dd_create") && is_single()):
 				if( get_query_var("dd_create") == "success"): ?>
 
-				<h4 style="padding: 1rem 0; text-align: center">You have succesfully created a new Bizcard</h4>
+				<h4 style="padding: 1rem 0; text-align: center">Your Bizcard has been created.</h4>
 
 				<?php
 				elseif
 
 				( get_query_var("dd_create") == "update"): ?>
 
-				<h4 style="padding: 1rem 0; text-align: center">You have updated your Bizcard</h4>
+				<h4 style="padding: 1rem 0; text-align: center">Your Bizcard has been updated.</h4>
 
 				<?php
 				elseif
@@ -41,7 +41,7 @@
 					$action = get_post_status()=='publish'?"activated":"deactivated";
 				?>
 
-				<h4 style="padding: 1rem 0; text-align: center">You have <?php 	echo $action ?> your Bizcard</h4>
+				<h4 style="padding: 1rem 0; text-align: center">Your Bizcard has been <?php 	echo $action ?>. </h4>
 
 				<?php
 				endif;
