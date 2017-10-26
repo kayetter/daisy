@@ -148,6 +148,30 @@ ul.products {
 .page .bizcard-entry-header img {
     max-width: 80%;
 }
+.daisy-edit-icon {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    line-height: 1.2em!important;
+    font-size: 25px;
+    z-index: 5;
+    background: #0085ba!important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 3px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 1px rgba(46,68,83,.15);
+    text-align: center;
+    cursor: pointer;
+}
+.daisy-edit-icon:hover {
+    background: rgb(223, 158, 6) !important;
+}
 .bizcard-edit {
     position: relative;
 }
@@ -205,30 +229,6 @@ ul.products {
 }
 .bizcard-entry-header .bizimg-select img:hover {
     border: 2px solid rgb(229, 185, 18);
-}
-.bizcard-entry-header .daisy-edit-icon {
-    position: absolute;
-    right: 0;
-    bottom: -7px;
-    color: white;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-    line-height: 1.2em!important;
-    font-size: 25px;
-    z-index: 5;
-    background: #0085ba!important;
-    border-radius: 50%;
-    box-sizing: border-box;
-    padding: 3px;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 1px rgba(46,68,83,.15);
-    text-align: center;
-    cursor: pointer;
-}
-.bizcard-entry-header .daisy-edit-icon:hover {
-    background: rgb(223, 158, 6) !important;
 }
 .bizcard-entry-header .bizcard-display {
     padding: 0;
@@ -471,11 +471,6 @@ ul.products {
     min-width: 63px;
     font-size: 4rem;
 }
-.daisy-form .icon-action-group .dashicon-ul .remove-file {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-}
 .daisy-form .icon-action-group .dashicon-ul:hover {
     color: rgb(223, 158, 6);
 }
@@ -489,6 +484,12 @@ ul.products {
 }
 .daisy-form input[type=text], .daisy-form label {
     display: block;
+}
+.remove-file {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
 }
 #create-bizcard-form input[required], #create-bizcard-form textarea[required], #create-vcard-form input[required], #create-vcard-form textarea[required] {}
 #create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover, #create-vcard-form input[required]:hover, #create-vcard-form textarea[required]:hover {
@@ -553,6 +554,19 @@ ul.products {
     margin: .5rem;
     border: none;
     color: white;
+}
+.vcard-image-wrapper {
+    width: 200px;
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+}
+.vcard-image-wrapper img {
+    width: 120px;
+    margin: auto;
+    padding: 1rem;
+    background: rgb(124,124,124);
+    cursor: pointer;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

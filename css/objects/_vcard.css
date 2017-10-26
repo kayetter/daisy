@@ -1,0 +1,13 @@
+.vcard-image-wrapper {
+  width: 200px;
+  margin: auto;
+  padding: 1rem;
+  position: relative;
+  img {
+    width: 120px;
+    margin: auto;
+    padding: 1rem;
+    background: $darkgray;
+    cursor: pointer;
+  }
+}

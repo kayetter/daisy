@@ -6,6 +6,31 @@
   }
 }
 
+.daisy-edit-icon {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  line-height: 1.2em!important;
+  font-size: 25px;
+  z-index: 5;
+  background: #0085ba!important;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 3px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 1px rgba(46,68,83,.15);
+  text-align: center;
+  cursor: pointer;
+   &:hover {
+    background: $yellow2 !important;
+  }
+}
+
 
 .bizcard-edit{
   position: relative;
@@ -78,30 +103,7 @@
     }
   }
 
-  .daisy-edit-icon {
-    position: absolute;
-    right: 0;
-    bottom: -7px;
-    color: white;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-    line-height: 1.2em!important;
-    font-size: 25px;
-    z-index: 5;
-    background: #0085ba!important;
-    border-radius: 50%;
-    box-sizing: border-box;
-    padding: 3px;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 1px rgba(46,68,83,.15);
-    text-align: center;
-    cursor: pointer;
-     &:hover {
-      background: $yellow2 !important;
-    }
-  }
+
 
   .bizcard-display {
     padding: 0;
