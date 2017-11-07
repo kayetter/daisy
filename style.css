@@ -25,6 +25,8 @@
 
 /*	#eff4ec*/
 
+/*rgb(240, 240, 240)*/
+
 /*#6d6d6d*/
 
 /* #FFFFaF */
@@ -109,17 +111,11 @@ ul.products {
     }
 }
 .daisy-spinner {
-    min-height: 300px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    position: fixed;/*min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;*/
+    z-index: 999999999;
 }
 .daisy-spinner img {
     margin: auto;
@@ -144,6 +140,48 @@ ul.products {
     left: 0;
     max-width: 200px;
     z-index: 999;
+}
+.svg-test {
+    background: url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space 0 0;
+    height: 300px;
+    width: 100%px;
+    background-size: 50px 50px;
+}
+main {
+    position: relative;
+}
+#overlay {
+    position: absolute;
+    background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space #f0f0f0;
+    background-size: 50px 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;/*background: $ltgray;*/
+    z-index: 666;/*background: #000;*//*opacity: 0.5;*//*filter: alpha(opacity=50);*/
+}
+#modal {
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    border-radius: 14px;
+    padding: 8px;
+    z-index: 9999999;
+}
+#modal button {
+    float: right;/*padding: 1rem;*/
+    border-radius: 14px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+#content {
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+}
+#close {
+    line-height: 4;
+    z-index: 9999;
 }
 .page .bizcard-entry-header img {
     max-width: 80%;

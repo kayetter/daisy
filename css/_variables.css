@@ -6,7 +6,7 @@ $daisy: rgb(252, 255, 11); /*	#fcff0b*/
 $grn: rgb(96, 184, 97); /*	#60b861*/
 $ltgrn: rgb(159, 249, 102); /*#9ff966*/
 $white: rgb(239, 244, 236); /*	#eff4ec*/
-$ltgray: #f0f0f0;
+$ltgray: #f0f0f0;  /*rgb(240, 240, 240)*/
 $fontgray: rgb(109,109,109);  /*#6d6d6d*/
 $darkgray: rgb(124,124,124);
 $lightestgray: #F8F8F8;

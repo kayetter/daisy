@@ -14,9 +14,6 @@
 
 <header class='bizcard-entry-header'>
 
-	<div class = "daisy-spinner daisy-hidden" >
-		<img src="<?php echo DAISY_PLUGIN_URL."/public/assets/images/DD64px.png" ?>" alt="dopey daisy spinner" />
-	</div>
 
 	<div class="bizcard-wrapper ">
 		<div class = "daisy-message-div">

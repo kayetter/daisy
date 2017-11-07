@@ -70,10 +70,14 @@ flex-direction: row;
   }
 }
 .daisy-spinner {
-  min-height: 300px;
+  position: fixed;
+
+  /*min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;*/
+  z-index: 999999999;
+
   img {
     margin: auto;
     animation: daisy-spin 1s linear infinite;
@@ -101,4 +105,15 @@ flex-direction: row;
   left: 0;
   max-width: 200px;
   z-index: 999
+}
+
+.svg-test {
+  background: url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space 0 0;
+  height: 300px;
+  width: 100%px;
+  background-size: 50px 50px;
+}
+
+main {
+  position: relative;
 }
