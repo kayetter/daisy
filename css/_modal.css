@@ -14,6 +14,12 @@
   /*filter: alpha(opacity=50);*/
 }
 
+.spinner-background{
+  background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray;
+   background-size: 50px 50px;
+}
+
 #modal {
   position:fixed;
   background:rgba(0,0,0,0.8);
@@ -39,4 +45,11 @@
 #close{
   line-height: 4;
   z-index: 9999;
+}
+
+.daisy-error{
+  color: red;
+  ul {
+    margin: 0 1rem;
+  }
 }

@@ -87,6 +87,11 @@
 
   .bizimg-div {
     margin: auto;
+    img{
+      width: auto;
+      height: auto;
+      max-height: 260px;
+    }
   }
 
   .bizimg-select {
@@ -105,7 +110,7 @@
 
 
 
-  .bizcard-display {
+  .bizcards-gui {
     padding: 0;
     padding-bottom: 1rem;
     min-height: 7rem;

@@ -161,6 +161,11 @@ main {
     height: 100%;/*background: $ltgray;*/
     z-index: 666;/*background: #000;*//*opacity: 0.5;*//*filter: alpha(opacity=50);*/
 }
+.spinner-background {
+    background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space #f0f0f0;
+    background-size: 50px 50px;
+}
 #modal {
     position: fixed;
     background: rgba(0,0,0,0.8);
@@ -182,6 +187,12 @@ main {
 #close {
     line-height: 4;
     z-index: 9999;
+}
+.daisy-error {
+    color: red;
+}
+.daisy-error ul {
+    margin: 0 1rem;
 }
 .page .bizcard-entry-header img {
     max-width: 80%;
@@ -256,6 +267,11 @@ main {
 .bizcard-entry-header .bizimg-div {
     margin: auto;
 }
+.bizcard-entry-header .bizimg-div img {
+    width: auto;
+    height: auto;
+    max-height: 260px;
+}
 .bizcard-entry-header .bizimg-select {
     position: relative;
     max-width: 486px;
@@ -268,7 +284,7 @@ main {
 .bizcard-entry-header .bizimg-select img:hover {
     border: 2px solid rgb(229, 185, 18);
 }
-.bizcard-entry-header .bizcard-display {
+.bizcard-entry-header .bizcards-gui {
     padding: 0;
     padding-bottom: 1rem;
     min-height: 7rem;
