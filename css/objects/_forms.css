@@ -171,6 +171,7 @@
       padding: 0;
       color: $blue;
       flex-direction: column;
+      margin-left: 0;
       margin-top: 1rem;
       align-items: center;
       justify-content: flex-start;
@@ -183,8 +184,8 @@
         }
 
       .dashicons, .fa{
-        min-height: 63px;
-        min-width: 63px;
+        min-height: 50px;
+        min-width: 50px;
         font-size: 4rem;
       }
 
@@ -291,4 +292,37 @@
     }
   }
 
+}
+
+/*vcard form specific styling for inputs*/
+#edit-vcard-form {
+  fieldset {
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+
+  fieldset#vcard-name{
+
+    div {
+      width: 100%;
+
+    }
+
+    @media screen and (min-width: 490px){
+        font-size: 1.4rem;
+
+      div {
+        display: inline-block;
+      }
+      select {
+        display: block;
+      }
+    }
+  }
 }

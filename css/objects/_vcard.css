@@ -7,7 +7,16 @@
     width: 120px;
     margin: auto;
     padding: 1rem;
-    background: $darkgray;
     cursor: pointer;
   }
+}
+
+
+#vcard-archive-div{
+  position: relative;
+/*vcard archive table styling*/
+  table.vcard-archive{
+    position: relative;
+  }
+
 }

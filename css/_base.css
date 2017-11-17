@@ -1,5 +1,6 @@
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
+  border-sizing: border-box;
 }
 
 body {
@@ -70,7 +71,7 @@ flex-direction: row;
   }
 }
 .daisy-spinner {
-  position: fixed;
+  position: absolute;
 
   /*min-height: 300px;
   display: flex;

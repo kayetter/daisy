@@ -32,6 +32,7 @@
 /* #FFFFaF */
 html {
     font-size: 62.5%;
+    border-sizing: border-box;
 }
 body {
     font-size: 1.2rem;
@@ -111,7 +112,7 @@ ul.products {
     }
 }
 .daisy-spinner {
-    position: fixed;/*min-height: 300px;
+    position: absolute;/*min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;*/
@@ -159,7 +160,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;/*background: $ltgray;*/
-    z-index: 666;/*background: #000;*//*opacity: 0.5;*//*filter: alpha(opacity=50);*/
+    z-index: 9999;/*background: #000;*//*opacity: 0.5;*//*filter: alpha(opacity=50);*/
 }
 .spinner-background {
     background: linear-gradient(rgba(240, 240, 240, .8),
@@ -505,6 +506,7 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-left: 0;
     margin-top: 1rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -521,8 +523,8 @@ main {
     text-align: center;
 }
 .daisy-form .icon-action-group .dashicon-ul .dashicons, .daisy-form .icon-action-group .dashicon-ul .fa {
-    min-height: 63px;
-    min-width: 63px;
+    min-height: 50px;
+    min-width: 50px;
     font-size: 4rem;
 }
 .daisy-form .icon-action-group .dashicon-ul:hover {
@@ -609,6 +611,29 @@ main {
     border: none;
     color: white;
 }
+/*vcard form specific styling for inputs*/
+#edit-vcard-form fieldset {
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+#edit-vcard-form input {
+    width: 100%;
+}
+#edit-vcard-form fieldset#vcard-name div {
+    width: 100%;
+}
+@media screen and (min-width: 490px) {
+    #edit-vcard-form fieldset#vcard-name {
+        font-size: 1.4rem;
+    }
+    #edit-vcard-form fieldset#vcard-name div {
+        display: inline-block;
+    }
+    #edit-vcard-form fieldset#vcard-name select {
+        display: block;
+    }
+}
 .vcard-image-wrapper {
     width: 200px;
     margin: auto;
@@ -619,8 +644,14 @@ main {
     width: 120px;
     margin: auto;
     padding: 1rem;
-    background: rgb(124,124,124);
     cursor: pointer;
+}
+#vcard-archive-div {
+    position: relative;
+}
+/*vcard archive table styling*/
+#vcard-archive-div table.vcard-archive {
+    position: relative;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

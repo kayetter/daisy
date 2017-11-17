@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   /*background: $ltgray;*/
-  z-index: 666;
+  z-index: 9999;
   /*background: #000;*/
   /*opacity: 0.5;*/
   /*filter: alpha(opacity=50);*/
