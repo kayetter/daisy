@@ -1,3 +1,14 @@
+/**
+ * Styles for VCard form
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+
+
+
 .vcard-image-wrapper {
   width: 200px;
   margin: auto;
@@ -19,4 +30,74 @@
     position: relative;
   }
 
+}
+
+.daisy-window-border-top{
+  height: 40px;
+  background-color: $hoverblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#edit-vcard-form{
+
+    fieldset {
+      border: 2px solid black;
+      padding: 1rem;
+      margin: 1rem;
+    }
+
+    input {
+      width: 100%;
+    }
+
+
+    fieldset#vcard-name{
+
+      div {
+        width: 100%;
+
+      }
+
+      $s_media {
+          font-size: 1.4rem;
+
+        div {
+          display: inline-block;
+          input{
+            width: auto;
+          }
+        }
+        select {
+          display: block;
+        }
+      }
+    }
+
+}
+
+.daisy-close-form{
+  height: 40px;
+  width: 40px;
+  color: white;
+  &:hover{
+    color: $lightgray;
+    background: transparent;
+    border: none;
+  }
+}
+
+button.remove-file{
+  height: 40px;
+  width: 40px;
+  top: 0;
+  right: 0;
+  &:hover{
+    color: $hoverblue;
+    background: transparent;
+    border: none;
+  }
 }

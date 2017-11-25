@@ -19,8 +19,21 @@ while ( have_posts() ) : the_post();
 	 */
 	get_template_part( 'content', 'bizcards' );
 
-endwhile;
+endwhile; ?>
 
+
+<div class="pagination">
+
+
+				 <?php
+
+				 echo paginate_links();
+
+				 ?>
+
+
+</div>
+<?php 
 /**
  * Functions hooked in to storefront_paging_nav action
  *

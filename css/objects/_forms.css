@@ -1,3 +1,12 @@
+/**
+ * Styles for generic form and daisy-create-form
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+
 .daisy-error{
   color: red;
 }
@@ -52,9 +61,15 @@
    input {
      display: inline-block;
      max-width: 200px;
+     @media $s_screen{
+       max-width: 120px;
+     }
    }
    input#drdpin {
      max-width: 85px;
+     @media $s_screen {
+       max-width: 50px;
+     }
    }
 
    span {
@@ -75,7 +90,7 @@
     font-size: 1.4em;
     font-weight: bold;
     &:focus{
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: normal;
     }
   }
@@ -103,6 +118,9 @@
     .accordion-content {
     padding: 1rem;
     display: none;
+    @media $s_screen{
+      padding: 0;
+    }
 
     }
   }
@@ -292,37 +310,4 @@
     }
   }
 
-}
-
-/*vcard form specific styling for inputs*/
-#edit-vcard-form {
-  fieldset {
-    border: 2px solid black;
-    padding: 1rem;
-    margin: 1rem;
-  }
-
-  input {
-    width: 100%;
-  }
-
-
-  fieldset#vcard-name{
-
-    div {
-      width: 100%;
-
-    }
-
-    @media screen and (min-width: 490px){
-        font-size: 1.4rem;
-
-      div {
-        display: inline-block;
-      }
-      select {
-        display: block;
-      }
-    }
-  }
 }

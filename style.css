@@ -9,6 +9,14 @@
  Text Domain:  daisy
 */
 
+/**
+ * Variables for precss styling
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+
 /*#FDE3C2*/
 
 /*	#4a78c5*/
@@ -30,20 +38,25 @@
 /*#6d6d6d*/
 
 /* #FFFFaF */
+
+/*wordpress break point*/
+
+/*768px when sidebar moves to right*/
 html {
     font-size: 62.5%;
     border-sizing: border-box;
 }
 body {
-    font-size: 1.2rem;
-}
-@media screen and (min-width: 490px) {
-    body {
-        font-size: 1.4rem;
-    }
+    position: relative;
+    font-size: 1.4rem;
 }
 .col-full {
     max-width: 80%;
+}
+@media screen and (max-width: 490px) {
+    .col-full {
+        max-width: 100%;
+    }
 }
 .daisy-hidden {
     display: none!important;
@@ -151,6 +164,14 @@ ul.products {
 main {
     position: relative;
 }
+main .bizcard-main-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
 #overlay {
     position: absolute;
     background: linear-gradient(rgba(240, 240, 240, .8),
@@ -180,10 +201,10 @@ main {
     margin-top: 1rem;
     margin-right: 1rem;
 }
-#content {
-    border-radius: 8px;
-    background: #fff;
-    padding: 20px;
+#modal #modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 14px;
 }
 #close {
     line-height: 4;
@@ -195,8 +216,22 @@ main {
 .daisy-error ul {
     margin: 0 1rem;
 }
+/**
+ * Styles for bizcards display
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+.page {
+    position: relative;
+}
 .page .bizcard-entry-header img {
     max-width: 80%;
+}
+.bizcards {
+    position: relative;
 }
 .daisy-edit-icon {
     position: absolute;
@@ -220,7 +255,7 @@ main {
     cursor: pointer;
 }
 .daisy-edit-icon:hover {
-    background: rgb(223, 158, 6) !important;
+    background: #055aa5 !important;
 }
 .bizcard-edit {
     position: relative;
@@ -233,7 +268,7 @@ main {
     border-radius: 20px;
     margin: 2rem auto;
     background: #f0f0f0;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 .bizcard-entry-header h4 {
     color: rgb(124,124,124);
@@ -261,6 +296,9 @@ main {
 }
 .bizcard-entry-header h4 span:hover {
     color: rgb(223, 158, 6) !important;
+}
+.bizcard-entry-header .bizcard-wrapper img, .bizcard-entry-header .bizcard-status {
+    border-radius: 20px;
 }
 .bizcard-entry-header p {
     margin-bottom: 0;
@@ -331,11 +369,19 @@ main {
     cursor: pointer;
     padding: .6180469716em 1.41575em;
     font-weight: 600;
-    margin-right: .5rem;
+    margin-left: 1rem;
 }
 .daisy-button-anchor:hover {
     background-color: rgb(74, 120, 197);
 }
+/**
+ * Styles for generic form and daisy-create-form
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
 .daisy-error {
     color: red;
 }
@@ -412,7 +458,7 @@ main {
     font-weight: bold;
 }
 .daisy-form input#og_title:focus {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: normal;
 }
 .daisy-form input#og_desc {
@@ -541,6 +587,21 @@ main {
 .daisy-form input[type=text], .daisy-form label {
     display: block;
 }
+@media screen and (max-width: 490px) {
+    .daisy-form #drdcard-link input {
+        max-width: 120px;
+    }
+}
+@media screen and (max-width: 490px) {
+    .daisy-form #drdcard-link input#drdpin {
+        max-width: 50px;
+    }
+}
+@media screen and (max-width: 490px) {
+    .daisy-form .daisy-accordion .accordion-content {
+        padding: 0;
+    }
+}
 .remove-file {
     position: absolute;
     top: -10px;
@@ -611,29 +672,14 @@ main {
     border: none;
     color: white;
 }
-/*vcard form specific styling for inputs*/
-#edit-vcard-form fieldset {
-    border: 2px solid black;
-    padding: 1rem;
-    margin: 1rem;
-}
-#edit-vcard-form input {
-    width: 100%;
-}
-#edit-vcard-form fieldset#vcard-name div {
-    width: 100%;
-}
-@media screen and (min-width: 490px) {
-    #edit-vcard-form fieldset#vcard-name {
-        font-size: 1.4rem;
-    }
-    #edit-vcard-form fieldset#vcard-name div {
-        display: inline-block;
-    }
-    #edit-vcard-form fieldset#vcard-name select {
-        display: block;
-    }
-}
+/**
+ * Styles for VCard form
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
 .vcard-image-wrapper {
     width: 200px;
     margin: auto;
@@ -652,6 +698,59 @@ main {
 /*vcard archive table styling*/
 #vcard-archive-div table.vcard-archive {
     position: relative;
+}
+.daisy-window-border-top {
+    height: 40px;
+    background-color: #055aa5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+#edit-vcard-form fieldset {
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+#edit-vcard-form input {
+    width: 100%;
+}
+#edit-vcard-form fieldset#vcard-name div {
+    width: 100%;
+}
+#edit-vcard-form fieldset#vcard-name $s_media {
+    font-size: 1.4rem;
+}
+#edit-vcard-form fieldset#vcard-name $s_media div {
+    display: inline-block;
+}
+#edit-vcard-form fieldset#vcard-name $s_media div input {
+    width: auto;
+}
+#edit-vcard-form fieldset#vcard-name $s_media select {
+    display: block;
+}
+.daisy-close-form {
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+.daisy-close-form:hover {
+    color: $lightgray;
+    background: transparent;
+    border: none;
+}
+button.remove-file {
+    height: 40px;
+    width: 40px;
+    top: 0;
+    right: 0;
+}
+button.remove-file:hover {
+    color: #055aa5;
+    background: transparent;
+    border: none;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

@@ -2,7 +2,7 @@
 /**
  * A template used to display a users active vcards for read/edit
  *
- * Template Name: Vcard Archive
+ * Template Name: Daisy LoggedIn Page
  *
  */
 
@@ -17,16 +17,24 @@
       if(is_user_logged_in()):
         global $current_user;
         ?>
-          <h1>Manage VCards</h1>
-          <div id="vcard-archive-div">
-        <?php
-            echo do_shortcode("[daisy_vcard_archive]");
-        ?>
 
-          </div> <!--end .#vcard-archive-div -->
+          <?php while ( have_posts() ) : the_post();
 
+            do_action( 'storefront_page_before' );
+
+            get_template_part( 'content', 'page' );
+
+            /**
+             * Functions hooked in to storefront_page_after action
+             *
+             * @hooked storefront_display_comments - 10
+             */
+            do_action( 'storefront_page_after' );
+
+          endwhile; // End of the loop. ?>
 
           <?php
+
       else:  ?>
 
     				<h4>You must be logged in to view the content of this page.

@@ -4,16 +4,17 @@ html {
 }
 
 body {
-  font-size: 1.2rem;
+  position: relative;
+  font-size: 1.4rem;
 
-    @media screen and (min-width: 490px){
-      font-size: 1.4rem;
-    }
 
 }
 
-.col-full{
+.col-full {
   max-width: 80%;
+  @media $s_screen {
+    max-width: 100%;
+  }
 }
 
 .daisy-hidden{
@@ -117,4 +118,8 @@ flex-direction: row;
 
 main {
   position: relative;
+  .bizcard-main-links{
+    display: flex;
+    justify-content: space-between;
+  }
 }

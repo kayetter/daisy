@@ -1,9 +1,24 @@
+/**
+ * Styles for bizcards display
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+
+
 .page {
+  position: relative;
   .bizcard-entry-header{
     img{
       max-width: 80%;
     }
   }
+}
+
+.bizcards {
+  position: relative;
 }
 
 .daisy-edit-icon {
@@ -27,7 +42,7 @@
   text-align: center;
   cursor: pointer;
    &:hover {
-    background: $yellow2 !important;
+    background: $hoverblue !important;
   }
 }
 
@@ -47,7 +62,8 @@
   border-radius: 20px;
   margin: 2rem auto;
   background: $ltgray;
-  padding: 1rem 2rem;
+  padding: 1rem;
+
 
   h4 {
     color: $darkgray;
@@ -79,6 +95,10 @@
 
       }
     }
+  }
+
+  .bizcard-wrapper img, .bizcard-status {
+    border-radius: 20px;
   }
 
   p {
@@ -170,7 +190,7 @@
   cursor: pointer;
   padding: .6180469716em 1.41575em;
   font-weight: 600;
-  margin-right: .5rem;
+  margin-left: 1rem;
   &:hover {
     background-color: $blue;
   }
