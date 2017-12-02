@@ -27,7 +27,7 @@ get_header('bizcards');
 
 				<?php
 				get_template_part( 'loop', 'bizcards' );
-				
+
 				?>
 				<h3>
 					<a href="<?php echo home_url("new-bizcard") ?>">+ </a> Add another <a href="<?php echo home_url("new-bizcard") ?>">Bizcard</a>.
@@ -52,11 +52,10 @@ get_header('bizcards');
 
 		else:  ?> <!-- endif for is_user_logged_in conditional -->
 
-			<h4>You must be logged in to view the content of this page.
-				<a href="<?php echo home_url("/login") ?> ">Go to Login</a>
-			</h4>
+			<h4>You must be logged in to view the content of this page.</h4>
 
 		<?php
+			wc_get_template( 'myaccount/form-login.php' );
 
 		endif;   ?>
 

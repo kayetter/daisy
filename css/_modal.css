@@ -20,6 +20,37 @@
    background-size: 50px 50px;
 }
 
+.daisy-modal {
+
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      z-index: 160000;
+
+      @media $m_screen {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+      }
+
+}
+
+.daisy-modal-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  min-height: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.7);
+  background: #fcfcfc;
+}
+
+
 #modal {
   position:fixed;
   background:rgba(0,0,0,0.8);

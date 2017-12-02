@@ -37,11 +37,10 @@
 
       else:  ?>
 
-    				<h4>You must be logged in to view the content of this page.
-    					<a href="<?php echo home_url("/login") ?> ">Go to Login</a>
-    				</h4>
+      <h4>You must be logged in to view the content of this page.</h4>
 
-    		<?php
+      		<?php
+      			wc_get_template( 'myaccount/form-login.php' );
 
       endif; //endif for is_user_logged_in conditional -->
       ?>
