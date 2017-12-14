@@ -1,0 +1,22 @@
+
+
+.entry-content {
+
+  .woocommerce  {
+
+    form.login, form.checkout_coupon, form.register {
+      border: none;
+
+    }
+
+    a.button,  button.button,  input.button,  #respond input#submit, woocommerce-Button button{
+      background-color: $blue;
+      color: white;
+      &:hover{
+        background: $hoverblue;
+        color: white;
+      }
+    }
+  }
+
+}

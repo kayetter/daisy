@@ -24,9 +24,9 @@
         //if user is logged in then get content
       if(is_user_logged_in() && current_user_can("delete_plugins")):
         if(is_page('daisy-print-pre')):
-          do_shortcode('[daisy_print_pre]');
+          echo do_shortcode('[daisy_print_pre]');
         elseif(is_page("daisy-error-log")):
-          do_shortcode('[log_file]');
+          echo do_shortcode('[log_file]');
         endif;
 
       endif;

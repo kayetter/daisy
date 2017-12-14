@@ -21,11 +21,11 @@
 
 /*	#4a78c5*/
 
+/*#055aa5*/
+
 /*	#e5b912*/
 
 /*	#df9e06*/
-
-/*	#fcff0b*/
 
 /*	#60b861*/
 
@@ -44,11 +44,16 @@
 /*768px when sidebar moves to right*/
 html {
     font-size: 62.5%;
-    border-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
     position: relative;
     font-size: 1.4rem;
+}
+body a {}
+body a:hover {
+    color: rgb(0, 174, 239);
+    text-decoration: underline;
 }
 .col-full {
     max-width: 80%;
@@ -62,7 +67,7 @@ body {
     display: none!important;
 }
 .border-blue {
-    border: 2px solid rgb(74, 120, 197);
+    border: 2px solid rgb(5, 90, 165);
 }
 #daisy-table tr, #daisy-table td, #daisy-table th, #daisy-table tbody, #daisy-table thead {
     background: none;
@@ -148,7 +153,7 @@ ul.products {
     line-height: 1;
     display: none;
     background: rgb(255, 255, 175);
-    border: .5px solid rgb(74, 120, 197);
+    border: .5px solid rgb(5, 90, 165);
     position: fixed;
     top: 0;
     left: 0;
@@ -171,6 +176,40 @@ main .bizcard-main-links {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+}
+.flex-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.daisy-error {
+    color: red;
+}
+.daisy-error ul {
+    margin: 0 1rem;
+}
+.daisy-verified {
+    color: rgb(76, 164, 77);
+}
+.fa-trash-o {
+    cursor: pointer;
+    color: rgb(5, 90, 165);
+}
+i {
+    padding-left: .25rem;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+    color: white;
+}
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+    background: rgb(0, 174, 239);
+    color: white;
 }
 #overlay {
     position: absolute;
@@ -237,11 +276,16 @@ main .bizcard-main-links {
     line-height: 4;
     z-index: 9999;
 }
-.daisy-error {
-    color: red;
+.entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register {
+    border: none;
 }
-.daisy-error ul {
-    margin: 0 1rem;
+.entry-content .woocommerce a.button, .entry-content .woocommerce button.button, .entry-content .woocommerce input.button, .entry-content .woocommerce #respond input#submit, .entry-content .woocommerce woocommerce-Button button {
+    background-color: rgb(5, 90, 165);
+    color: white;
+}
+.entry-content .woocommerce a.button:hover, .entry-content .woocommerce button.button:hover, .entry-content .woocommerce input.button:hover, .entry-content .woocommerce #respond input#submit:hover, .entry-content .woocommerce woocommerce-Button button:hover {
+    background: rgb(0, 174, 239);
+    color: white;
 }
 /**
  * Styles for bizcards display
@@ -282,7 +326,7 @@ main .bizcard-main-links {
     cursor: pointer;
 }
 .daisy-edit-icon:hover {
-    background: #055aa5 !important;
+    background: rgb(0, 174, 239) !important;
 }
 .bizcard-edit {
     position: relative;
@@ -307,7 +351,7 @@ main .bizcard-main-links {
     position: absolute;
     right: 10px;
     bottom: -7px;
-    color: rgb(74, 120, 197);
+    color: rgb(5, 90, 165);
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -366,10 +410,8 @@ main .bizcard-main-links {
     padding-bottom: 1rem;
 }
 .bizcard-entry-header .bizcard-status {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 1rem;
+    float: right;/*position: absolute;*//*top: 0;
+    left: 0;*//*margin: 1rem;*/
     background: rgb(96, 184, 97);
     color: white;
     padding: .6180469716em 1.41575em;
@@ -384,22 +426,12 @@ main .bizcard-main-links {
 .bizcard-entry-header .drd-link span:hover {
     color: rgb(229, 185, 18);
 }
-.daisy-button-anchor {
-    background: #F8F8F8;
-    display: inline-block;
-    min-width: 40.057px+1.41575em+.5rem;
-    background-color: #F8F8F8;
-    border-color: #eeeeee;
-    color: #333333;
-    font-size: 100%;
-    line-height: 1.618;
-    cursor: pointer;
-    padding: .6180469716em 1.41575em;
-    font-weight: 600;
-    margin-left: 1rem;
-}
-.daisy-button-anchor:hover {
-    background-color: rgb(74, 120, 197);
+.bizcard-entry-header #daisy-download-contact {
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 /**
  * Styles for generic form and daisy-create-form
@@ -409,8 +441,20 @@ main .bizcard-main-links {
  * @package DD
  * @since 0.2.0
  */
-.daisy-error {
-    color: red;
+.daisy-button-anchor {
+    display: inline-block;
+    padding: 7px 35px 8px 35px;
+    background: rgb(5, 90, 165);
+    color: white;
+    border: none;
+    font-size: 100%;
+    line-height: 1.618;
+    cursor: pointer;/* font-weight: 600; */
+}
+.daisy-button-anchor:hover {
+    background-color: rgb(0, 174, 239);
+    color: white;
+    text-decoration: none;
 }
 .daisy-form {/*counter-reset: fieldset;*/
     position: relative;
@@ -423,7 +467,7 @@ main .bizcard-main-links {
 /*input styles to make edit form style close to the bizcard formatting*/
 .daisy-form fieldset {
     position: relative;
-    background: #f0f0f0;
+    background: white;
     padding: 0;
     margin: 0;
 }
@@ -433,6 +477,9 @@ main .bizcard-main-links {
       counter-increment: fieldset;
       content: counter(fieldset)". ";
     }*/
+.daisy-form fieldset.daisy-form-buttons {
+    background: #f0f0f0;
+}
 .daisy-form .label-div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -441,22 +488,36 @@ main .bizcard-main-links {
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.daisy-form input, .daisy-form textarea, .daisy-form a label {
+.daisy-form input[type=text], .daisy-form textarea, .daisy-form a label {
     position: relative;
     background: #F8F8F8;
 }
-.daisy-form input::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a label::-webkit-input-placeholder {
+.daisy-form input[type=text]::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a label::-webkit-input-placeholder {
     color: rgb(229, 185, 18);
 }
-.daisy-form input:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a label:-ms-input-placeholder {
+.daisy-form input[type=text]:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a label:-ms-input-placeholder {
     color: rgb(229, 185, 18);
 }
-.daisy-form input::placeholder, .daisy-form textarea::placeholder, .daisy-form a label::placeholder {
+.daisy-form input[type=text]::placeholder, .daisy-form textarea::placeholder, .daisy-form a label::placeholder {
     color: rgb(229, 185, 18);
 }
-.daisy-form input:focus, .daisy-form textarea:focus, .daisy-form a label:focus {
+.daisy-form input[type=text]:focus, .daisy-form textarea:focus, .daisy-form a label:focus {
     border: 2px solid rgb(223, 158, 6);
     background: white;
+}
+.daisy-form .flex-div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+.daisy-form .flex-div p {
+    margin-bottom: 0;
+}
+.daisy-form .flex-div > * {
+    margin-right: 1rem;
 }
 .daisy-form #drdcard-link {
     padding-top: 1rem;
@@ -473,7 +534,7 @@ main .bizcard-main-links {
     color: rgb(124,124,124);
 }
 .daisy-form #drdcard-link #drdcard-link-input span {
-    color: rgb(74, 120, 197);
+    color: rgb(5, 90, 165);
     text-decoration: underline;
 }
 .daisy-form #drdcard-link label {
@@ -509,7 +570,7 @@ main .bizcard-main-links {
 }
 .daisy-form .daisy-accordion .accordion-content {
     padding: 1rem;
-    display: none;
+    background: #f0f0f0;
 }
 .daisy-form input.daisy-form-item {
     padding: .25rem;
@@ -521,8 +582,8 @@ main .bizcard-main-links {
     border-bottom: 2px solid rgb(124,124,124);
 }
 .daisy-form .accordion-icon-down:hover {
-    color: rgb(223, 158, 6);
-    border-color: rgb(223, 158, 6);
+    color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
 }
 .daisy-form .accordion-icon-down:after {
     font-family: 'dashicons';
@@ -534,12 +595,12 @@ main .bizcard-main-links {
     font-size: 1.8em;
 }
 .daisy-form .accordion-icon-up {
-    border-bottom: 2px solid rgb(74, 120, 197);
-    color: rgb(74, 120, 197);
+    border-bottom: 2px solid rgb(5, 90, 165);
+    color: rgb(5, 90, 165);
 }
 .daisy-form .accordion-icon-up:hover {
-    color: rgb(223, 158, 6);
-    border-color: rgb(223, 158, 6);
+    color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
 }
 .daisy-form .accordion-icon-up:after {
     font-family: 'dashicons';
@@ -553,7 +614,7 @@ main .bizcard-main-links {
 .daisy-form #drdcard-vcard p {
     text-align: center;
     padding: .5rem;
-    color: rgb(74, 120, 197);
+    color: rgb(5, 90, 165);
     margin: 0 auto;
 }
 .daisy-form .icon-action-group {
@@ -574,7 +635,7 @@ main .bizcard-main-links {
     display: -ms-flexbox;
     display: flex;
     padding: 0;
-    color: rgb(74, 120, 197);
+    color: rgb(5, 90, 165);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -601,7 +662,7 @@ main .bizcard-main-links {
     font-size: 4rem;
 }
 .daisy-form .icon-action-group .dashicon-ul:hover {
-    color: rgb(223, 158, 6);
+    color: rgb(0, 174, 239);
 }
 .daisy-form .new-bizcard-icons {
     width: 75%;
@@ -613,6 +674,9 @@ main .bizcard-main-links {
 }
 .daisy-form input[type=text], .daisy-form label {
     display: block;
+}
+.daisy-form .daisy-cancel {
+    padding: 0 1rem;
 }
 @media screen and (max-width: 490px) {
     .daisy-form #drdcard-link input {
@@ -639,14 +703,8 @@ main .bizcard-main-links {
 #create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover, #create-vcard-form input[required]:hover, #create-vcard-form textarea[required]:hover {
     border: 2px solid rgb(223, 158, 6);
 }
-#edit-buttons-form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding-left: 3rem;
+.daisy-activation {
+    max-width: 450px;
 }
 #create-vcard-form {
     box-sizing: border-box;
@@ -692,13 +750,6 @@ main .bizcard-main-links {
     border: none;
     background: #F8F8F8;
 }
-#create-vcard-form fieldset button {
-    display: inline-block;
-    padding: 0 .5rem;
-    margin: .5rem;
-    border: none;
-    color: white;
-}
 /**
  * Styles for VCard form
  *
@@ -728,12 +779,15 @@ main .bizcard-main-links {
 }
 .daisy-window-border-top {
     height: 40px;
-    background-color: #055aa5;
+    background-color: rgb(5, 90, 165);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
+}
+#edit-vcard-form {
+    padding-top: 4rem;
 }
 #edit-vcard-form fieldset {
     border: 2px solid black;
@@ -758,6 +812,15 @@ main .bizcard-main-links {
 #edit-vcard-form fieldset#vcard-name $s_media select {
     display: block;
 }
+#edit-vcard-form .daisy-add-item, #edit-vcard-form .daisy-remove-item {
+    color: rgb(5, 90, 165);
+    display: inline-block;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+#edit-vcard-form .dyn-property-wrapper {
+    margin-bottom: 1rem;
+}
 .daisy-close-form {
     height: 40px;
     width: 40px;
@@ -775,9 +838,77 @@ button.remove-file {
     right: 0;
 }
 button.remove-file:hover {
-    color: #055aa5;
+    color: rgb(0, 174, 239);
     background: transparent;
     border: none;
+}
+.sms-forms #terms {
+    margin-bottom: 1rem;
+}
+.sms-forms #terms p {
+    display: none;
+    width: 90%;
+    background: #F8F8F8;
+    padding: .5rem;
+    margin: auto;
+}
+.sms-forms fieldset {
+    background: none;
+    width: 100%;
+    margin: auto;
+}
+.sms-forms fieldset input {
+    padding: .5rem;
+    display: inline-block;
+    background: #F5F5F5;
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    color: black;
+}
+.sms-forms fieldset p {
+    text-align: right;
+}
+.sms-forms label {
+    display: inline-block;
+}
+.sms-forms .daisy-form-actions {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-top: 1rem;
+}
+#daisy-input-veri-code {
+    display: none;
+    width: 75%;
+    border: 1px solid black;
+    margin: 0 auto .5rem;
+    background: #F8F8F8;
+    padding: 1rem;
+}
+#daisy-input-veri-code h4 {
+    text-align: center;
+    margin-bottom: 0;
+}
+#daisy-input-veri-code h4 + p {
+    text-align: center;
+}
+#daisy-input-veri-code input[name=code] {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+#daisy-input-veri-code div {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 1rem 0;
+}
+#daisy-input-veri-code div a {
+    padding-left: 3rem;
+}
+#daisy-input-veri-code div input {
+    padding-right: 3rem;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

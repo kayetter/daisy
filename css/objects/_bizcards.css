@@ -151,10 +151,11 @@
   }
 
   .bizcard-status{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 1rem;
+    float: right;
+    /*position: absolute;*/
+    /*top: 0;
+    left: 0;*/
+    /*margin: 1rem;*/
     background: $grn;
     color: white;
     padding: .6180469716em 1.41575em;;
@@ -174,24 +175,14 @@
 
   }
 
-
-
-}
-
-.daisy-button-anchor {
-  background: $lightestgray;
-  display: inline-block;
-  min-width: 40.057px+1.41575em+.5rem;
-  background-color: #F8F8F8;
-  border-color: #eeeeee;
-  color: #333333;
-  font-size: 100%;
-  line-height: 1.618;
-  cursor: pointer;
-  padding: .6180469716em 1.41575em;
-  font-weight: 600;
-  margin-left: 1rem;
-  &:hover {
-    background-color: $blue;
+  #daisy-download-contact{
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
   }
+
+
+
 }

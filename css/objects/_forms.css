@@ -7,9 +7,22 @@
  * @since 0.2.0
  */
 
-.daisy-error{
-  color: red;
-}
+ .daisy-button-anchor {
+   display: inline-block;
+   padding: 7px 35px 8px 35px;
+   background: $blue;
+   color: white;
+   border: none;
+   font-size: 100%;
+   line-height: 1.618;
+   cursor: pointer;
+   /* font-weight: 600; */
+   &:hover {
+     background-color: $hoverblue;
+     color: white;
+     text-decoration: none;
+   }
+ }
 
 .daisy-form {
   /*counter-reset: fieldset;*/
@@ -30,10 +43,13 @@
  /*input styles to make edit form style close to the bizcard formatting*/
   fieldset {
     position: relative;
-    background: $ltgray;
+    background: white;
     padding: 0;
     margin: 0;
+    &.daisy-form-buttons {
+      background: $ltgray;
     }
+  }
 
   .label-div{
     display: flex;
@@ -41,8 +57,7 @@
   }
 
 
-
- input, textarea, a label {
+ input[type=text], textarea, a label {
    position: relative;
    background: $lightestgray;
    &::placeholder {
@@ -54,6 +69,19 @@
      background: white;
      }
 
+   }
+
+   .flex-div {
+     align-items: center;
+     justify-content: flex-end;
+
+     & > * {
+       margin-right: 1rem;
+     }
+
+     p {
+       margin-bottom: 0;
+     }
    }
 
  #drdcard-link {
@@ -104,6 +132,7 @@
     }
   }
 
+
   .daisy-accordion{
     position: relative;
     width: 100%;
@@ -115,15 +144,18 @@
       cursor: pointer;
 
     }
+
     .accordion-content {
     padding: 1rem;
-    display: none;
+    background: $ltgray;
     @media $s_screen{
       padding: 0;
     }
 
     }
   }
+
+
 
   input.daisy-form-item {
     padding: .25rem;
@@ -135,8 +167,8 @@
   .accordion-icon-down {
     border-bottom: 2px solid $darkgray;
     &:hover{
-      color: $yellow2;
-      border-color: $yellow2;
+      color: $hoverblue;
+      border-color: $hoverblue;
     }
     &:after {
       font-family: 'dashicons';
@@ -153,8 +185,8 @@
     border-bottom: 2px solid $blue;
     color: $blue;
     &:hover{
-      color: $yellow2;
-      border-color: $yellow2;
+      color: $hoverblue;
+      border-color: $hoverblue;
     }
     &:after {
       font-family: 'dashicons';
@@ -209,7 +241,7 @@
 
 
       &:hover {
-        color: $yellow2;
+        color: $hoverblue;
       }
 
 
@@ -227,6 +259,10 @@
 
  input[type=text], label{
    display: block;
+ }
+
+ .daisy-cancel {
+   padding: 0 1rem;
  }
 
 }
@@ -248,11 +284,8 @@
   }
 }
 
-#edit-buttons-form{
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 3rem;
-
+.daisy-activation{
+  max-width: 450px;
 }
 
 #create-vcard-form {
@@ -300,14 +333,7 @@
       background: $lightestgray;
 
     }
-    button {
-      display:inline-block;
-      padding: 0 .5rem;
-      margin: .5rem;
-      border: none;
-      color: white;
 
-    }
   }
 
 }

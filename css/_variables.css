@@ -7,12 +7,15 @@
  */
 
   $sand: rgb(253, 227, 194); /*#FDE3C2*/
-  $blue: rgb(74, 120, 197); /*	#4a78c5*/
-  $hoverblue: #055aa5;
+  $darkblue: rgb(74, 120, 197); /*	#4a78c5*/
+  $hoverblue: rgb(0, 174, 239);
+  $blue: rgb(5, 90, 165); /*#055aa5*/
   $yellow: rgb(229, 185, 18); /*	#e5b912*/
+  $daisyorange: rgb(245, 130, 32);
   $yellow2: rgb(223, 158, 6); /*	#df9e06*/
-  $daisy: rgb(252, 255, 11); /*	#fcff0b*/
+  $daisy: rgb(255, 242, 0); 
   $grn: rgb(96, 184, 97); /*	#60b861*/
+  $darkgrn: rgb(76, 164, 77);
   $ltgrn: rgb(159, 249, 102); /*#9ff966*/
   $white: rgb(239, 244, 236); /*	#eff4ec*/
   $ltgray: #f0f0f0;  /*rgb(240, 240, 240)*/

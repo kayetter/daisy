@@ -35,15 +35,15 @@
 
           <?php
 
-      else:  ?>
 
-      <h4>You must be logged in to view the content of this page.</h4>
+      else:  ?> <!-- endif for is_user_logged_in conditional -->
 
-      		<?php
-      			wc_get_template( 'myaccount/form-login.php' );
+  			<h4>You must be <a href="<?php echo home_url("my-account") ?>"><strong>Logged In</strong></a> to view the content of this page.</h4>
 
-      endif; //endif for is_user_logged_in conditional -->
-      ?>
+  		<?php
+
+  		endif;   ?>
+    
 
  		</main><!-- #main -->
 

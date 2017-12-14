@@ -77,10 +77,3 @@
   line-height: 4;
   z-index: 9999;
 }
-
-.daisy-error{
-  color: red;
-  ul {
-    margin: 0 1rem;
-  }
-}

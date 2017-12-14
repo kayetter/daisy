@@ -34,7 +34,7 @@
 
 .daisy-window-border-top{
   height: 40px;
-  background-color: $hoverblue;
+  background-color: $blue;
   position: absolute;
   top: 0;
   left: 0;
@@ -43,6 +43,7 @@
 }
 
 #edit-vcard-form{
+  padding-top: 4rem;
 
     fieldset {
       border: 2px solid black;
@@ -76,6 +77,16 @@
         }
       }
     }
+  .daisy-add-item, .daisy-remove-item {
+    color: $blue;
+    display: inline-block;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .dyn-property-wrapper {
+    margin-bottom: 1rem;
+  }
 
 }
 

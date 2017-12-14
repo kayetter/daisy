@@ -22,18 +22,9 @@ while ( have_posts() ) : the_post();
 endwhile; ?>
 
 
-<div class="pagination">
 
 
-				 <?php
-
-				 echo paginate_links();
-
-				 ?>
-
-
-</div>
-<?php 
+<?php
 /**
  * Functions hooked in to storefront_paging_nav action
  *

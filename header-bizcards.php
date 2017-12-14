@@ -7,7 +7,18 @@
  * @package storefront
  */
 
-?><!doctype html>
+/**
+ 	 * redirects user to 404 page if 1. not logged in and not post author or not admin.
+ 	 * if not logged in but has proper $_GET dd_pin credentials, user will continue
+ 	 *
+ 	 * @hook action "daisy_check_bizcard_credentials"
+ 	 * @return void
+	 */
+
+do_action("daisy-bizcard-redirect");
+
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -18,15 +29,6 @@
 
 <?php
 wp_head();
-
-/**
- *
- * @hooked daisy_enqueue_edit_bizcard'), 0 (daisy.php)
- * @hooked daisy_retrieve_session, 0 (daisy.php)
- *
- */
-// do_action('daisy_bizcard_header');
-
 
 ?>
 </head>
@@ -57,7 +59,9 @@ wp_head();
 			 */
 			remove_action('storefront_header', 'storefront_header_cart', 60 );
 			remove_action('storefront_header', 'storefront_product_search', 40 );
-			do_action( 'storefront_header' ); ?>
+			do_action( 'storefront_header' );
+
+			if(is_user_logged_in()):?>
 		<div class="user-label">
 			<h4>Welcome
 				<?php
@@ -67,6 +71,10 @@ wp_head();
 
 				?></h4>
 		</div>
+		<?php
+			endif;
+
+		 ?>
 
 		</div>
 	</header><!-- #masthead -->
