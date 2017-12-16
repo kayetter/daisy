@@ -7,7 +7,7 @@
  * @since 0.2.0
  */
 
- .daisy-button-anchor {
+ .daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
    display: inline-block;
    padding: 7px 35px 8px 35px;
    background: $blue;
@@ -22,7 +22,15 @@
      color: white;
      text-decoration: none;
    }
+   &:disabled, &:disabled:hover, &[disabled=disabled] {
+     opacity: .5!important;
+      cursor: not-allowed;
+
+   }
+
  }
+
+
 
 .daisy-form {
   /*counter-reset: fieldset;*/

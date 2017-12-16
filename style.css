@@ -204,13 +204,6 @@ main .bizcard-main-links {
 i {
     padding-left: .25rem;
 }
-button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
-    color: white;
-}
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
-    background: rgb(0, 174, 239);
-    color: white;
-}
 #overlay {
     position: absolute;
     background: linear-gradient(rgba(240, 240, 240, .8),
@@ -441,7 +434,7 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
  * @package DD
  * @since 0.2.0
  */
-.daisy-button-anchor {
+.daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
     display: inline-block;
     padding: 7px 35px 8px 35px;
     background: rgb(5, 90, 165);
@@ -451,10 +444,14 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
     line-height: 1.618;
     cursor: pointer;/* font-weight: 600; */
 }
-.daisy-button-anchor:hover {
+.daisy-button-anchor:hover, button:hover, form input[type="button"]:hover, form input[type="reset"]:hover, form input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
     background-color: rgb(0, 174, 239);
     color: white;
     text-decoration: none;
+}
+.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type="button"]:disabled, form input[type="button"]:disabled:hover, form input[type="button"][disabled=disabled], form input[type="reset"]:disabled, form input[type="reset"]:disabled:hover, form input[type="reset"][disabled=disabled], form input[type="submit"]:disabled, form input[type="submit"]:disabled:hover, form input[type="submit"][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
+    opacity: .5!important;
+    cursor: not-allowed;
 }
 .daisy-form {/*counter-reset: fieldset;*/
     position: relative;

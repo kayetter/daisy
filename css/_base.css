@@ -155,11 +155,3 @@ main {
 i {
   padding-left: .25rem;
 }
-
-button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
-  color: white;
-  &:hover {
-    background: $hoverblue;
-    color: white;
-  }
-}
