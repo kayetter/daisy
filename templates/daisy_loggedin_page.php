@@ -38,12 +38,12 @@
 
       else:  ?> <!-- endif for is_user_logged_in conditional -->
 
-  			<h4>You must be <a href="<?php echo home_url("my-account") ?>"><strong>Logged In</strong></a> to view the content of this page.</h4>
+  			<h4>You must be <a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ) ?>"><strong>Logged In</strong></a> to view the content of this page.</h4>
 
   		<?php
 
   		endif;   ?>
-    
+
 
  		</main><!-- #main -->
 

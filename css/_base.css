@@ -3,6 +3,7 @@ html {
   box-sizing: border-box;
 }
 
+
 body {
   position: relative;
   font-size: 1.4rem;
@@ -103,11 +104,15 @@ flex-direction: row;
 }
 
 #daisy-hover-tip{
-  padding: .25rem;
+  padding: .5rem;
+  color: black;
+  font-family: $backup_font;
+  font-size: 1.2rem;
   line-height: 1;
   display: none;
-  background: $helpTip;
-  border: .5px solid $blue;
+  background: white;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
+  border: .5px solid black;
   position: fixed;
   top: 0;
   left: 0;
@@ -119,10 +124,9 @@ flex-direction: row;
   background: url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space 0 0;
   height: 300px;
   width: 100%px;
-  background-size: 50px 50px;
+  background-size: 50px 50px6
 }
-
-main {
+6main {
   position: relative;
   .bizcard-main-links{
     display: flex;
@@ -147,11 +151,19 @@ main {
   color: $darkgrn;
 }
 
+.daisy-not-verified {
+  cursor:not-allowed;
+  color: $bluedisabled;
+}
+
 .fa-trash-o {
   cursor: pointer;
   color: $blue;
 }
 
+
 i {
-  padding-left: .25rem;
+  padding: 0 .5rem;
+  text-decoration: none;
+
 }

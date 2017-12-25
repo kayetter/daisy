@@ -9,6 +9,7 @@
 
  .daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
    display: inline-block;
+   font-family: $font_main;
    padding: 7px 35px 8px 35px;
    background: $blue;
    color: white;
@@ -16,7 +17,7 @@
    font-size: 100%;
    line-height: 1.618;
    cursor: pointer;
-   /* font-weight: 600; */
+   font-weight: normal;
    &:hover {
      background-color: $hoverblue;
      color: white;
@@ -35,7 +36,7 @@
 .daisy-form {
   /*counter-reset: fieldset;*/
   position: relative;
-  font-family: $font_ptsans;
+  font-family: $font_main;
   padding: 1rem 0;
   padding-top: 0;
   margin: auto;
@@ -66,10 +67,18 @@
 
 
  input[type=text], textarea, a label {
+
+   padding: .5rem;
+   display: inline-block;
+   background: #F5F5F5;
+   outline: 0;
+   box-shadow: none;
+   border: 1px solid #e5e5e5;
+   color: black;
    position: relative;
-   background: $lightestgray;
    &::placeholder {
-     color: $yellow;
+     color: $placeholder;
+     font-style: italic;
         }
 
    &:focus {
@@ -94,9 +103,11 @@
 
  #drdcard-link {
    padding-top: 1rem;
+
    input {
      display: inline-block;
      max-width: 200px;
+     text-decoration: underline;
      @media $s_screen{
        max-width: 120px;
      }
@@ -173,7 +184,7 @@
   }
 
   .accordion-icon-down {
-    border-bottom: 2px solid $darkgray;
+    border-bottom: 2px solid $black;
     &:hover{
       color: $hoverblue;
       border-color: $hoverblue;
@@ -219,7 +230,8 @@
     position: relative;
     display:flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: center;
+
     min-height: 100px;
 
 
@@ -229,8 +241,13 @@
       padding: 0;
       color: $blue;
       flex-direction: column;
-      margin-left: 0;
       margin-top: 1rem;
+      margin-right: 4rem;
+      margin-left: 0;
+      &:last-of-type{
+        margin-right: 0;
+        margin-left: 4rem;
+      }
       align-items: center;
       justify-content: flex-start;
       list-style: none;

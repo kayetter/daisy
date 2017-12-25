@@ -53,16 +53,8 @@ get_header('bizcards'); ?>
 	<?php
 
 	endif;   ?>
-	<pre>
-<?php
-	global $wp_query;
 
-	print_r($wp_query->request);
-	print_r($wp_query->query_vars);
 
- ?>
-
-	</pre>
 	</main><!-- #main -->
 </div><!-- #primary -->
 

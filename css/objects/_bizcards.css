@@ -33,7 +33,7 @@
   line-height: 1.2em!important;
   font-size: 25px;
   z-index: 5;
-  background: #0085ba!important;
+  background: $blue!important;
   border-radius: 50%;
   box-sizing: border-box;
   padding: 3px;
@@ -56,8 +56,7 @@
 
 
   position: relative;
-  max-width: 450px;
-  font-family: $font_ptsans;
+  max-width: 550px;
   width: 100%;
   border-radius: 20px;
   margin: 2rem auto;
@@ -66,9 +65,9 @@
 
 
   h4 {
-    color: $darkgray;
+    color: $blue;
     font-size: 1.4em;
-    border-bottom: 2px solid $darkgray;
+    border-bottom: 2px solid $blue;
     position: relative;
     span {
       position: absolute;
@@ -97,21 +96,22 @@
     }
   }
 
-  .bizcard-wrapper img, .bizcard-status {
-    border-radius: 20px;
-  }
-
   p {
     margin-bottom: 0;
   }
 
-  .bizimg-div {
+  .bizcard-anchor{
+    text-decoration: none;
+  }
+
+.bizimg-div {
     margin: auto;
+    padding: 0 2rem;
+    padding-top: 2rem;
     img{
-      width: auto;
-      height: auto;
-      max-height: 260px;
+      margin-bottom: 0;
     }
+
   }
 
   .bizimg-select {
@@ -120,7 +120,7 @@
 
    img {
     position: relative;
-    margin: .5rem auto;
+    margin: 0 auto;
     cursor: pointer;
     &:hover {
       border: 2px solid $yellow;
@@ -131,8 +131,8 @@
 
 
   .bizcards-gui {
-    padding: 0;
-    padding-bottom: 1rem;
+    position: relative;
+    padding: .5rem 2rem 2rem;
     min-height: 7rem;
   }
 
@@ -151,18 +151,28 @@
   }
 
   .bizcard-status{
-    float: right;
+    display: block;
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
     /*position: absolute;*/
     /*top: 0;
     left: 0;*/
     /*margin: 1rem;*/
     background: $grn;
+    /* padding: 0 2rem; */
     color: white;
-    padding: .6180469716em 1.41575em;;
     z-index: 5;
   }
 
   .drd-link{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    a {
+      display: block;
+    }
     .link-preview{
       color: $yellow;
     }
@@ -171,6 +181,19 @@
       &:hover {
         color: $yellow;
       }
+    }
+
+    #send-sms {
+      display: block;
+      /* border-radius: 100px; */
+      color: $blue;
+      /* background: $blue; */
+      margin-left: .5rem;
+      &:hover {
+        color: $hoverblue;
+
+      }
+
     }
 
   }

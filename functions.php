@@ -7,12 +7,11 @@ require 'inc/daisy-template-hooked-functions.php';
 require 'inc/daisy-template-functions.php';
 
 
-add_action( 'wp_enqueue_styles', 'load_daisy_styles');
+add_action( 'wp_enqueue_scripts', 'load_daisy_styles');
 function load_daisy_styles(){
     wp_enqueue_style('daisy-fonts', daisy_fonts_url());
     wp_enqueue_style('storefront', get_template_directory_uri()."/style.css");
     wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
-    wp_enqueue_style('load-ptsans', 'https://fonts.googleapis.com/css?family=PT+Sans');
 }
 
 
@@ -41,6 +40,16 @@ function daisy_fonts_url() {
 
     		$font_families[] = 'Poppins:400,700';
     	}
+            if ( 'off' !== $raleway ) {
+
+    		$font_families[] = 'Raleway:400,500,700';
+    	}
+            if ( 'off' !== $PTSans ) {
+
+    		$font_families[] = 'PT+Sans:400,700';
+    	}
+
+
 
 
     	if ( in_array('on', array($poppins, $quicksand)) ) {
@@ -53,7 +62,7 @@ function daisy_fonts_url() {
     		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
     	}
 
-    	return esc_url_raw( $fonts_url );
+    	return  $fonts_url;
     }
 
 

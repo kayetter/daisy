@@ -1,7 +1,8 @@
 #overlay {
   position: absolute;
-  background: linear-gradient(rgba(240, 240, 240, .8),
-   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray;
+  /* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+   background: white;
    background-size: 50px 50px;
   top: 0;
   left: 0;
@@ -14,10 +15,15 @@
   /*filter: alpha(opacity=50);*/
 }
 
-.spinner-background{
-  background: linear-gradient(rgba(240, 240, 240, .8),
-   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray;
-   background-size: 50px 50px;
+.modal-background{
+  /* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+   background: white;
+   opacity: .7;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   top: 0;
 }
 
 .daisy-modal {

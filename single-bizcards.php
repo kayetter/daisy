@@ -11,21 +11,23 @@ get_header('bizcards'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
-
+		global $post;
 //content if user is admin or post owner
-		if(is_user_logged_in() && (get_post_field( 'post_author', $post_id ) ==  get_current_user_id()||current_user_can("delete_plugins"))):
+		if((isset($_GET[get_post_meta($post->ID,"dd_pin",true)]) && get_post_status() == "publish") || (get_post_field( 'post_author', $post_id ) ==  get_current_user_id()) || current_user_can("delete_plugins")):
 
+			if(get_post_field( 'post_author', $post_id ) ==  get_current_user_id() || current_user_can("delete_plugins")):
  			?>
 			<div class="bizcard-main-links">
 				<h3>
 					<a href="<?php echo home_url("bizcards") ?>">View All Bizcards</a>.
 				</h3>
 				<h3>
-					<a href="<?php echo home_url("new-bizcard") ?>">+ </a> Add another <a href="<?php echo home_url("new-bizcard") ?>">Bizcard</a>.
+					<a href="<?php echo home_url("new-bizcard") ?>">Add another Bizcard</a>.
 				</h3>
 			</div>
 
-		<?php
+			<?php
+			endif;
 
 		while ( have_posts() ) : the_post();
 
@@ -33,30 +35,31 @@ get_header('bizcards'); ?>
 
 			get_template_part( 'content', 'bizcards' );
 
-			do_action('daisy_post_navigation');
+			if(get_post_field( 'post_author', $post_id ) ==  get_current_user_id() || current_user_can("delete_plugins")):
+
+				do_action('daisy_post_navigation');
+
+			endif;
 
 			do_action( 'storefront_single_post_after' );
 
 			endwhile; // End of the loop.
 
-	else: //end of user is admin or post owner loop
+	else:
 
-		//content if you are not admin nor post owner
+		//content none if you are not owner or admin and don't have dd_pin
 
-		while ( have_posts() ) : the_post();
+
 
 			do_action( 'storefront_single_post_before' );
 
-			get_template_part( 'content', 'bizcards' );
+			get_template_part( 'content', 'none' );
 
 			do_action( 'storefront_single_post_after' );
 
-			endwhile; // End of the loop.
 
 
-
-
-		endif; //end of public link with proper $_GET credentials
+	endif; //end of public link with proper $_GET credentials
 
 		?>
 

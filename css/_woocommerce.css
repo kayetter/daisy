@@ -1,4 +1,6 @@
-
+/*
+* Woocommerce && storefront theme overrides
+*/
 
 .entry-content {
 
@@ -12,6 +14,7 @@
     a.button,  button.button,  input.button,  #respond input#submit, woocommerce-Button button{
       background-color: $blue;
       color: white;
+      font-family: $font_main;
       &:hover{
         background: $hoverblue;
         color: white;
@@ -20,3 +23,19 @@
   }
 
 }
+
+.storefront-primary-navigation {
+  font-family: $font_main;
+}
+
+/* @media (max-width: 800px) {
+
+  .handheld-navigation, .main-navigation.toggled .handheld-navigation, .main-navigation.toggled div.menu, .menu-toggle {
+      display: block;
+  }
+
+  .primary-navigation{
+    display: none;
+  }
+
+} */

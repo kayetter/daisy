@@ -15,7 +15,7 @@
  	 * @return void
 	 */
 
-do_action("daisy-bizcard-redirect");
+
 
 ?>
 <!doctype html>

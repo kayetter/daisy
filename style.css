@@ -21,6 +21,10 @@
 
 /*	#4a78c5*/
 
+/*#00AEEF*/
+
+/*#055aa5*/
+
 /*#055aa5*/
 
 /*	#e5b912*/
@@ -34,6 +38,8 @@
 /*	#eff4ec*/
 
 /*rgb(240, 240, 240)*/
+
+/*#6d6d6d*/
 
 /*#6d6d6d*/
 
@@ -149,11 +155,15 @@ ul.products {
     color: rgb(223, 158, 6);
 }
 #daisy-hover-tip {
-    padding: .25rem;
+    padding: .5rem;
+    color: black;
+    font-family: "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 1.2rem;
     line-height: 1;
     display: none;
-    background: rgb(255, 255, 175);
-    border: .5px solid rgb(5, 90, 165);
+    background: white;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
+    border: .5px solid black;
     position: fixed;
     top: 0;
     left: 0;
@@ -164,12 +174,12 @@ ul.products {
     background: url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space 0 0;
     height: 300px;
     width: 100%px;
-    background-size: 50px 50px;
+    background-size: 50px 50px6;
 }
-main {
+6main {
     position: relative;
 }
-main .bizcard-main-links {
+6main .bizcard-main-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -197,17 +207,22 @@ main .bizcard-main-links {
 .daisy-verified {
     color: rgb(76, 164, 77);
 }
+.daisy-not-verified {
+    cursor: not-allowed;
+    color: rgba(5, 90, 165,.5);
+}
 .fa-trash-o {
     cursor: pointer;
     color: rgb(5, 90, 165);
 }
 i {
-    padding-left: .25rem;
+    padding: 0 .5rem;
+    text-decoration: none;
 }
 #overlay {
-    position: absolute;
-    background: linear-gradient(rgba(240, 240, 240, .8),
-   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space #f0f0f0;
+    position: absolute;/* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+    background: white;
     background-size: 50px 50px;
     top: 0;
     left: 0;
@@ -215,10 +230,14 @@ i {
     height: 100%;/*background: $ltgray;*/
     z-index: 9999;/*background: #000;*//*opacity: 0.5;*//*filter: alpha(opacity=50);*/
 }
-.spinner-background {
-    background: linear-gradient(rgba(240, 240, 240, .8),
-   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space #f0f0f0;
-    background-size: 50px 50px;
+.modal-background {/* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+    background: white;
+    opacity: .7;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 .daisy-modal {
     position: fixed;
@@ -269,17 +288,35 @@ i {
     line-height: 4;
     z-index: 9999;
 }
+/*
+* Woocommerce && storefront theme overrides
+*/
 .entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register {
     border: none;
 }
 .entry-content .woocommerce a.button, .entry-content .woocommerce button.button, .entry-content .woocommerce input.button, .entry-content .woocommerce #respond input#submit, .entry-content .woocommerce woocommerce-Button button {
     background-color: rgb(5, 90, 165);
     color: white;
+    font-family: 'Raleway',$backup_font;
 }
 .entry-content .woocommerce a.button:hover, .entry-content .woocommerce button.button:hover, .entry-content .woocommerce input.button:hover, .entry-content .woocommerce #respond input#submit:hover, .entry-content .woocommerce woocommerce-Button button:hover {
     background: rgb(0, 174, 239);
     color: white;
 }
+.storefront-primary-navigation {
+    font-family: 'Raleway',$backup_font;
+}
+/* @media (max-width: 800px) {
+
+  .handheld-navigation, .main-navigation.toggled .handheld-navigation, .main-navigation.toggled div.menu, .menu-toggle {
+      display: block;
+  }
+
+  .primary-navigation{
+    display: none;
+  }
+
+} */
 /**
  * Styles for bizcards display
  *
@@ -309,7 +346,7 @@ i {
     line-height: 1.2em!important;
     font-size: 25px;
     z-index: 5;
-    background: #0085ba!important;
+    background: rgb(5, 90, 165)!important;
     border-radius: 50%;
     box-sizing: border-box;
     padding: 3px;
@@ -326,8 +363,7 @@ i {
 }
 .bizcard-entry-header {
     position: relative;
-    max-width: 450px;
-    font-family: 'PT Sans',sans-serif;
+    max-width: 550px;
     width: 100%;
     border-radius: 20px;
     margin: 2rem auto;
@@ -335,9 +371,9 @@ i {
     padding: 1rem;
 }
 .bizcard-entry-header h4 {
-    color: rgb(124,124,124);
+    color: rgb(5, 90, 165);
     font-size: 1.4em;
-    border-bottom: 2px solid rgb(124,124,124);
+    border-bottom: 2px solid rgb(5, 90, 165);
     position: relative;
 }
 .bizcard-entry-header h4 span {
@@ -361,19 +397,19 @@ i {
 .bizcard-entry-header h4 span:hover {
     color: rgb(223, 158, 6) !important;
 }
-.bizcard-entry-header .bizcard-wrapper img, .bizcard-entry-header .bizcard-status {
-    border-radius: 20px;
-}
 .bizcard-entry-header p {
     margin-bottom: 0;
 }
+.bizcard-entry-header .bizcard-anchor {
+    text-decoration: none;
+}
 .bizcard-entry-header .bizimg-div {
     margin: auto;
+    padding: 0 2rem;
+    padding-top: 2rem;
 }
 .bizcard-entry-header .bizimg-div img {
-    width: auto;
-    height: auto;
-    max-height: 260px;
+    margin-bottom: 0;
 }
 .bizcard-entry-header .bizimg-select {
     position: relative;
@@ -381,15 +417,15 @@ i {
 }
 .bizcard-entry-header .bizimg-select img {
     position: relative;
-    margin: .5rem auto;
+    margin: 0 auto;
     cursor: pointer;
 }
 .bizcard-entry-header .bizimg-select img:hover {
     border: 2px solid rgb(229, 185, 18);
 }
 .bizcard-entry-header .bizcards-gui {
-    padding: 0;
-    padding-bottom: 1rem;
+    position: relative;
+    padding: .5rem 2rem 2rem;
     min-height: 7rem;
 }
 .bizcard-entry-header .bizcard-entry-title {
@@ -403,12 +439,27 @@ i {
     padding-bottom: 1rem;
 }
 .bizcard-entry-header .bizcard-status {
-    float: right;/*position: absolute;*//*top: 0;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;/*position: absolute;*//*top: 0;
     left: 0;*//*margin: 1rem;*/
-    background: rgb(96, 184, 97);
+    background: rgb(96, 184, 97);/* padding: 0 2rem; */
     color: white;
-    padding: .6180469716em 1.41575em;
     z-index: 5;
+}
+.bizcard-entry-header .drd-link {
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+}
+.bizcard-entry-header .drd-link a {
+    display: block;
 }
 .bizcard-entry-header .drd-link .link-preview {
     color: rgb(229, 185, 18);
@@ -418,6 +469,14 @@ i {
 }
 .bizcard-entry-header .drd-link span:hover {
     color: rgb(229, 185, 18);
+}
+.bizcard-entry-header .drd-link #send-sms {
+    display: block;/* border-radius: 100px; */
+    color: rgb(5, 90, 165);/* background: $blue; */
+    margin-left: .5rem;
+}
+.bizcard-entry-header .drd-link #send-sms:hover {
+    color: rgb(0, 174, 239);
 }
 .bizcard-entry-header #daisy-download-contact {
     display: block;
@@ -436,13 +495,15 @@ i {
  */
 .daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
     display: inline-block;
+    font-family: 'Raleway',$backup_font;
     padding: 7px 35px 8px 35px;
     background: rgb(5, 90, 165);
     color: white;
     border: none;
     font-size: 100%;
     line-height: 1.618;
-    cursor: pointer;/* font-weight: 600; */
+    cursor: pointer;
+    font-weight: normal;
 }
 .daisy-button-anchor:hover, button:hover, form input[type="button"]:hover, form input[type="reset"]:hover, form input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
     background-color: rgb(0, 174, 239);
@@ -455,7 +516,7 @@ i {
 }
 .daisy-form {/*counter-reset: fieldset;*/
     position: relative;
-    font-family: 'PT Sans',sans-serif;
+    font-family: 'Raleway',$backup_font;
     padding: 1rem 0;
     padding-top: 0;
     margin: auto;
@@ -486,17 +547,26 @@ i {
             justify-content: space-between;
 }
 .daisy-form input[type=text], .daisy-form textarea, .daisy-form a label {
+    padding: .5rem;
+    display: inline-block;
+    background: #F5F5F5;
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    color: black;
     position: relative;
-    background: #F8F8F8;
 }
 .daisy-form input[type=text]::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a label::-webkit-input-placeholder {
-    color: rgb(229, 185, 18);
+    color: rgba(109,109,109,.5);
+    font-style: italic;
 }
 .daisy-form input[type=text]:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a label:-ms-input-placeholder {
-    color: rgb(229, 185, 18);
+    color: rgba(109,109,109,.5);
+    font-style: italic;
 }
 .daisy-form input[type=text]::placeholder, .daisy-form textarea::placeholder, .daisy-form a label::placeholder {
-    color: rgb(229, 185, 18);
+    color: rgba(109,109,109,.5);
+    font-style: italic;
 }
 .daisy-form input[type=text]:focus, .daisy-form textarea:focus, .daisy-form a label:focus {
     border: 2px solid rgb(223, 158, 6);
@@ -522,6 +592,7 @@ i {
 .daisy-form #drdcard-link input {
     display: inline-block;
     max-width: 200px;
+    text-decoration: underline;
 }
 .daisy-form #drdcard-link input#drdpin {
     max-width: 85px;
@@ -576,7 +647,7 @@ i {
     margin: .25rem 0;
 }
 .daisy-form .accordion-icon-down {
-    border-bottom: 2px solid rgb(124,124,124);
+    border-bottom: 2px solid $black;
 }
 .daisy-form .accordion-icon-down:hover {
     color: rgb(0, 174, 239);
@@ -622,8 +693,9 @@ i {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     min-height: 100px;
 }
 .daisy-form .icon-action-group .dashicon-ul {
@@ -637,8 +709,9 @@ i {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 0;
     margin-top: 1rem;
+    margin-right: 4rem;
+    margin-left: 0;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -657,6 +730,10 @@ i {
     min-height: 50px;
     min-width: 50px;
     font-size: 4rem;
+}
+.daisy-form .icon-action-group .dashicon-ul:last-of-type {
+    margin-right: 0;
+    margin-left: 4rem;
 }
 .daisy-form .icon-action-group .dashicon-ul:hover {
     color: rgb(0, 174, 239);
@@ -853,15 +930,6 @@ button.remove-file:hover {
     background: none;
     width: 100%;
     margin: auto;
-}
-.sms-forms fieldset input {
-    padding: .5rem;
-    display: inline-block;
-    background: #F5F5F5;
-    outline: 0;
-    box-shadow: none;
-    border: 1px solid #e5e5e5;
-    color: black;
 }
 .sms-forms fieldset p {
     text-align: right;
