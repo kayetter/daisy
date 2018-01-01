@@ -1,6 +1,6 @@
 /*
  Theme Name:   Daisy
- Description:  a child theme for twentyseventeen
+ Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
  Version:      0.1
@@ -56,17 +56,20 @@ body {
     position: relative;
     font-size: 1.4rem;
 }
-body a {}
-body a:hover {
+a {
+    color: rgb(5, 90, 165);
+    transition: color.5s;
+}
+a:hover {
     color: rgb(0, 174, 239);
-    text-decoration: underline;
 }
 .col-full {
-    max-width: 80%;
+    max-width: 95%;
+    margin: auto;
 }
 @media screen and (max-width: 490px) {
     .col-full {
-        max-width: 100%;
+        max-width: 97%;
     }
 }
 .daisy-hidden {
@@ -176,10 +179,10 @@ ul.products {
     width: 100%px;
     background-size: 50px 50px6;
 }
-6main {
+main {
     position: relative;
 }
-6main .bizcard-main-links {
+main .bizcard-main-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -291,21 +294,26 @@ i {
 /*
 * Woocommerce && storefront theme overrides
 */
+.woocommerce-active .site-header .site-branding {
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
 .entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register {
     border: none;
 }
 .entry-content .woocommerce a.button, .entry-content .woocommerce button.button, .entry-content .woocommerce input.button, .entry-content .woocommerce #respond input#submit, .entry-content .woocommerce woocommerce-Button button {
     background-color: rgb(5, 90, 165);
     color: white;
-    font-family: 'Raleway',$backup_font;
+    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;/* transition: background .5s */
 }
 .entry-content .woocommerce a.button:hover, .entry-content .woocommerce button.button:hover, .entry-content .woocommerce input.button:hover, .entry-content .woocommerce #respond input#submit:hover, .entry-content .woocommerce woocommerce-Button button:hover {
-    background: rgb(0, 174, 239);
+    background-color: rgb(0, 174, 239);
     color: white;
 }
-.storefront-primary-navigation {
-    font-family: 'Raleway',$backup_font;
-}
+/*Used to change the screen width break point for menus*/
 /* @media (max-width: 800px) {
 
   .handheld-navigation, .main-navigation.toggled .handheld-navigation, .main-navigation.toggled div.menu, .menu-toggle {
@@ -317,6 +325,28 @@ i {
   }
 
 } */
+/**
+ * Re declare storefront styles
+ *
+ * @since 0.2.0
+ * @package daisy
+ */
+.site-header {
+    background-color: white;
+    padding-bottom: 1.618em;
+    z-index: 999;
+    border-bottom: 1px solid transparent;
+}
+.storefront-primary-navigation {
+    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+/*position admin bar at top of screen*/
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed;
+        top: 0;
+    }
+}
 /**
  * Styles for bizcards display
  *
@@ -493,9 +523,21 @@ i {
  * @package DD
  * @since 0.2.0
  */
-.daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea {
+    padding: .6180469716em;
+    background-color: #f2f2f2;
+    color: #43454b;
+    outline: 0;
+    border: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    box-shadow: none;
+}
+/* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
+.daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
     display: inline-block;
-    font-family: 'Raleway',$backup_font;
+    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     padding: 7px 35px 8px 35px;
     background: rgb(5, 90, 165);
     color: white;
@@ -504,19 +546,19 @@ i {
     line-height: 1.618;
     cursor: pointer;
     font-weight: normal;
+    transition: background 2s;
 }
-.daisy-button-anchor:hover, button:hover, form input[type="button"]:hover, form input[type="reset"]:hover, form input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
-    background-color: rgb(0, 174, 239);
+.daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+    background: rgb(0, 174, 239);
     color: white;
-    text-decoration: none;
 }
-.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type="button"]:disabled, form input[type="button"]:disabled:hover, form input[type="button"][disabled=disabled], form input[type="reset"]:disabled, form input[type="reset"]:disabled:hover, form input[type="reset"][disabled=disabled], form input[type="submit"]:disabled, form input[type="submit"]:disabled:hover, form input[type="submit"][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
+.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
     opacity: .5!important;
     cursor: not-allowed;
 }
 .daisy-form {/*counter-reset: fieldset;*/
     position: relative;
-    font-family: 'Raleway',$backup_font;
+    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     padding: 1rem 0;
     padding-top: 0;
     margin: auto;
@@ -874,18 +916,6 @@ i {
 #edit-vcard-form fieldset#vcard-name div {
     width: 100%;
 }
-#edit-vcard-form fieldset#vcard-name $s_media {
-    font-size: 1.4rem;
-}
-#edit-vcard-form fieldset#vcard-name $s_media div {
-    display: inline-block;
-}
-#edit-vcard-form fieldset#vcard-name $s_media div input {
-    width: auto;
-}
-#edit-vcard-form fieldset#vcard-name $s_media select {
-    display: block;
-}
 #edit-vcard-form .daisy-add-item, #edit-vcard-form .daisy-remove-item {
     color: rgb(5, 90, 165);
     display: inline-block;
@@ -895,13 +925,27 @@ i {
 #edit-vcard-form .dyn-property-wrapper {
     margin-bottom: 1rem;
 }
+@media screen and (max-width: 490px) {
+    #edit-vcard-form fieldset#vcard-name {
+        font-size: 1.4rem;
+    }
+    #edit-vcard-form fieldset#vcard-name div {
+        display: inline-block;
+    }
+    #edit-vcard-form fieldset#vcard-name div input {
+        width: auto;
+    }
+    #edit-vcard-form fieldset#vcard-name select {
+        display: block;
+    }
+}
 .daisy-close-form {
     height: 40px;
     width: 40px;
     color: white;
 }
 .daisy-close-form:hover {
-    color: $lightgray;
+    color: #f0f0f0;
     background: transparent;
     border: none;
 }
@@ -924,7 +968,7 @@ button.remove-file:hover {
     width: 90%;
     background: #F8F8F8;
     padding: .5rem;
-    margin: auto;
+    margin: 1rem auto;
 }
 .sms-forms fieldset {
     background: none;
@@ -974,6 +1018,152 @@ button.remove-file:hover {
 }
 #daisy-input-veri-code div input {
     padding-right: 3rem;
+}
+div, ul, li {
+    transition: width 2s;
+}
+.site-branding {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    color: rgb(5, 90, 165);
+    width: 100%;/* end #daisy-header-menu */
+}
+.site-branding .custom-logo-link {
+    float: none;
+}
+.site-branding .custom-logo-link img {}
+.site-branding #daisy-header-menu {/* end ul*/
+}
+.site-branding #daisy-header-menu ul {
+    margin: 0;
+    margin-bottom: .5rem;
+    list-style: none;
+}
+/* @ $m_screen media query  */
+.site-branding #daisy-header-menu ul li {
+    display: inline-block;
+    padding: 1rem;
+    padding-left: 0;
+}
+.site-branding #daisy-header-menu ul li .dd-menu-item-title {}
+.site-branding #daisy-header-menu ul li .dd-menu-item-icon {
+    display: none;
+    font-size: 2.5rem;
+}
+.site-branding #daisy-header-menu ul li:last-of-type {
+    padding-right: 0;
+}
+/* Individual nav li element styling */
+.site-branding #daisy-header-menu ul #dd-cart-icon {
+    position: relative;
+}
+.site-branding #daisy-header-menu ul #dd-cart-icon i {
+    padding-right: 10px;
+}
+.site-branding #daisy-header-menu ul #dd-cart-icon .dd-indicator {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    background: red;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 50px;
+    font-size: 10px;
+    transition: opacity .5s;
+}
+.site-branding #daisy-header-menu ul #dd-cart-icon .dd-indicator:hover {
+    opacity: .5;
+}
+/*also see _searchform.css*/
+.site-branding #daisy-header-menu ul #dd-search-menu-item {
+    padding: 0;
+}
+.site-branding #daisy-header-menu ul #dd-hamburger {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .site-branding .custom-logo-link img {
+        max-width: 125px;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding .custom-logo-link img {
+        max-width: 100px;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding #daisy-header-menu ul {
+        padding: .5rem;
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding #daisy-header-menu ul li .dd-menu-item-title {
+        display: none;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding #daisy-header-menu ul li .dd-menu-item-icon {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding #daisy-header-menu ul #dd-search-menu-item {
+        display: none;
+    }
+}
+@media screen and (max-width: 568px) {
+    .site-branding #daisy-header-menu ul #dd-hamburger {
+        display: inline-block;
+        font-size: 2rem;
+    }
+}
+/* end .site-branding */
+/*
+* css styling for search input form
+*
+*/
+.show-form {
+    width: 150px;
+    opacity: 1;
+}
+.hide-form {
+    width: 0;
+    opacity: 0;
+}
+.dd-search i {/* display: inline-block; */
+    transition: color, 2s;
+    cursor: pointer;
+}
+.dd-search i:hover {
+    color: rgb(0, 174, 239);
+}
+.dd-search .dd-search-form {
+    margin: 0;
+    transition: width 2s, opacity 2s;
+}
+.dd-search .dd-search-form input[type=submit] {
+    width: 0;
+    opacity: 0;
+    position: fixed;
+    right: -999px;
+}
+.dd-search .dd-search-form .dd-search-input {
+    padding: 0;
+    transition: width 2s, opacity 2s;
+}
+.dd-search .dd-search-form .fa-placeholder::-webkit-input-placeholder {
+    color: rgb(5, 90, 165);
+}
+.dd-search .dd-search-form .fa-placeholder:-ms-input-placeholder {
+    color: rgb(5, 90, 165);
+}
+.dd-search .dd-search-form .fa-placeholder::placeholder {
+    color: rgb(5, 90, 165);
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

@@ -63,7 +63,7 @@
 
       }
 
-      $s_media {
+     @media $s_screen {
           font-size: 1.4rem;
 
         div {
@@ -95,7 +95,7 @@
   width: 40px;
   color: white;
   &:hover{
-    color: $lightgray;
+    color: $ltgray;
     background: transparent;
     border: none;
   }

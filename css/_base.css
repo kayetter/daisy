@@ -8,19 +8,22 @@ body {
   position: relative;
   font-size: 1.4rem;
 
-  a {
-    &:hover {
-      color: $hoverblue;
-      text-decoration: underline;
-    }
-  }
+}
 
+a {
+  color: $blue;
+  transition: color.5s;
+
+  &:hover {
+    color: $hoverblue;
+  }
 }
 
 .col-full {
-  max-width: 80%;
+  max-width: 95%;
+  margin: auto;
   @media $s_screen {
-    max-width: 100%;
+    max-width: 97%;
   }
 }
 
@@ -126,7 +129,8 @@ flex-direction: row;
   width: 100%px;
   background-size: 50px 50px6
 }
-6main {
+
+main {
   position: relative;
   .bizcard-main-links{
     display: flex;

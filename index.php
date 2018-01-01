@@ -26,27 +26,6 @@ get_header(); ?>
 
 		endif; ?>
 
-    <?php
-    echo (__ABSPATH__)."<br>";
-      echo get_template_directory()."<br>";
-      echo (__DIR__)."<br>";
-      echo (__FILE__)."<br>";
-      echo plugin_dir_path(__FILE__)."<br>";
-      echo (__ABSPATH__)."<br>";
-      echo get_admin_url()."<br>";
-      echo site_url()."<br>";
-      echo home_url()."<br>";
-      echo get_stylesheet_directory_uri();
-			echo "<br>---------------------------------------------------<br>";?>
-			<pre>
-				<?php
-				print_r($_SESSION);
-				$_SESSION['errors'] = null;
-
-				 ?>
-			</pre>
-
-
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

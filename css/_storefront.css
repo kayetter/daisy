@@ -1,0 +1,25 @@
+/**
+ * Re declare storefront styles
+ *
+ * @since 0.2.0
+ * @package daisy
+ */
+
+.site-header {
+    background-color: white;
+    padding-bottom: 1.618em;
+    z-index: 999;
+    border-bottom: 1px solid transparent;
+}
+
+.storefront-primary-navigation {
+  font-family: $font_main, $backup_font;
+}
+
+/*position admin bar at top of screen*/
+@media screen and (max-width: 600px){
+  #wpadminbar {
+      position: fixed;
+      top: 0;
+  }
+}

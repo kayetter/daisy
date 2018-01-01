@@ -1,12 +1,29 @@
 <?php
+/**
+ * Custom ations added to daisy theme
+ *
+ * @package daisy
+ */
 
 
-//daisy status tag on bizcard
+/**
+ 	 * Block comment
+ 	 *
+ 	 * @param type
+ 	 * @return void
+	 */
+	function daisy_header_menu(){
+    global $current_user;
+    if(WC()->cart->get_cart_contents_count()){
 
+      $item_count = WC()->cart->get_cart_contents_count();
+    } else {
 
-//include format parameter
-//    link = anchor tag with drdcard link to download vcard;
-//    file-link = link to file with filename as inner html;
-//    file = filename only or
-//    raw = raw with line breaks
-//   default is filename
+      $item_count = 0;
+    }
+
+    ob_start();
+    require_once(get_stylesheet_directory()."/partials/daisy_header_menu.php");
+    return ob_get_clean();
+
+  }

@@ -2,9 +2,9 @@
 
 
 
-require 'inc/daisy-functions.php';
-require 'inc/daisy-template-hooked-functions.php';
-require 'inc/daisy-template-functions.php';
+require_once( 'inc/daisy-template-hooked-functions.php');
+require_once( 'inc/daisy-template-functions.php');
+require_once( 'inc/daisy-storefront-functions.php');
 
 
 add_action( 'wp_enqueue_scripts', 'load_daisy_styles');
@@ -12,7 +12,11 @@ function load_daisy_styles(){
     wp_enqueue_style('daisy-fonts', daisy_fonts_url());
     wp_enqueue_style('storefront', get_template_directory_uri()."/style.css");
     wp_enqueue_style( 'load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
+    wp_enqueue_script('daisy_theme_scripts', get_stylesheet_directory_uri()."/inc/js/daisy_theme_scripts.js");
 }
+
+// remove woocommerce styles
+// add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
 
@@ -72,5 +76,3 @@ function daisy_theme_support(){
   add_theme_support('woocommerce');
   add_theme_support( 'custom-header' );
 }
-
-// Change number or products per row to 3

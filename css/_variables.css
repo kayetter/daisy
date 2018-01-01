@@ -26,7 +26,7 @@
   $lightestgray: #F8F8F8;
   $helpTip: rgb(255, 255, 175); /* #FFFFaF */
 
-  $font_main: 'Raleway', $backup_font;
+  $font_main: 'Raleway';
   $backup_font: "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 
 

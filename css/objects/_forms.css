@@ -6,10 +6,23 @@
  * @package DD
  * @since 0.2.0
  */
+input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea {
+   padding: .6180469716em;
+  background-color: #f2f2f2;
+  color: #43454b;
+  outline: 0;
+  border: 0;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  font-weight: 400;
+  box-shadow: none;
 
- .daisy-button-anchor, button, form input[type="button"], form input[type="reset"], form input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+}
+/* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
+
+ .daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
    display: inline-block;
-   font-family: $font_main;
+   font-family: $font_main, $backup_font;
    padding: 7px 35px 8px 35px;
    background: $blue;
    color: white;
@@ -18,10 +31,10 @@
    line-height: 1.618;
    cursor: pointer;
    font-weight: normal;
+   transition: background 2s;
    &:hover {
-     background-color: $hoverblue;
+     background: $hoverblue;
      color: white;
-     text-decoration: none;
    }
    &:disabled, &:disabled:hover, &[disabled=disabled] {
      opacity: .5!important;
@@ -36,7 +49,7 @@
 .daisy-form {
   /*counter-reset: fieldset;*/
   position: relative;
-  font-family: $font_main;
+  font-family: $font_main, $backup_font;
   padding: 1rem 0;
   padding-top: 0;
   margin: auto;

@@ -1,6 +1,6 @@
 /*
  Theme Name:   Daisy
- Description:  a child theme for twentyseventeen
+ Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
  Version:      0.1
@@ -13,7 +13,10 @@
 @import "base";
 @import "modal";
 @import "woocommerce";
+@import "storefront";
 @import "objects/bizcards";
 @import "objects/forms";
 @import "objects/vcard";
 @import "objects/sms";
+@import "objects/site-header-nav";
+@import "objects/searchform";

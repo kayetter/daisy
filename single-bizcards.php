@@ -11,7 +11,7 @@ get_header('bizcards'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
-		global $post;
+
 //content if user is admin or post owner
 		if((isset($_GET[get_post_meta($post->ID,"dd_pin",true)]) && get_post_status() == "publish") || (get_post_field( 'post_author', $post_id ) ==  get_current_user_id()) || current_user_can("delete_plugins")):
 

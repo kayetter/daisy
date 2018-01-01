@@ -1,0 +1,105 @@
+div, ul, li {
+  transition: width 2s;
+}
+
+.site-branding {
+  justify-content: space-between;
+  align-items: flex-start;
+  color: $blue;
+  width: 100%;
+  .custom-logo-link{
+    float: none;
+    img {
+      @media $l_screen{
+        max-width: 125px;
+      }
+      @media $m_screen{
+        max-width: 100px;
+      }
+
+    }
+  }
+
+  #daisy-header-menu{
+    ul {
+      margin: 0;
+      margin-bottom: .5rem;
+      list-style: none;
+
+      @media $m_screen {
+        padding: .5rem;
+        padding-left: 0;
+
+      } /* @ $m_screen media query  */
+
+
+
+      li {
+        display: inline-block;
+        padding: 1rem;
+        padding-left: 0;
+          &:last-of-type {
+            padding-right: 0;
+          }
+        .dd-menu-item-title{
+          @media $m_screen{
+            display: none;
+          }
+        }
+
+        .dd-menu-item-icon {
+          display: none;
+          font-size: 2.5rem;
+          @media $m_screen {
+            display: inline-block;
+          }
+        }
+      }
+
+      /* Individual nav li element styling */
+
+      #dd-cart-icon{
+        position: relative;
+        i {
+          padding-right: 10px;
+
+        }
+        .dd-indicator{
+          position: absolute;
+          right: 0;
+          top: -10px;
+          background: red;
+          color: white;
+          padding: 1px 6px;
+          border-radius: 50px;
+          font-size: 10px;
+          transition: opacity .5s;
+          &:hover {
+            opacity: .5;
+          }
+
+        }
+      }
+
+      /*also see _searchform.css*/
+      #dd-search-menu-item{
+        padding: 0;
+        @media $m_screen {
+          display: none;
+
+        }
+      }
+
+      #dd-hamburger {
+        display: none;
+        @media $m_screen {
+          display: inline-block;
+          font-size: 2rem;
+        }
+      }
+    }/* end ul*/
+
+    }/* end #daisy-header-menu */
+
+
+}/* end .site-branding */

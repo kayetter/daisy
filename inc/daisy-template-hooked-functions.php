@@ -8,7 +8,7 @@ add_filter('the_content', 'daisy_content_tags', 10);
 add_filter('the_excerpt', 'daisy_remove_excerpt_p_tags', 0);
 add_filter('the_excerpt', 'daisy_excerpt_tags', 10);
 
-add_filter('loop_shop_columns', 'loop_columns',999);
+// add_filter('loop_shop_columns', 'loop_columns',999);
 /**
  	 * Wraps post content in h1 tags if post_type = bizcards
  	 *
