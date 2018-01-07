@@ -58,9 +58,8 @@ wp_head();
 			 * @hooked storefront_header_cart                      - 60
 			 * @hooked storefront_primary_navigation_wrapper_close - 68
 			 */
-			remove_action('storefront_header', 'storefront_header_cart', 60 );
-			remove_action('storefront_header', 'storefront_product_search', 40 );
-			do_action( 'storefront_header' );
+
+			do_action('daisy_primary_nav');
 ?>
 	</header><!-- #masthead -->
 

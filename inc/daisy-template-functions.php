@@ -7,8 +7,8 @@
 
 
 /**
- 	 * Block comment
- 	 *
+ 	 * HTML for header menu
+ 	 * @see header-bizcards.php
  	 * @param type
  	 * @return void
 	 */

@@ -46,6 +46,11 @@
 
 .daisy-modal-content{
   position: absolute;
+
+  /* for smooth scrolling effect */
+    overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+
   top: 0;
   left: 0;
   right: 0;
@@ -82,4 +87,19 @@
 #close{
   line-height: 4;
   z-index: 9999;
+}
+
+#dd-activation-terms{
+  max-width: 780px;
+  max-height: 150px;
+  overflow-y: scroll;
+  p {
+    margin: 0;
+  }
+  ul {
+    paddding:none;
+    li {
+      font-size: 1.1rem;
+    }
+  }
 }

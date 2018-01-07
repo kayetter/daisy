@@ -1,4 +1,11 @@
 <?php
+/**
+ * Actions and filters for daisy theme
+ *
+ *
+ * @package Daisy theme
+ * @since 0.2.0
+ */
 
 //remove p tags and add h1 tags to the content
 add_filter('the_content', 'daisy_remove_p_tags', 0);
@@ -83,3 +90,46 @@ function daisy_remove_excerpt_p_tags($content){
 function loop_columns() {
 	return 2; // 2 products per row
 }
+
+/**
+ * The primary navigation menu for theme daisy.
+ *
+ * Displays content navigation menu
+ * @hook action daisy_primary_nav
+ * @see header-bizcards.php
+ * @package daisy
+ */
+function daisy_primary_nav(){
+	 $pages = array(
+	    'bizcard-designs' => array(
+	      "title" => "Bizcard Designs",
+	      "sub-menu"=>array(
+	        "bizcards-templates" => array(
+	          "title" => "Templates"
+	        ),
+	        "bizcards-custom" => array(
+	          "title" => "Custom Bizcards"
+	        )
+	      )
+
+	    ),
+	    'shop' => array(),
+	    'daisy-help' => array(
+	      "title"=>"Instructions"
+	      )
+	    );
+
+	 $bizcard_sub = array(
+	       'new-bizcard'=>array(
+	    "title"=> "New Bizcard"),
+	     'manage-vcards'=>array(),
+	     'new-vcard' => array(
+	       "title"=> "New VCard"),
+	   );
+		 require_once(get_stylesheet_directory()."/partials/daisy_primary_nav.php");
+}
+//create daisy_primary_nav action which includes storefront nav wrapper and site branding
+add_action('daisy_primary_nav', 'storefront_site_branding',10);
+add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper',20);
+add_action('daisy_primary_nav', 'daisy_primary_nav', 30);
+add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper_close', 40);
