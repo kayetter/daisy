@@ -100,24 +100,16 @@ function loop_columns() {
  * @package daisy
  */
 function daisy_primary_nav(){
-	 $pages = array(
-	    'bizcard-designs' => array(
-	      "title" => "Bizcard Designs",
-	      "sub-menu"=>array(
-	        "bizcards-templates" => array(
+	 $product_sub = array(
+	          "bizcards-templates" => array(
 	          "title" => "Templates"
 	        ),
 	        "bizcards-custom" => array(
 	          "title" => "Custom Bizcards"
 	        )
-	      )
+	      );
 
-	    ),
-	    'shop' => array(),
-	    'daisy-help' => array(
-	      "title"=>"Instructions"
-	      )
-	    );
+
 
 	 $bizcard_sub = array(
 	       'new-bizcard'=>array(
@@ -133,3 +125,29 @@ add_action('daisy_primary_nav', 'storefront_site_branding',10);
 add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper',20);
 add_action('daisy_primary_nav', 'daisy_primary_nav', 30);
 add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper_close', 40);
+
+/**
+ * The title section for daisy content-daisy-page
+ *
+ * Displays content navigation menu
+ * @hook action daisy_title_header
+ * @see content-daisy.php
+ * @package daisy
+ */
+function daisy_title_header(){ ?>
+
+	<header class="page-header flex-div"> <?php
+		the_title( '<h1 class="page-title">', '</h1>' );
+
+		if(is_page('manage-vcards')): ?>
+
+			<h1><a title="Add a new VCard" href="<?php echo get_permalink(get_page_by_path("new-vcard")) ?>"><i class="fa fa-plus" aria-hidden="true"></i></a></h1>
+		<?php	endif; ?>
+	</header> <?php
+}
+add_action('daisy_title_header', 'daisy_title_header', 10);
+
+function add_daisy_share_buttons(){
+	require_once(get_stylesheet_directory()."/partials/share_buttons.php");
+}
+add_action('daisy_footer', 'add_daisy_share_buttons', 10);

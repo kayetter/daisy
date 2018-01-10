@@ -11,6 +11,14 @@ body {
 
 }
 
+h1, h2, h3 {
+  a i.fa {
+    font-size: .8em;
+    font-weight: normal;
+  }
+
+}
+
 a {
   color: $blue;
   transition: color.5s;
@@ -153,6 +161,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media $m_screen {
+    display: block;
+  }
 }
 
 .daisy-error{

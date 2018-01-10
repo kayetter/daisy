@@ -68,6 +68,7 @@
   border-radius:14px;
   padding:8px;
   z-index: 9999999;
+  max-width: 800px;
   button {
     float: right;
     /*padding: 1rem;*/
@@ -93,6 +94,8 @@
   max-width: 780px;
   max-height: 150px;
   overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
+
   p {
     margin: 0;
   }

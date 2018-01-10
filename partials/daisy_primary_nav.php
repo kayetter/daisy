@@ -11,6 +11,7 @@
 <nav id="dd-primary-nav">
   <ul class="dd-top-menu">
        <li class="<?php echo is_front_page()?"dd-menu-selected":"" ?>" > <a href="<?php home_url() ?>">Home</a></li> <?php
+       //show bizcard menu if user is a subscriber
        if(current_user_can('edit_bizcards')): ?>
        <li class="dd-has-submenu">Bizcards<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
 
@@ -30,43 +31,30 @@
 
   <?php
   //endif for current_user_can
-endif;
-   foreach($pages as $slug=>$defs):
+endif; ?>
+<!-- adding menu item for products -->
+  <li class="dd-has-submenu" >Products<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+    <ul class="dd-submenu">
+      <li class="<?php echo is_page(wc_get_page_id("shop"))?"dd-menu-selected":"" ?>" ><a href="<?php echo get_permalink(wc_get_page_id("shop")) ?>">All Products</a></li> <?php
 
-     if($page = get_page_by_path($slug)):
-        $id = $page->ID;
-       ?>
-       <li class="<?php echo isset($defs["sub-menu"])?"dd-has-submenu":""; echo  is_page("$slug")?"dd-menu-selected":"" ?> ">
+      foreach($product_sub as $submenu_slug=>$subdefs):
+        if($id = get_page_by_path($submenu_slug)):
+          ?>
+          <li class"<?php echo is_page("$submenu_slug")?"dd-menu-selected":"" ?>"> <a href="<?php the_permalink($id) ?>"><?php  echo isset($subdefs["title"])?$subdefs["title"]:get_the_title($id);  ?></a></li>
 
-         <!-- if li does not have submenu than make it a link -->
-       <?php if(!isset($defs["sub-menu"])): ?>
-         <a href="<?php echo the_permalink($id) ?>"><?php
-       endif;
-          echo isset($defs["title"])?$defs["title"]:get_the_title($id);
-
-          //if li doesnot have submenu then close anchor tag
-        if(!isset($defs["sub-menu"])):  ?>
-            </a> <?php
-
-            //if is sub menu then add caret and sub menu items
-        else: ?>
-
-        <a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
-          <ul class="dd-submenu"> <?php
-          foreach($defs["sub-menu"] as $submenu => $subdefs):
-            if($submenu = get_page_by_path($submenu)):
-                $subid = $submenu->ID; ?>
-                 <li class="<?php echo is_page($submenu)?"dd-menu-selected":"" ?>"> <a href="<?php echo the_permalink($subid) ?>"><?php  echo isset($subdefs["title"])?$subdefs["title"]:get_the_title($subid);  ?></a></li>
-
-          <?php
-            endif;
-          endforeach; ?>
-          </li>
-          </ul> <?php
+      <?php
         endif;
+      endforeach; ?>
 
-     endif;
-  endforeach;
+    </ul>
+
+  </li> <?php
+  //if user is not logged in then add yet another login link
+  if(!is_user_logged_in()): ?>
+    <li ><a href="<?php echo the_permalink(wc_get_page_id("myaccount")) ?>">Login</a></li> <?php
+  endif;
+
+
   if(current_user_can("delete_plugins")): ?>
     <li ><a href="<?php echo the_permalink(get_page_by_path("daisy-print-pre")) ?>">Daisy Print Pre</a></li> <?php
   endif;

@@ -24,7 +24,7 @@
 
     li {
       display: block;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       /*do not display submenu*/
       &.dd-has-submenu {
         ul{

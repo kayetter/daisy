@@ -57,6 +57,10 @@ body {
     font-size: 1.4rem;
     font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
+h1 a i.fa, h2 a i.fa, h3 a i.fa {
+    font-size: .8em;
+    font-weight: normal;
+}
 a {
     color: rgb(5, 90, 165);
     transition: color.5s;
@@ -212,6 +216,11 @@ main .bizcard-main-links {
         -ms-flex-align: center;
             align-items: center;
 }
+@media screen and (max-width: 568px) {
+    .flex-div {
+        display: block;
+    }
+}
 .daisy-error {
     color: red;
 }
@@ -288,6 +297,7 @@ i {
     border-radius: 14px;
     padding: 8px;
     z-index: 9999999;
+    max-width: 800px;
 }
 #modal button {
     float: right;/*padding: 1rem;*/
@@ -308,6 +318,7 @@ i {
     max-width: 780px;
     max-height: 150px;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 #dd-activation-terms p {
     margin: 0;
@@ -550,16 +561,34 @@ i {
  * @package DD
  * @since 0.2.0
  */
-input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea {
+input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea a label {
+    position: relative;
     padding: .6180469716em;
-    background-color: #f2f2f2;
+    background-color: #F5F5F5;
     color: #43454b;
     outline: 0;
     border: 0;
+    border: 1px solid #e5e5e5;
     -webkit-appearance: none;
     box-sizing: border-box;
     font-weight: 400;
     box-shadow: none;
+}
+input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, input[type=text]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder, textarea a label::-webkit-input-placeholder {
+    color: rgba(109,109,109,.5);
+    font-style: italic;
+}
+input[type=email]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=text]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder, textarea a label:-ms-input-placeholder {
+    color: rgba(109,109,109,.5);
+    font-style: italic;
+}
+input[type=email]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=text]::placeholder, input[type=url]::placeholder, textarea a label::placeholder {
+    color: rgba(109,109,109,.5);
+    font-style: italic;
+}
+input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, input[type=text]:focus, input[type=url]:focus, textarea a label:focus {
+    border: 2px solid rgb(223, 158, 6);
+    background: white;
 }
 /* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
 .daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
@@ -578,6 +607,7 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 .daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
     background: rgb(0, 174, 239);
     color: white;
+    text-decoration: none;
 }
 .daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
     opacity: .5!important;
@@ -614,32 +644,6 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-}
-.daisy-form input[type=text], .daisy-form textarea, .daisy-form a label {
-    padding: .5rem;
-    display: inline-block;
-    background: #F5F5F5;
-    outline: 0;
-    box-shadow: none;
-    border: 1px solid #e5e5e5;
-    color: black;
-    position: relative;
-}
-.daisy-form input[type=text]::-webkit-input-placeholder, .daisy-form textarea::-webkit-input-placeholder, .daisy-form a label::-webkit-input-placeholder {
-    color: rgba(109,109,109,.5);
-    font-style: italic;
-}
-.daisy-form input[type=text]:-ms-input-placeholder, .daisy-form textarea:-ms-input-placeholder, .daisy-form a label:-ms-input-placeholder {
-    color: rgba(109,109,109,.5);
-    font-style: italic;
-}
-.daisy-form input[type=text]::placeholder, .daisy-form textarea::placeholder, .daisy-form a label::placeholder {
-    color: rgba(109,109,109,.5);
-    font-style: italic;
-}
-.daisy-form input[type=text]:focus, .daisy-form textarea:focus, .daisy-form a label:focus {
-    border: 2px solid rgb(223, 158, 6);
-    background: white;
 }
 .daisy-form .flex-div {
     -webkit-box-align: center;
@@ -920,6 +924,19 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 #vcard-archive-div table.vcard-archive {
     position: relative;
 }
+#vcard-archive-div h3 {
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+#vcard-archive-div h3 a {
+    display: block;
+}
+@media screen and (max-width: 490px) {
+    #vcard-archive-div h3 span {
+        display: none;
+    }
+}
 .daisy-window-border-top {
     height: 40px;
     background-color: rgb(5, 90, 165);
@@ -932,6 +949,10 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 #edit-vcard-form {
     padding-top: 4rem;
 }
+#edit-vcard-form h5 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #f0f0f0;
+}
 #edit-vcard-form fieldset {
     border: 2px solid black;
     padding: 1rem;
@@ -940,9 +961,25 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 #edit-vcard-form input {
     width: 100%;
 }
-#edit-vcard-form fieldset#vcard-name div {
-    width: 100%;
+#edit-vcard-form .vcard-fieldset .single-line-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 100%;/* end of media query */
 }
+/* Use abbreviated label when full screen */
+#edit-vcard-form .vcard-fieldset .single-line-div label span {
+    display: block;
+}
+#edit-vcard-form .vcard-fieldset .single-line-div label span+span {
+    display: none;
+}
+/* end of $name-div */
+#edit-vcard-form .vcard-fieldset i.fa {}
+/* end of #vcard-name */
 #edit-vcard-form .daisy-add-item, #edit-vcard-form .daisy-remove-item {
     color: rgb(5, 90, 165);
     display: inline-block;
@@ -952,18 +989,23 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 #edit-vcard-form .dyn-property-wrapper {
     margin-bottom: 1rem;
 }
-@media screen and (max-width: 490px) {
-    #edit-vcard-form fieldset#vcard-name {
-        font-size: 1.4rem;
-    }
-    #edit-vcard-form fieldset#vcard-name div {
-        display: inline-block;
-    }
-    #edit-vcard-form fieldset#vcard-name div input {
-        width: auto;
-    }
-    #edit-vcard-form fieldset#vcard-name select {
+@media screen and (max-width: 568px) {
+    #edit-vcard-form .vcard-fieldset .single-line-div {
         display: block;
+    }
+    #edit-vcard-form .vcard-fieldset .single-line-div div {
+        width: 100%;
+    }/* Use full label when m screen */
+    #edit-vcard-form .vcard-fieldset .single-line-div label span {
+        display: none;
+    }
+    #edit-vcard-form .vcard-fieldset .single-line-div label span + span {
+        display: block;
+    }
+}
+@media screen and (max-width: 568px) {
+    #edit-vcard-form .vcard-fieldset i.fa {
+        font-size: 2.0rem;
     }
 }
 .daisy-close-form {
@@ -986,6 +1028,28 @@ button.remove-file:hover {
     color: rgb(0, 174, 239);
     background: transparent;
     border: none;
+}
+/* styling for name and address label+input divs to get correct proportions*/
+#dd-mname {
+    width: 10%;
+}
+#dd-lname {
+    width: 45%;
+}
+#dd-suffix {
+    width: 15%;
+}
+#dd-fname {
+    width: 25%;
+}
+.dd-city {
+    width: 50%;
+}
+.dd-state {
+    width: 27%;
+}
+.dd-zip {
+    width: 17%;
 }
 .sms-forms #terms {
     margin-bottom: 1rem;
@@ -1074,7 +1138,7 @@ button.remove-file:hover {
 }
 #dd-primary-nav ul li {
     display: block;
-    padding: 1rem;/*do not display submenu*/
+    padding: 1rem 1.5rem;/*do not display submenu*/
 }
 #dd-primary-nav ul li.dd-has-submenu ul {
     display: block;
@@ -1361,6 +1425,50 @@ div, ul, li {
     }
     #vcard-archive-div table thead {
         display: none;
+    }
+}
+.support-page {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    padding-top: 2rem;
+}
+.dd-category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 32%;
+}
+/* min-height: 200px; */
+.dd-category h2 {
+    color: rgb(5, 90, 165);
+    border-bottom: 1px solid #f0f0f0;
+}
+.dd-category h2 i, .dd-category h2 img {
+    padding-right: 1rem;
+}
+.dd-category a {
+    display: inline-block;
+}
+.dd-category p {
+    width: 100%;
+    max-width: 100%;
+}
+@media screen and (max-width: 568px) {
+    .dd-category {
+        max-width: 460px;
+        width: auto;
+        min-height: auto;
+        text-align: center;
+        margin: 1rem auto;
+        padding-top: 2rem;
     }
 }
 

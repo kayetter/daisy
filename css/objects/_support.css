@@ -1,0 +1,34 @@
+.support-page {
+  align-items: stretch;
+  padding-top: 2rem;
+}
+
+.dd-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  /* min-height: 200px; */
+  h2 {
+    color: $blue;
+    border-bottom: 1px solid $ltgray;
+    i, img {
+      padding-right: 1rem;
+    }
+  }
+  a {
+    display: inline-block;
+  }
+  p {
+    width: 100%;
+    max-width: 100%;
+  }
+  @media $m_screen {
+    max-width: 460px;
+    width: auto;
+    min-height: auto;
+    text-align: center;
+    margin: 1rem auto;
+    padding-top: 2rem;
+  }
+}

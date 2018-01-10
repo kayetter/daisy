@@ -22,7 +22,7 @@
 
             do_action( 'storefront_page_before' );
 
-            get_template_part( 'content', 'page' );
+            get_template_part( 'content', 'daisy-page' );
 
             /**
              * Functions hooked in to storefront_page_after action
@@ -37,8 +37,7 @@
 
 
       else:  ?> <!-- endif for is_user_logged_in conditional -->
-
-  			<h4>You must be <a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ) ?>"><strong>Logged In</strong></a> to view the content of this page.</h4>
+      		<h4>You must <a href="<?php echo home_url("my-account") ?>">Login</a> or be an active Subscriber to view the content of this page. <a href="<?php get_permalink(wc_get_page_id("shop")) ?> ">Subscribe</a> </h4>
 
   		<?php
 
