@@ -8,14 +8,14 @@
  */
  ?>
 
-<nav id="dd-primary-nav">
+<nav id="dd-primary-nav"class="daisy-menu daisy-hz-menu" >
   <ul class="dd-top-menu">
        <li class="<?php echo is_front_page()?"dd-menu-selected":"" ?>" > <a href="<?php home_url() ?>">Home</a></li> <?php
        //show bizcard menu if user is a subscriber
        if(current_user_can('edit_bizcards')): ?>
-       <li class="dd-has-submenu">Bizcards<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+       <li class="has-children">Bizcards<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
 
-             <ul class="dd-submenu">
+             <ul class="children">
                <li class="<?php echo is_post_type_archive("bizcards")?"dd-menu-selected":"" ?>"> <a href="<?php echo get_post_type_archive_link( 'bizcards') ?>">My Bizcards</a></li>
                <?php
              foreach($bizcard_sub as $submenu_slug=>$subdefs):
@@ -33,8 +33,8 @@
   //endif for current_user_can
 endif; ?>
 <!-- adding menu item for products -->
-  <li class="dd-has-submenu" >Products<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
-    <ul class="dd-submenu">
+  <li class="has-children" >Products<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+    <ul class="children">
       <li class="<?php echo is_page(wc_get_page_id("shop"))?"dd-menu-selected":"" ?>" ><a href="<?php echo get_permalink(wc_get_page_id("shop")) ?>">All Products</a></li> <?php
 
       foreach($product_sub as $submenu_slug=>$subdefs):

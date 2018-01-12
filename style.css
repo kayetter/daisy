@@ -1111,36 +1111,23 @@ button.remove-file:hover {
     padding-right: 3rem;
 }
 /**
- * Styling for daisy theme primary nav menu
+ * Styling for daisy theme menus (horizontal and verticle)
  *
  *
  * @package Daisy theme
  * @since 0.2.0
  */
-#dd-primary-nav {
-    color: rgb(5, 90, 165);
-    padding: 1rem 0;
-    border-bottom: 1px solid #f0f0f0;
+.daisy-menu {/*end of .dd-top-menu*/
 }
-#dd-primary-nav .dd-menu-selected a {
+.daisy-menu .dd-menu-selected a, .daisy-menu .current-cat a {
     color: black;
 }
-#dd-primary-nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style-type: none;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding: 0;
-    margin: 0;
+.daisy-menu ul {/*end of first level li */
 }
-#dd-primary-nav ul li {
-    display: block;
-    padding: 1rem 1.5rem;/*do not display submenu*/
+.daisy-menu ul li {/* endo f .children*/
 }
-#dd-primary-nav ul li.dd-has-submenu ul {
+/* ul with class of children, only found under li with has-children */
+.daisy-menu ul li .children {
     display: block;
     max-height: 0;
     height: auto;
@@ -1151,35 +1138,64 @@ button.remove-file:hover {
     overflow-y: hidden;
     transition: max-height .5s ease-out, opacity .5s ease-out;
 }
-#dd-primary-nav ul li.dd-has-submenu ul li {
+.daisy-menu ul li .children li {
     display: block;
     background: #F8F8F8;
 }
-#dd-primary-nav ul li.dd-has-submenu ul.dd-display-submenu {
+/* class to add to show children */
+.daisy-menu ul li .show-children {
     opacity: 1;
     max-height: 500px;
     background: white;
     -webkit-transform: scaleY(1);
             transform: scaleY(1);
 }
-/*media query nav styling for hamburger menu*/
+/* Daisy Horizontal Menu */
+.daisy-hz-menu {
+    color: rgb(5, 90, 165);
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;/*media query nav styling for hamburger menu*//*end of media query */
+}
+/* top-level-menu, flex for horizontal */
+.daisy-hz-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+.daisy-hz-menu ul li {
+    display: block;
+    padding: 1rem 1.5rem;/*do not display submenu*/
+}
 @media screen and (max-width: 568px) {
-    #dd-primary-nav {
+    .daisy-hz-menu {
         display: none;
         font-size: 1.8rem;
     }/* dd-hamburger-menu class is added when #dd-hamburger icon is clicked */
-    #dd-primary-nav ul {
+    .daisy-hz-menu ul {
         display: block;
     }
-    #dd-primary-nav ul li {
+    .daisy-hz-menu ul li {
         border-bottom: 1px solid #f0f0f0;
     }
-    #dd-primary-nav ul li.dd-has-submenu ul.dd-submenu {
+    .daisy-hz-menu ul li.has-children ul.children {
         position: relative;
     }
-    #dd-primary-nav.dd-hamburger-menu {
+    .daisy-hz-menu.dd-hamburger-menu {
         display: block;
     }
+}
+/*end of .daisy-hz-menu */
+.daisy-verticle-menu ul li {
+    border-bottom: 1px solid #f0f0f0;
+}
+.daisy-verticle-menu ul li.has-children ul.children {
+    position: relative;
 }
 div, ul, li {
     transition: width 2s;
@@ -1470,6 +1486,47 @@ div, ul, li {
         margin: 1rem auto;
         padding-top: 2rem;
     }
+}
+/**
+ * Styling for daisy theme category page
+ *
+ *
+ * @package Daisy theme
+ * @since 0.2.0
+ */
+.category .daisy-cat-main h2 {
+    font-size: 2em;
+}
+.category .daisy-cat-main .entry-header {
+    margin-bottom: 2em;
+}
+.category .daisy-cat-main .entry-content {
+    float: none;
+    width: 100%;
+}
+/**
+ * Styling for daisy theme custom secondary widget areas
+ *
+ *
+ * @package Daisy theme
+ * @since 0.2.0
+ */
+.daisy-widget-area .daisy-widget .daisy-widget-title {
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    padding: 0 0 .5em;
+    margin-bottom: .5em;
+}
+.daisy-widget-area .daisy-widget .daisy-widget-menu {
+    margin-bottom: 1em;
+}
+.daisy-widget-area .daisy-widget ul li {
+    margin-bottom: 1em;
+}
+.daisy-widget-area .daisy-widget ul li a {
+    text-decoration: none;
+}
+.daisy-widget-area .daisy-widget ul li:before {
+    content: "";
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

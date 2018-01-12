@@ -18,8 +18,10 @@
 @import "objects/forms";
 @import "objects/vcard";
 @import "objects/sms";
-@import "objects/primary_nav";
+@import "objects/menus";
 @import "objects/site-header-nav";
 @import "objects/searchform";
 @import "objects/table";
 @import "objects/support";
+@import "objects/category";
+@import "objects/widgets";

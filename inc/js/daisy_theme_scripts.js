@@ -35,10 +35,10 @@ function toggle_submenu(evt){
     evt.preventDefault();
   }
   console.log(evt.type);
-  if($(this).find("ul").hasClass("dd-display-submenu")){
-    $(this).find("ul").removeClass("dd-display-submenu");
+  if($(this).find("ul").hasClass("show-children")){
+    $(this).find("ul").removeClass("show-children");
   } else {
-    $(this).find("ul").addClass("dd-display-submenu");
+    $(this).find("ul").addClass("show-children");
   }
 }
 
@@ -73,22 +73,22 @@ $(document).ready(function(){
   $(".dd-search-input").blur(remove_search);
 
   /**
-     * event handler that toggles dd-display-submenu class
+     * event handler that toggles show-children class
      *
      */
-  $(".dd-has-submenu").on("mouseenter click", toggle_submenu);
+  $(".has-children").on("mouseenter click", toggle_submenu);
 
   /**
      * on mouse leave of submenu ul target, dd-display_submenu class is removed
      *
      */
-  $(".dd-has-submenu").on("mouseleave", function(evt){
+  $(".has-children").on("mouseleave", function(evt){
     setTimeout(function(){
-      if($(evt.target).closest("ul").hasClass("dd-display-submenu")){
-        $(evt.target).closest("ul").removeClass("dd-display-submenu");
+      if($(evt.target).closest("ul").hasClass("show-children")){
+        $(evt.target).closest("ul").removeClass("show-children");
       }
-      if($(evt.target).is(".dd-has-submenu") && $(evt.target).find("ul").hasClass("dd-display-submenu")){
-        $(evt.target).find("ul").removeClass("dd-display-submenu");
+      if($(evt.target).is(".has-children") && $(evt.target).find("ul").hasClass("show-children")){
+        $(evt.target).find("ul").removeClass("show-children");
       }
     },500);
 

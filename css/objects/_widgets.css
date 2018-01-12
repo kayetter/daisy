@@ -1,0 +1,34 @@
+/**
+ * Styling for daisy theme custom secondary widget areas
+ *
+ *
+ * @package Daisy theme
+ * @since 0.2.0
+ */
+.daisy-widget-area {
+  .daisy-widget   {
+
+    .daisy-widget-title {
+      border-bottom: 1px solid rgba(0,0,0,.05);
+      padding: 0 0 .5em;
+      margin-bottom: .5em;
+    }
+    .daisy-widget-menu {
+      margin-bottom: 1em;
+    }
+
+    ul {
+
+      li {
+        margin-bottom: 1em;
+        &:before {
+          content: "";
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+}

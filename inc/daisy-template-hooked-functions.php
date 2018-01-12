@@ -7,89 +7,6 @@
  * @since 0.2.0
  */
 
-//remove p tags and add h1 tags to the content
-add_filter('the_content', 'daisy_remove_p_tags', 0);
-add_filter('the_content', 'daisy_content_tags', 10);
-
-//remove p tags and add h2 tags to the excerpt
-add_filter('the_excerpt', 'daisy_remove_excerpt_p_tags', 0);
-add_filter('the_excerpt', 'daisy_excerpt_tags', 10);
-
-// add_filter('loop_shop_columns', 'loop_columns',999);
-/**
- 	 * Wraps post content in h1 tags if post_type = bizcards
- 	 *
- 	 * @hook filter 'the_content'
- 	 * @param $content
- 	 * @return $content
-	 */
-	function daisy_content_tags($content){
-  if('bizcards'== get_post_type(get_the_ID())){
-    $content = stripslashes($content);
-    $elem_s = "<h1 class='bizcard-entry-title'>";
-    $elem_e = "</h1>";
-    $content = $elem_s . $content . $elem_e;
-  }
-  return $content;
-}
-
-/**
- 	 * function that adds a filter to remove p tags on content if post_type =
- 	 * bizcards.
- 	 *
- 	 * @hook filter 'the content'
- 	 * @param $content  variable passed through hook
- 	 * @return $content the modified content
-	 */
-function daisy_remove_p_tags($content){
-  if('bizcards'==get_post_type(get_the_ID())){
-  remove_filter('the_content', 'wpautop');
-  }
-  return $content;
-}
-
-/**
- 	 * Wraps post excerpt in h2 tags if post_type = bizcards
- 	 *
- 	 * @hook filter 'the_excerpt'
- 	 * @param $content
- 	 * @return $content
-	 */
-function daisy_excerpt_tags($content){
-  if('bizcards'== get_post_type(get_the_ID()) && in_the_loop()){
-    $content = stripslashes($content);
-    $elem_s = "<h2 class='bizcard-entry-excerpt'>";
-    $elem_e = "</h2>";
-    $content =  $elem_s . $content . $elem_e;
-  }
-  return $content;
-}
-
-/**
- 	 * function that adds a filter to remove p tags on excerpt if post_type =
- 	 * bizcards.
- 	 *
- 	 * @hook filter 'the_excerpt'
- 	 * @param $content  variable passed through hook
- 	 * @return $content the modified content
-	 */
-function daisy_remove_excerpt_p_tags($content){
-  if('bizcards'==get_post_type(get_the_ID()) && in_the_loop()){
-  remove_filter('the_excerpt', 'wpautop');
-  }
-  return $content;
-}
-
-
-/**
- 	 * Creates 2 products per row for loop columns on WC_shop page
- 	 *
- 	 * @hook filter 'loop_shop_columns', 999
- 	 * @return void
-	 */
-function loop_columns() {
-	return 2; // 2 products per row
-}
 
 /**
  * The primary navigation menu for theme daisy.
@@ -120,11 +37,7 @@ function daisy_primary_nav(){
 	   );
 		 require_once(get_stylesheet_directory()."/partials/daisy_primary_nav.php");
 }
-//create daisy_primary_nav action which includes storefront nav wrapper and site branding
-add_action('daisy_primary_nav', 'storefront_site_branding',10);
-add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper',20);
-add_action('daisy_primary_nav', 'daisy_primary_nav', 30);
-add_action('daisy_primary_nav', 'storefront_primary_navigation_wrapper_close', 40);
+
 
 /**
  * The title section for daisy content-daisy-page
@@ -145,9 +58,131 @@ function daisy_title_header(){ ?>
 		<?php	endif; ?>
 	</header> <?php
 }
-add_action('daisy_title_header', 'daisy_title_header', 10);
 
+/**
+ * Share buttons used in footer
+ *
+ * Displays content share buttons
+ * @hook action daisy_footer
+ * @see content-daisy.php
+ * @package daisy
+ */
 function add_daisy_share_buttons(){
 	require_once(get_stylesheet_directory()."/partials/share_buttons.php");
 }
-add_action('daisy_footer', 'add_daisy_share_buttons', 10);
+
+/**
+ * Category nav menu used in sidebar
+ *
+ * @hook action daisy_cat_sidebar, 20
+ * @see content-daisy.php
+ * @package daisy
+ */
+function daisy_cat_post_submenu(){ ?>
+
+			<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget"><span class="gamma daisy-widget-title widget-title"><?php echo ucwords(single_term_title("",false)) ?></span>
+	      <ul>
+
+	    <?php while(have_posts()):
+	      the_post(); ?>
+	          		<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
+	     endwhile;
+	           ?>
+
+				</ul>
+			</div>
+			<?php
+
+}
+
+/**
+ * opening tag for sidebar
+ *
+ * @hook action daisy_cat_sidebar 10
+ * @see content-daisy.php
+ * @package daisy
+ */
+function daisy_cat_sidebar_before(){ ?>
+
+ 	<div id="secondary" class="widget-area daisy-widget-area" role="complementary">
+
+	<?php
+}
+/**
+ * closing tag for sidebar
+ *
+ * @hook action daisy_cat_sidebar, 40
+ * @see content-daisy.php
+ * @package daisy
+ */
+function daisy_cat_sidebar_after(){ ?>
+
+ 	</div><!-- #secondary --> <?php
+
+}
+
+/**
+ * HTML for primary category menu of help topics
+ *
+ * @hook action daisy_cat_sidebar, 30
+ *
+ * @package daisy
+ */
+function daisy_prim_cat_menu(){
+	if(is_category()){
+		global $wp_query;
+		$cat_id = $wp_query->get_queried_object_id();
+		$args = array(
+			 'child_of'            => 0,
+			 'current_category'    => $cat_id,
+			 'depth'               => 2,
+			 'echo'                => 1,
+			 'exclude'             => get_cat_ID('Uncategorized'),
+			 'exclude_tree'        => '',
+			 'feed'                => '',
+			 'feed_image'          => '',
+			 'feed_type'           => '',
+			 'hide_empty'          => false,
+			 'hide_title_if_empty' => false,
+			 'hierarchical'        => true,
+			 'order'               => 'ASC',
+			 'orderby'             => 'name',
+			 'separator'           => '<br />',
+			 'show_count'          => 0,
+			 'show_option_all'     => '',
+			 'show_option_none'    => '',
+			 'style'               => 'list',
+			 'taxonomy'            => 'category',
+			 'title_li'            => "",
+			 'use_desc_for_title'  => 0,
+			 'walker'							=> new Walker_Category_Find_Parents()
+		 ); ?>
+	 <div id="daisy-cat-menu" class="daisy-widget widget daisy-verticle-menu daisy-menu"><span class="gamma daisy-widget-title widget-title">Help Topics</span>
+		 <ul class="dd-top-menu"> <?php
+		 			wp_list_categories($args); ?>
+				</ul>
+			</div> <?php
+		}
+}
+/**
+ * Display the post header with a link to the single post
+ *
+ * @hook daisy_loop_post
+ * @since 0.2.0
+ */
+function daisy_post_header() {
+	?>
+	<header class="entry-header">
+	<?php
+	if ( is_single() ) {
+		the_title( '<h2 class="entry-title">', '</h2>' );
+	} else {
+		if ( 'post' == get_post_type() ) {
+		}
+
+		the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+	}
+	?>
+	</header><!-- .entry-header -->
+	<?php
+}
