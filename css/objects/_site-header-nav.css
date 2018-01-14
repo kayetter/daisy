@@ -7,6 +7,21 @@ div, ul, li {
   align-items: flex-start;
   color: $blue;
   width: 100%;
+  .tagline {
+    color:black;
+    @media $s_screen {
+      display:none;
+    }
+  }
+  .custom-logo-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    font-family: 'Poppins', $backup_font;
+    @media $m_screen{
+      display: block;
+    }
+  }
   .custom-logo-link{
     float: none;
     img {
@@ -41,6 +56,10 @@ div, ul, li {
           &:last-of-type {
             padding-right: 0;
           }
+        @media $s_screen {
+          padding: .5rem;
+        }
+
         .dd-menu-item-title{
           @media $m_screen{
             display: none;

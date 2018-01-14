@@ -5,11 +5,11 @@
  * @package Daisy theme
  * @since 0.2.0
  */
-.category {
+
 
   .daisy-cat-main{
 
-
+  background: red;
     h2{
       font-size: 2em;
     }
@@ -27,5 +27,3 @@
 
 
   }
-
-}
