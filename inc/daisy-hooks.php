@@ -17,13 +17,16 @@ add_action('daisy_title_header', 'daisy_title_header', 10);
 
 //Daisy footer content
 add_action('daisy_footer', 'add_daisy_share_buttons', 10);
+add_action('daisy_footer', 'add_daisy_footer_info', 20);
 
 //Daisy Sidebar on Category Pages
 add_action('daisy_cat_sidebar', 'daisy_cat_sidebar_before', 10);
 add_action('daisy_cat_sidebar', 'daisy_cat_post_submenu', 20);
-add_action('daisy_cat_sidebar', 'daisy_prim_cat_menu', 30);
+add_action('daisy_cat_sidebar', 'daisy_category_menu_widget', 30);
 add_action('daisy_cat_sidebar', 'daisy_cat_sidebar_after', 40);
 
+//display category menu for help
+add_action('daisy_cat', 'daisy_list_categories', 10,3);
 
 //displays title content of post
 add_action('daisy_loop_post', 'daisy_post_header', 10);

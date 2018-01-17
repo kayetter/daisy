@@ -69,6 +69,18 @@ function daisy_title_header(){ ?>
  */
 function add_daisy_share_buttons(){
 	require_once(get_stylesheet_directory()."/partials/share_buttons.php");
+
+}
+/**
+ * Footer information for dopey daisy
+ *
+ * Displays content share buttons
+ * @hook action daisy_footer
+ * @see content-daisy.php
+ * @package daisy
+ */
+function add_daisy_footer_info(){
+	require_once(get_stylesheet_directory()."/partials/daisy_footer.php");
 }
 
 /**
@@ -80,18 +92,37 @@ function add_daisy_share_buttons(){
  */
 function daisy_cat_post_submenu(){ ?>
 
-			<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget"><span class="gamma daisy-widget-title widget-title"><?php echo ucwords(single_term_title("",false)) ?></span>
-	      <ul>
+			<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget">
+				<?php
+					if(is_single()){
+						global $post;
+						$terms = get_the_terms($post->ID, 'category');
+						if(!empty($terms)){
+							$term = $terms[0];
+						} else { return "";}
+					} elseif(is_category()) {
+						$term = get_queried_object();
+					}
 
-	    <?php while(have_posts()):
-	      the_post(); ?>
-	          		<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
-	     endwhile;
-	           ?>
+					$title = ucwords($term->name);
 
-				</ul>
-			</div>
+					$sub = new WP_Query(array('category_name'=>$term->slug));
+					if($sub->have_posts()):
+				 ?>
+
+						<span class="gamma daisy-widget-title widget-title"><?php echo $title ?></span>
+	      		<ul>
+						<?php 	while($sub->have_posts()): $sub->the_post();  ?>
+        		<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
+   						endwhile;
+
+							wp_reset_query();
+						 ?>
+
+								</ul>
+							</div>
 			<?php
+		endif;
 
 }
 
@@ -128,14 +159,21 @@ function daisy_cat_sidebar_after(){ ?>
  *
  * @package daisy
  */
-function daisy_prim_cat_menu(){
-	if(is_category()){
+function daisy_list_categories($term_name="",$depth=0,$cat_id=0){
+
 		global $wp_query;
-		$cat_id = $wp_query->get_queried_object_id();
+		$child_of = 0;
+
+		if($term_name !="" && term_exists($term_name)){
+			$child_of = term_exists($term_name);
+			}
+		if($cat_id != "" && is_category()){
+			$cat_id = $wp_query->get_queried_object_id();
+		}
 		$args = array(
-			 'child_of'            => 0,
+			 'child_of'            => $child_of,
 			 'current_category'    => $cat_id,
-			 'depth'               => 2,
+			 'depth'               => $depth,
 			 'echo'                => 1,
 			 'exclude'             => get_cat_ID('Uncategorized'),
 			 'exclude_tree'        => '',
@@ -156,13 +194,20 @@ function daisy_prim_cat_menu(){
 			 'title_li'            => "",
 			 'use_desc_for_title'  => 0,
 			 'walker'							=> new Walker_Category_Find_Parents()
-		 ); ?>
-	 <div id="daisy-cat-menu" class="daisy-widget widget daisy-verticle-menu daisy-menu"><span class="gamma daisy-widget-title widget-title">Help Topics</span>
-		 <ul class="dd-top-menu"> <?php
-		 			wp_list_categories($args); ?>
-				</ul>
-			</div> <?php
-		}
+		 );
+	 		 $html = '<ul class="dd-top-menu">';
+			 $html =	wp_list_categories($args);
+			 $html .= '</ul>';
+			 return $html;
+}
+
+
+function daisy_category_menu_widget(){ ?>
+	<div id="daisy-cat-menu" class="daisy-widget widget daisy-verticle-menu daisy-menu"><span class="gamma daisy-widget-title widget-title">Help Topics</span>
+		<ul class="dd-top-menu"> <?php
+				 echo daisy_list_categories("help",2); ?>
+			 </ul>
+		 </div> <?php
 }
 /**
  * Display the post header with a link to the single post

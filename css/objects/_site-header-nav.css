@@ -3,14 +3,26 @@ div, ul, li {
 }
 
 .site-branding {
+  position: relative;
   justify-content: space-between;
   align-items: flex-start;
   color: $blue;
   width: 100%;
   .tagline {
+    position: relative;
     color:black;
+    @media $l_screen {
+      position: absolute;
+      left: 125px;
+      bottom: 0;
+    }
+    @media $m_screen {
+      left: 100px;
+    }
+
     @media $s_screen {
       display:none;
+      position: relative;
     }
   }
   .custom-logo-div {

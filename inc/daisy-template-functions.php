@@ -22,6 +22,11 @@
       $item_count = 0;
     }
 
+		$help_link = home_url();
+		if(term_exists("help")){
+			$help_link = get_term_link("help","category");
+		}
+
     ob_start();
     require_once(get_stylesheet_directory()."/partials/daisy_header_menu.php");
     return ob_get_clean();
@@ -42,12 +47,12 @@ function is_post_help($post_id){
 		if(is_wp_error($terms)){
 			wp_die("there was an error retrieving your term");
 		}
-		if($terms[0]->name == "Help"){
-			return true; 
+		if($terms[0]->slug == "help"){
+			return true;
 		}
 		$continue = true;
 		$i=0;
-		while ($continue==true && $i<count($terms)-1){
+		while ($continue==true && $i < count($terms)){
 			$ancestors = get_ancestors( $terms[$i]->term_id, 'category');
 			$rootId = end( $ancestors);
 			$root = get_term( $rootId, 'category' );

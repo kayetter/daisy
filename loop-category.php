@@ -10,15 +10,23 @@
 
 do_action( 'storefront_loop_before' );
 
-while ( have_posts() ) : the_post();
-	/**
-	 * Include the Post-Format-specific template for the content.
-	 * If you want to override this in a child theme, then include a file
-	 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-	 */
-	get_template_part( 'content', 'category');
+	if(is_category("help")){
+		get_posts( 'category_name=help' );
+		the_post();
+		get_template_part( 'content', 'category');
+		echo "this is the post_id".$post->ID;
+	} else {
 
-endwhile;
+	while ( have_posts() ) : the_post();
+		/**
+		 * Include the Post-Format-specific template for the content.
+		 * If you want to override this in a child theme, then include a file
+		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		 */
+		get_template_part( 'content', 'category');
+
+	endwhile;
+}
 
 /**
  * Functions hooked in to storefront_paging_nav action

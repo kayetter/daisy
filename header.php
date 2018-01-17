@@ -34,7 +34,7 @@ wp_head();
 </head>
 
 <body <?php body_class(); ?>  >
-	
+
 
 <?php do_action( 'storefront_before_site' ); ?>
 
@@ -48,15 +48,10 @@ wp_head();
 			/**
 			 * Functions hooked into storefront_header action
 			 *
-			 * @hooked storefront_skip_links                       - 0
-			 * @hooked storefront_social_icons                     - 10
-			 * @hooked storefront_site_branding                    - 20
-			 * @hooked storefront_secondary_navigation             - 30
-			 * @hooked storefront_product_search                   - 40
-			 * @hooked storefront_primary_navigation_wrapper       - 42
-			 * @hooked storefront_primary_navigation               - 50
-			 * @hooked storefront_header_cart                      - 60
-			 * @hooked storefront_primary_navigation_wrapper_close - 68
+			 * 'storefront_site_branding'											10
+ 			 * 'storefront_primary_navigation_wrapper'				20
+ 			 * 'daisy_primary_nav'														30
+ 			 * 'storefront_primary_navigation_wrapper_close'	40
 			 */
 
 			do_action('daisy_primary_nav');

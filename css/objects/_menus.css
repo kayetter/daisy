@@ -12,10 +12,13 @@
   }
 
   ul {
-    li {
 
+
+    li {
+      padding: 1rem 1.5rem;
     /* ul with class of children, only found under li with has-children */
       .children {
+          background: $lightestgray;
           display: block;
           max-height: 0;
           height: auto;
@@ -34,7 +37,7 @@
         .show-children {
           opacity: 1;
           max-height: 500px;
-          background: white;
+          background: $lightestgray;
           transform: scaleY(1);
         }
     } /*end of first level li */
@@ -64,7 +67,7 @@
 
     li {
       display: block;
-      padding: 1rem 1.5rem;
+
       /*do not display submenu*/
       }
     }

@@ -49,6 +49,8 @@ endif; ?>
     </ul>
 
   </li> <?php
+
+  do_action('daisy_cat',"",2,0);
   //if user is not logged in then add yet another login link
   if(!is_user_logged_in()): ?>
     <li ><a href="<?php echo the_permalink(wc_get_page_id("myaccount")) ?>">Login</a></li> <?php

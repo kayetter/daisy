@@ -2,7 +2,7 @@
 /**
  * Custom Header menu HTML for Daisy LOGIN | ACCOUNT | CART
  *
- * @package storefront
+ * @package daisy
  */
 
 ?>
@@ -31,7 +31,7 @@
 
         </li> <!-- end of dd-menu-item dd-login -->
         <li>
-          <a href="<?php the_permalink(get_page_by_path("daisy-help")) ?>" title="Help"><i class="fa fa-question-circle fa-lg dd-menu-item-icon" aria-hidden="true"></i><span class="dd-menu-item-title">Help</span></a>
+          <a href="<?php echo $help_link ?>" title="Help"><i class="fa fa-question-circle fa-lg dd-menu-item-icon" aria-hidden="true"></i><span class="dd-menu-item-title">Help</span></a>
         </li>
         <li class="dd-menu-item" id="dd-cart">
             <a title="Cart" id="dd-cart-icon" href="<?php the_permalink( wc_get_page_id( 'cart' ) ) ?> "><i class="fa fa-shopping-basket fa-lg " aria-hidden="true"></i>
@@ -41,7 +41,7 @@
             </a>
          </li>
          <li class="dd-menu-item" id="dd-search-menu-item">
-           <?php echo get_search_form() ?>
+           <?php require_once(get_stylesheet_directory()."/partials/header-search.php") ?>
          </li>
          <li class="dd-menu-item" id="dd-hamburger">
            <a href=""><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>

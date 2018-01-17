@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * Template Name: Category
  *
  * @package storefront
  */
@@ -15,46 +15,25 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<?php if(!is_category("help")): ?>
 				<h1><?php echo ucwords(single_term_title("", false)); ?></h1>
-
+			<?php endif; ?>
 			</header><!-- .page-header -->
 
-			<?php get_template_part( 'loop', 'category' );
+			<?php if(is_single()){
+				the_post();
+				get_template_part('content', 'category');
 
+
+			} else {
+			 get_template_part( 'loop', 'category' );
+		 }
 		else :
 
 			get_template_part( 'content', 'none' );
 
 		endif; ?>
-		<?php
-		global $wp_query;
-		$cat_id = $wp_query->get_queried_object_id();
-		$args = array(
-			 'child_of'            => $cat_id,
-			 'current_category'    => $cat_id,
-			 'depth'               => 0,
-			 'echo'                => 1,
-			 'exclude'             => '',
-			 'exclude_tree'        => '',
-			 'feed'                => '',
-			 'feed_image'          => '',
-			 'feed_type'           => '',
-			 'hide_empty'          => false,
-			 'hide_title_if_empty' => false,
-			 'hierarchical'        => true,
-			 'order'               => 'ASC',
-			 'orderby'             => 'name',
-			 'separator'           => '<br />',
-			 'show_count'          => 0,
-			 'show_option_all'     => 'All Help topics',
-			 'show_option_none'    => "",
-			 'style'               => 'list',
-			 'taxonomy'            => 'category',
-			 'title_li'            => ucwords(single_term_title( "", false )),
-			 'use_desc_for_title'  => 0,
-		 );
-	wp_list_categories($args);
-?>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

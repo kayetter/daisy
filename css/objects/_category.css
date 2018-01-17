@@ -7,23 +7,28 @@
  */
 
 
-  .daisy-cat-main{
-
-  background: red;
-    h2{
-      font-size: 2em;
+.daisy-cat-main{
+  h1 {
+    text-transform: capitalize;
+  }
+  h2{
+    font-size: 2em;
+    img {
+      padding-right: 0;
     }
+  }
+
+  article[class*="category-"] {
+   .entry-content {
+        float: none;
+        width: 100%;
+      }
+
 
     .entry-header {
       margin-bottom: 2em;
+      border: none;
     }
-
-    .entry-content {
-      float: none;
-      width: 100%;
-    }
-
-
-
-
   }
+
+}

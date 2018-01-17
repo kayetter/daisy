@@ -5,8 +5,10 @@
  * @package Daisy theme
  * @since 0.2.0
  */
+
+
 .daisy-widget-area {
-  .daisy-widget   {
+  .daisy-widget.widget   {
 
     .daisy-widget-title {
       border-bottom: 1px solid rgba(0,0,0,.05);
@@ -18,14 +20,17 @@
     }
 
     ul {
-
+      margin: 0;
       li {
-        margin-bottom: 1em;
         &:before {
           content: "";
         }
         a {
           text-decoration: none;
+          color: $blue;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

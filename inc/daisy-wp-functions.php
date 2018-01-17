@@ -174,3 +174,19 @@ function sort_category_on_meta() {
 
 }
 add_action('pre_get_posts', 'sort_category_on_meta');
+
+/**
+ 	 * Applies category.php template to single.
+ 	 *
+ 	 * @param $single_template
+ 	 * @hook filter 'single_template
+ 	 * @return void
+	 */
+function apply_category_single($single_template){
+  global $post;
+  if(is_post_help($post->ID)==true){
+    $single_template = get_stylesheet_directory()."/category.php";
+  }
+  return $single_template;
+}
+add_filter( "single_template", "apply_category_single");

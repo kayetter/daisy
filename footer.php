@@ -21,7 +21,8 @@
 			/**
 			 * Functions hooked in to daisy_footer action
 			 *
-			 * @hooked add_daisy_share_buttons - 10
+			 * hooked add_daisy_share_buttons - 10
+			 * hooked add_daisy_footer_info 	- 20
 			 */
 			do_action('daisy_footer');
 

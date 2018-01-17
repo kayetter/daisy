@@ -5,7 +5,6 @@
  * @package storefront
  */
 ?>
-
 <div class ="dd-search flex-div">
   <i class="fa fa-search fa-lg" id="" aria-hidden="true"></i>
   <form action="/" method="get" class="dd-search-form hide-form">
