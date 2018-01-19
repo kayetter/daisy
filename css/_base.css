@@ -19,6 +19,7 @@ h1, h2, h3 {
 
 }
 
+
 a {
   color: $blue;
   transition: color.5s;
@@ -155,6 +156,15 @@ main {
     display: flex;
     justify-content: space-between;
   }
+  .page-header.flex-div {
+    @media $m_screen {
+      display: flex;
+      h1 {
+        font-size: 2.0em;
+
+      }
+    }
+  }
 }
 
 .flex-div{
@@ -164,9 +174,7 @@ main {
   @media $m_screen {
     display: block;
   }
-  & > * {
-    flex: 1;
-  }
+
 }
 
 .daisy-error{
@@ -195,4 +203,12 @@ i {
   padding: 0 .5rem;
   text-decoration: none;
 
+}
+/* Dame ranch designs styling */
+.DRD {
+  letter-spacing: 2px;
+}
+
+div, ul, li, a {
+  transition: width 2s, color .5s, text-decoration .5s;
 }

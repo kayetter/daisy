@@ -2,40 +2,49 @@
 
   .col-full {
     max-width: 100%;
-  }
-  .daisy-footer {
-    font-size: 1rem;
-    a {
-      display: block;
 
-    }
+    .daisy-footer {
+      font-size: 1rem;
 
-
-  }
-
-  #daisy-footer-share {
-    justify-content: center;
-    font-size: 1.6rem;
-    width: 100%;
-    text-align: center;
-    .flex-div {
-      justify-content: center;
-      div {
-        flex: none;
-        width: 100%;
-        max-width: 33%;
-
-        a {
-          color: $blue;
-          padding: 1rem;
-
-          &:hover {
-            color: $hoverblue;
-          }
+      .flex-item {
+        padding: 0 1rem;
+        text-align: center;
+        flex: 1 1 0;
+        @media $m_screen {
+          padding-top: 1rem;
         }
       }
-    }
 
-  }
+      a {
+        display: block;
+      }
+
+    }
+    #daisy-footer-share {
+      text-align: center;
+      font-size: 1.6rem;
+      padding-bottom: 1rem;
+      .flex-div {
+        justify-content: center;
+        @media $m_screen {
+          display:flex;
+        }
+        .flex-item {
+          flex: none;
+          padding: 1.6rem;
+          a {
+            color: $blue;
+            &:hover {
+              color: $hoverblue;
+            }
+          }
+        }
+
+      }
+    } /*daisy-footer-share end*/
+
+  }/*col-full end*/
+
+
 
 }

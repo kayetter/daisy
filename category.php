@@ -22,7 +22,8 @@ get_header(); ?>
 
 			<?php if(is_single()){
 				the_post();
-				get_template_part('content', 'category');
+				get_template_part('content', 'category-single');
+
 
 
 			} else {

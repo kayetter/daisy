@@ -169,9 +169,18 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    a {
-      display: block;
+    margin-top: 2.5rem;
+    @media $m_screen {
+    margin: 2rem auto 0;
+    text-align: center;
+    .share-link-icons {
+        font-size: 2.5rem;
+        margin: 2rem auto;
+        text-align: center;
+        a {
+          margin: 0 2rem;
+        }
+      }
     }
     .link-preview{
       color: $yellow;

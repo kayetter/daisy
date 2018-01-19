@@ -23,3 +23,24 @@
       top: 0;
   }
 }
+
+/* corrections for storefront media query  */
+@media only screen and (min-width: 768px) and (max-width: 950px){
+  .col-full{
+    max-width: 95%;
+    .content-area {
+      width: 100%;
+    }
+
+    .widget-area {
+        width: 100%;
+        float: none;
+        margin-bottom: 2.617924em
+
+      }
+  }
+  .right-sidebar .content-area {
+    float: none;
+    margin-bottom: 2.617924em;
+  }
+}

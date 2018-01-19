@@ -54,6 +54,11 @@ function is_post_help($post_id){
 		$i=0;
 		while ($continue==true && $i < count($terms)){
 			$ancestors = get_ancestors( $terms[$i]->term_id, 'category');
+			if(empty($ancestors)){
+
+				$i++;
+				continue;
+			}
 			$rootId = end( $ancestors);
 			$root = get_term( $rootId, 'category' );
 			$i++;
@@ -61,6 +66,6 @@ function is_post_help($post_id){
 				$continue = false;
 				return true;
 			}
-			return false;
 		}
+			return false;
 	}

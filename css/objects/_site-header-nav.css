@@ -1,5 +1,8 @@
-div, ul, li {
-  transition: width 2s;
+.site-header {
+  .col-full {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
 }
 
 .site-branding {

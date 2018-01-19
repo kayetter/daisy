@@ -29,6 +29,10 @@
 
 }
 
+ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2, ul.products li.product h3 {
+  font-size: 2em;
+}
+
 
 
 

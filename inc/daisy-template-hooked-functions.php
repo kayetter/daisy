@@ -110,7 +110,7 @@ function daisy_cat_post_submenu(){ ?>
 					if($sub->have_posts()):
 				 ?>
 
-						<span class="gamma daisy-widget-title widget-title"><?php echo $title ?></span>
+						<a href="<?php echo get_permalink() ?> " class="gamma daisy-widget-title widget-title"><?php echo $title ?></a>
 	      		<ul>
 						<?php 	while($sub->have_posts()): $sub->the_post();  ?>
         		<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
@@ -212,7 +212,7 @@ function daisy_category_menu_widget(){ ?>
 /**
  * Display the post header with a link to the single post
  *
- * @hook daisy_loop_post
+ * @hook daisy_cat_post_content
  * @since 0.2.0
  */
 function daisy_post_header() {

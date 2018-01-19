@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      0.2.0
+ Version:      1.0.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -243,6 +243,19 @@ main .bizcard-main-links{
             justify-content: space-between;
   }
 
+@media screen and (max-width: 568px) {
+
+  main .page-header.flex-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  main .page-header.flex-div h1 {
+        font-size: 2.0em;
+  }
+}
+
 .flex-div{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -253,6 +266,7 @@ main .bizcard-main-links{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
 }
 
 @media screen and (max-width: 568px) {
@@ -260,12 +274,6 @@ main .bizcard-main-links{
   .flex-div {
     display: block;
   }
-}
-
-.flex-div > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .daisy-error{
@@ -294,6 +302,19 @@ i {
   padding: 0 .5rem;
   text-decoration: none;
 
+}
+
+/* Dame ranch designs styling */
+
+.DRD {
+  letter-spacing: 2px;
+}
+
+div, ul, li, a {
+  -webkit-transition: width 2s, color .5s, -webkit-text-decoration .5s;
+  transition: width 2s, color .5s, -webkit-text-decoration .5s;
+  transition: width 2s, color .5s, text-decoration .5s;
+  transition: width 2s, color .5s, text-decoration .5s, -webkit-text-decoration .5s;
 }
 
 #overlay {
@@ -440,6 +461,10 @@ i {
   color: white;
 }
 
+ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2, ul.products li.product h3 {
+  font-size: 2em;
+}
+
 /*Used to change the screen width break point for menus*/
 
 /* @media (max-width: 800px) {
@@ -478,6 +503,28 @@ i {
   #wpadminbar {
       position: fixed;
       top: 0;
+  }
+}
+
+/* corrections for storefront media query  */
+
+@media only screen and (min-width: 768px) and (max-width: 950px){
+  .col-full{
+    max-width: 95%;
+  }
+    .col-full .content-area {
+      width: 100%;
+    }
+
+    .col-full .widget-area {
+        width: 100%;
+        float: none;
+        margin-bottom: 2.617924em
+
+      }
+  .right-sidebar .content-area {
+    float: none;
+    margin-bottom: 2.617924em;
   }
 }
 
@@ -659,21 +706,34 @@ i {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 
   }
 
-.bizcard-entry-header .drd-link a {
-      display: block;
-    }
+@media screen and (max-width: 568px) {
 
-.bizcard-entry-header .drd-link .link-preview{
+  .bizcard-entry-header .drd-link {
+    margin: 2rem auto 0;
+    text-align: center;
+  }
+
+  .bizcard-entry-header .drd-link .share-link-icons {
+        font-size: 2.5rem;
+        margin: 2rem auto;
+        text-align: center;
+  }
+        .bizcard-entry-header .drd-link .share-link-icons a {
+          margin: 0 2rem;
+        }
+}
+
+.bizcard-entry-header .drd-link .link-preview {
       color: rgb(229, 185, 18);
-    }
+}
 
 .bizcard-entry-header .drd-link span {
-      color: rgb(109,109,109)
-    }
+      color: rgb(109,109,109);
+}
 
 .bizcard-entry-header .drd-link span:hover {
   color: rgb(229, 185, 18);
@@ -684,21 +744,20 @@ i {
       /* border-radius: 100px; */
       color: rgb(5, 90, 165);
       /* background: $blue; */
-      margin-left: .5rem
-
-    }
+      margin-left: .5rem;
+}
 
 .bizcard-entry-header .drd-link #send-sms:hover {
   color: rgb(0, 174, 239);
 }
 
-.bizcard-entry-header #daisy-download-contact{
+.bizcard-entry-header #daisy-download-contact {
     display: block;
     width: 80%;
     text-align: center;
     margin: auto;
     margin-bottom: 1rem;
-  }
+}
 
 /**
  * Styles for generic form and daisy-create-form
@@ -753,7 +812,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 /* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
 
-.daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+.daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button, .single_add_to_cart_button {
    display: inline-block;
    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
    padding: 7px 35px 8px 35px;
@@ -769,13 +828,13 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
  }
 
-.daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+.daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover, .single_add_to_cart_button:hover {
   background: rgb(0, 174, 239);
   color: white;
   text-decoration: none;
 }
 
-.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
+.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled], .single_add_to_cart_button:disabled, .single_add_to_cart_button:disabled:hover, .single_add_to_cart_button[disabled=disabled] {
   opacity: .5!important;
   cursor: not-allowed;
 }
@@ -826,8 +885,24 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
              align-items: center;
      -webkit-box-pack: end;
          -ms-flex-pack: end;
-             justify-content: flex-end
+             justify-content: flex-end;
    }
+
+.daisy-form .flex-div a, .daisy-form .flex-div input {
+       display: block;
+
+       width: 90%;
+       text-align: center;
+     }
+
+@media screen and (max-width: 568px) {
+
+  .daisy-form .flex-div a, .daisy-form .flex-div input {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+  }
+}
 
 .daisy-form .flex-div > * {
   margin-right: 1rem;
@@ -839,7 +914,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 .daisy-form #drdcard-link {
    padding-top: 1rem;
- }
+}
 
 .daisy-form #drdcard-link input {
      display: inline-block;
@@ -1546,10 +1621,10 @@ button.remove-file:hover {
         position: relative;
     }
 
-div, ul, li {
-  -webkit-transition: width 2s;
-  transition: width 2s;
-}
+.site-header .col-full {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
 
 .site-branding {
   position: relative;
@@ -2024,61 +2099,89 @@ div, ul, li {
       padding-right: 0;
     }
 
-.daisy-cat-main article[class*="category-"] .entry-content {
+.daisy-cat-main article[class*="category-"] .entry-content, .daisy-cat-main div[class*="category-"] .entry-content {
         float: none;
         width: 100%;
       }
 
-.daisy-cat-main article[class*="category-"] .entry-header {
+.daisy-cat-main article[class*="category-"] .entry-header, .daisy-cat-main div[class*="category-"] .entry-header {
       margin-bottom: 2em;
       border: none;
     }
 
 .site-footer .col-full {
     max-width: 100%;
-  }
-
-.site-footer .daisy-footer {
-    font-size: 1rem;
-
 
   }
 
-.site-footer .daisy-footer a {
-      display: block;
+.site-footer .col-full .daisy-footer {
+      font-size: 1rem;
 
     }
 
-.site-footer #daisy-footer-share {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 1.6rem;
-    width: 100%;
-    text-align: center;
-
-  }
-
-.site-footer #daisy-footer-share .flex-div {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-    }
-
-.site-footer #daisy-footer-share .flex-div div {
-        -webkit-box-flex: 0;
-            -ms-flex: none;
-                flex: none;
-        width: 100%;
-        max-width: 33%;
+.site-footer .col-full .daisy-footer .flex-item {
+        padding: 0 1rem;
+        text-align: center;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 0px;
+                flex: 1 1 0;
       }
 
-.site-footer #daisy-footer-share .flex-div div a {
-          color: rgb(5, 90, 165);
-          padding: 1rem
-        }
+@media screen and (max-width: 568px) {
 
-.site-footer #daisy-footer-share .flex-div div a:hover {
+  .site-footer .col-full .daisy-footer .flex-item {
+    padding-top: 1rem;
+  }
+}
+
+.site-footer .col-full .daisy-footer a {
+        display: block;
+}
+
+.site-footer .col-full #daisy-footer-share {
+      text-align: center;
+      font-size: 1.6rem;
+      padding-bottom: 1rem;
+}
+
+.site-footer .col-full #daisy-footer-share .flex-div {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+
+      }
+
+@media screen and (max-width: 568px) {
+
+  .site-footer .col-full #daisy-footer-share .flex-div {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+  }
+}
+
+.site-footer {/*
+ col-full end
+*/
+}
+
+.site-footer .col-full {/*
+ daisy-footer-share end
+*/
+}
+
+.site-footer .col-full #daisy-footer-share .flex-div .flex-item {
+          -webkit-box-flex: 0;
+              -ms-flex: none;
+                  flex: none;
+          padding: 1.6rem;
+}
+
+.site-footer .col-full #daisy-footer-share .flex-div .flex-item a {
+            color: rgb(5, 90, 165)
+          }
+
+.site-footer .col-full #daisy-footer-share .flex-div .flex-item a:hover {
   color: rgb(0, 174, 239);
 }
 
@@ -2094,7 +2197,13 @@ div, ul, li {
       border-bottom: 1px solid rgba(0,0,0,.05);
       padding: 0 0 .5em;
       margin-bottom: .5em;
+      color: black;
+      text-decoration: none
     }
+
+.daisy-widget-area .daisy-widget.widget .daisy-widget-title:hover {
+  text-decoration: underline;
+}
 
 .daisy-widget-area .daisy-widget.widget .daisy-widget-menu {
       margin-bottom: 1em;
