@@ -10,7 +10,7 @@
 
 <nav id="dd-primary-nav"class="daisy-menu daisy-hz-menu" >
   <ul class="dd-top-menu">
-       <li class="<?php echo is_front_page()?"dd-menu-selected":"" ?>" > <a href="<?php home_url() ?>">Home</a></li> <?php
+       <li class="<?php echo is_front_page()?"dd-menu-selected":"" ?>" > <a href="<?php echo home_url() ?>">Home</a></li> <?php
        //show bizcard menu if user is a subscriber
        if(current_user_can('edit_bizcards')): ?>
        <li class="has-children">Bizcards<a href="#"><i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>

@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      1.0.0
+ Version:      1.0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -80,25 +80,6 @@ a:hover {
 
 a i:hover {
   text-decoration: none;
-}
-
-.col-full {
-  max-width: 80%;
-  margin: auto;
-}
-
-@media screen and (max-width: 490px) {
-
-  .col-full {
-    max-width: 97%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .col-full {
-    max-width: 95%;
-  }
 }
 
 .daisy-hidden{
@@ -311,10 +292,10 @@ i {
 }
 
 div, ul, li, a {
-  -webkit-transition: width 2s, color .5s, -webkit-text-decoration .5s;
-  transition: width 2s, color .5s, -webkit-text-decoration .5s;
-  transition: width 2s, color .5s, text-decoration .5s;
-  transition: width 2s, color .5s, text-decoration .5s, -webkit-text-decoration .5s;
+  -webkit-transition: color .5s, -webkit-text-decoration .5s;
+  transition: color .5s, -webkit-text-decoration .5s;
+  transition: color .5s, text-decoration .5s;
+  transition: color .5s, text-decoration .5s, -webkit-text-decoration .5s;
 }
 
 #overlay {
@@ -444,25 +425,34 @@ div, ul, li, a {
     width: 100%;
 }
 
-.entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register {
+/* remove cart-subtotal from display */
+
+.cart-subtotal {display: none;}
+
+.entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register, .entry-summary .woocommerce form.login, .entry-summary .woocommerce form.checkout_coupon, .entry-summary .woocommerce form.register {
       border: none;
 
     }
 
-.entry-content .woocommerce a.button, .entry-content .woocommerce button.button, .entry-content .woocommerce input.button, .entry-content .woocommerce #respond input#submit, .entry-content .woocommerce woocommerce-Button button{
+.entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content #respond input#submit, .entry-content woocommerce-Button button, .entry-content .single_add_to_cart_button.button, .entry-summary a.button, .entry-summary button.button, .entry-summary input.button, .entry-summary #respond input#submit, .entry-summary woocommerce-Button button, .entry-summary .single_add_to_cart_button.button {
       background-color: rgb(5, 90, 165);
       color: white;
-      font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
-      /* transition: background .5s */
+      font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      -webkit-transition: background-color .5s;
+      transition: background-color .5s
     }
 
-.entry-content .woocommerce a.button:hover, .entry-content .woocommerce button.button:hover, .entry-content .woocommerce input.button:hover, .entry-content .woocommerce #respond input#submit:hover, .entry-content .woocommerce woocommerce-Button button:hover {
+.entry-content a.button:hover, .entry-content button.button:hover, .entry-content input.button:hover, .entry-content #respond input#submit:hover, .entry-content woocommerce-Button button:hover, .entry-content .single_add_to_cart_button.button:hover, .entry-summary a.button:hover, .entry-summary button.button:hover, .entry-summary input.button:hover, .entry-summary #respond input#submit:hover, .entry-summary woocommerce-Button button:hover, .entry-summary .single_add_to_cart_button.button:hover {
   background-color: rgb(0, 174, 239);
   color: white;
 }
 
 ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2, ul.products li.product h3 {
   font-size: 2em;
+}
+
+ul.products li.product .woocommerce-LoopProduct-link:hover {
+  text-decoration: none;
 }
 
 /*Used to change the screen width break point for menus*/
@@ -506,15 +496,42 @@ ul.products li.product .woocommerce-loop-product__title, ul.products li.product 
   }
 }
 
+.col-full {
+  max-width: 95%;
+  margin: auto;
+
+}
+
+@media screen and (max-width: 490px) {
+
+  .col-full {
+    max-width: 97%;
+  }
+}
+
 /* corrections for storefront media query  */
 
-@media only screen and (min-width: 768px) and (max-width: 950px){
-  .col-full{
+@media only screen and (min-width: 768px) and (max-width: 1000px){
+  .col-full {
     max-width: 95%;
   }
+
+    /* max-width: 95%; */
     .col-full .content-area {
       width: 100%;
     }
+      .col-full .entry-content .col2-set, .col-full .entry-content #order_review, .col-full .entry-content #order_review_heading {
+        float:none;
+        width: 55%;
+        margin: auto;
+      }
+      .col-full .entry-content #order_review, .col-full .entry-content #order_review_heading {
+        width: 95%;
+      }
+      .col-full .entry-content #payment .place-order {
+        width: 55%;
+        float: right;
+      }
 
     .col-full .widget-area {
         width: 100%;
@@ -526,6 +543,30 @@ ul.products li.product .woocommerce-loop-product__title, ul.products li.product 
     float: none;
     margin-bottom: 2.617924em;
   }
+}
+
+@media screen and (min-width: 1000px){
+
+  .col-full {
+    max-width: 97%;
+  }
+    .col-full .entry-content .col2-set {
+      /* float:none; */
+      width: 33%;
+      margin: 0;
+      }
+    .col-full .entry-content #order_review, .col-full .entry-content #order_review_heading {
+      width: 65%;
+    }
+    .col-full .entry-content #payment .place-order {
+      width: 100%;
+      float: none;
+    }
+    .col-full .entry-content #billing_phone_field, .col-full .entry-content #billing_email_field {
+      display: block;
+      float: none;
+      width: 100%;
+    }
 }
 
 /**
@@ -812,7 +853,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 /* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
 
-.daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button, .single_add_to_cart_button {
+.daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
    display: inline-block;
    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
    padding: 7px 35px 8px 35px;
@@ -828,13 +869,13 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
  }
 
-.daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover, .single_add_to_cart_button:hover {
+.daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
   background: rgb(0, 174, 239);
   color: white;
   text-decoration: none;
 }
 
-.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled], .single_add_to_cart_button:disabled, .single_add_to_cart_button:disabled:hover, .single_add_to_cart_button[disabled=disabled] {
+.daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
   opacity: .5!important;
   cursor: not-allowed;
 }

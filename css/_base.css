@@ -36,16 +36,7 @@ a {
   }
 }
 
-.col-full {
-  max-width: 80%;
-  margin: auto;
-  @media $s_screen {
-    max-width: 97%;
-  }
-  @media $l_screen {
-    max-width: 95%;
-  }
-}
+
 
 .daisy-hidden{
   display: none!important;
@@ -210,5 +201,5 @@ i {
 }
 
 div, ul, li, a {
-  transition: width 2s, color .5s, text-decoration .5s;
+  transition: color .5s, text-decoration .5s;
 }

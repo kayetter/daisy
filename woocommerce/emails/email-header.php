@@ -46,8 +46,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 													}
 												?>
 											</td>
-											<td id="header_wrapper" style="display: inline-block; padding: 15px;">
-												<h1 style="display: inline-block; width: auto;"><?php echo $email_heading; ?></h1>
+											<td id="header_wrapper" style="display: inline-block; padding: 15px; ba">
+												<h1 style="display: inline-block; width: auto; color: #055aa5 "><?php echo $email_heading; ?></h1>
 											</td>
 										</tr>
 									</table>
