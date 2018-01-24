@@ -33,12 +33,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<tr>
 					<td align="center" valign="top">
 
-						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container" style="background-color: #ffffff;">
+						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container">
 							<tr>
-								<td style="background-color: #ffffff;" align="center" valign="top">
+								<td align="center" valign="top">
 									<!-- Header -->
-									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header" style="background-color: #ffffff;" >
-										<tr style="background-color: #ffffff; border: none;">
+									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header">
+										<tr >
 											<td id="header_image" style="display: inline-block; padding: 10px;">
 												<?php
 													if ( $img = get_option( 'woocommerce_email_header_image' ) ) {
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 													}
 												?>
 											</td>
-											<td id="header_wrapper" style="display: inline-block; padding: 15px; ">
+											<td id="header_wrapper" style="display: inline-block; padding: 15px; ba">
 												<h1 style="display: inline-block; width: auto; color: #055aa5 "><?php echo $email_heading; ?></h1>
 											</td>
 										</tr>

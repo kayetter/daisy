@@ -13,7 +13,7 @@
      <?php if(is_user_logged_in()): ?>
 
    		<li class="dd-menu-item" id="dd-user">
-         <a aria-haspopup="true" title="My Account" href="<?php the_permalink(wc_get_page_id('myaccount'))   ?>"><i class="fa fa-user fa-lg dd-menu-item-icon" aria-hidden="true" title="<?php echo esc_html(ucwords($current_user->user_firstname)) ?>"></i> <span class="dd-menu-item-title"><?php echo esc_html( ucwords($current_user->user_nicename) ) ?></span>
+         <a aria-haspopup="true" title="My Account" href="<?php the_permalink(wc_get_page_id('myaccount'))   ?>"><i class="fa fa-user fa-lg dd-menu-item-icon" aria-hidden="true" title="<?php echo esc_html(ucwords($current_user->user_nicename)) ?>"></i> <span class="dd-menu-item-title"><?php echo esc_html( ucwords($current_user->user_nicename) ) ?></span>
          </a>
        </li>
     <?php endif; ?>

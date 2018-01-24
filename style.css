@@ -62,11 +62,6 @@ body {
 
 }
 
-main {
-  max-width: 680px;
-  margin: auto;
-}
-
 h1 a i.fa, h2 a i.fa, h3 a i.fa {
     font-size: .8em;
     font-weight: normal;
@@ -422,12 +417,6 @@ div, ul, li, a {
 * Woocommerce && storefront theme overrides
 */
 
-woocommerce-terms-and-conditions {
-  overflow-y: scroll; /* has to be scroll, not auto */
--webkit-overflow-scrolling: touch;
-
-}
-
 .woocommerce-active .site-header .site-branding {
     float: none;
     display: -webkit-box;
@@ -593,6 +582,10 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   position: relative;
 }
 
+.page .bizcard-entry-header img{
+      max-width: 80%;
+    }
+
 .bizcards {
   position: relative;
 }
@@ -694,7 +687,6 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   }
 
 .bizcard-entry-header .bizimg-div img{
-      margin: auto;
       margin-bottom: 0;
     }
 
@@ -821,7 +813,7 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
   position: relative;
    padding: .6180469716em;
   background-color: #F5F5F5;
-  color: black;
+  color: #43454b;
   outline: 0;
   border: 0;
   border: 1px solid #e5e5e5;
@@ -891,7 +883,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 .daisy-form {
   /*counter-reset: fieldset;*/
   position: relative;
-  max-width: 680px;
   font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   padding: 1rem 0;
   padding-top: 0;
@@ -1295,11 +1286,12 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 #vcard-archive-div table.vcard-archive{
     position: relative;
-    margin: auto;
   }
 
 #vcard-archive-div h3 {
     width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 
 @media screen and (max-width: 490px) {
@@ -1311,7 +1303,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 #vcard-archive-div h3 a {
     display: block;
-    text-align: center;
 }
 
 .daisy-window-border-top{
@@ -1471,24 +1462,9 @@ button.remove-file:hover {
   width: 17%
 }
 
-@media screen and (max-width: 490px) {
-
-  .sms-forms #sms-number {
-      margin-bottom: 0;
-  }
-
-  .sms-forms #daisy-delete-sms {
-      font-size: 2.5rem;
-  }
-
-  .sms-forms p.daisy-verified {
-      text-align: center;
-  }
-}
-
 .sms-forms #terms {
     margin-bottom: 1rem;
-}
+  }
 
 .sms-forms #terms p {
     display: none;
@@ -1502,7 +1478,8 @@ button.remove-file:hover {
     background: none;
     width: 100%;
     margin: auto;
-}
+
+    }
 
 .sms-forms fieldset p {
       text-align: right;
@@ -1510,14 +1487,14 @@ button.remove-file:hover {
 
 .sms-forms label {
       display: inline-block;
-}
+    }
 
-.sms-forms .daisy-form-actions {
+.sms-forms .daisy-form-actions{
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end;
       margin-top: 1rem;
-}
+      }
 
 #daisy-input-veri-code{
   display: none;
@@ -1580,8 +1557,7 @@ button.remove-file:hover {
   }
 
 .daisy-menu ul li {
-      padding: 1rem 1.5rem;
-      cursor: pointer; /* endo f .children*/
+      padding: 1rem 1.5rem; /* endo f .children*/
     }
 
 /* ul with class of children, only found under li with has-children */

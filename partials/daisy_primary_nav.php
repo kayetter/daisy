@@ -52,10 +52,11 @@ endif; ?>
 
   do_action('daisy_cat',"",2,0);
   //if user is not logged in then add yet another login link
-   ?>
-    <li ><a href="<?php echo the_permalink(wc_get_page_id("myaccount")) ?>"><?php echo is_user_logged_in()?"My Account":"Login" ?> </a></li>
+  if(!is_user_logged_in()): ?>
+    <li ><a href="<?php echo the_permalink(wc_get_page_id("myaccount")) ?>">Login</a></li> <?php
+  endif;
 
-<?php
+
   if(current_user_can("delete_plugins")): ?>
     <li ><a href="<?php echo the_permalink(get_page_by_path("daisy-print-pre")) ?>">Daisy Print Pre</a></li> <?php
   endif;

@@ -1,0 +1,98 @@
+/**
+ * Re declare storefront styles
+ *
+ * @since 0.2.0
+ * @package daisy
+ */
+
+.site-header {
+    background-color: white;
+    padding-bottom: 1.618em;
+    z-index: 999;
+    border-bottom: 1px solid transparent;
+}
+
+.storefront-primary-navigation {
+  font-family: $font_main, $backup_font;
+}
+
+/*position admin bar at top of screen*/
+@media screen and (max-width: 600px){
+  #wpadminbar {
+      position: fixed;
+      top: 0;
+  }
+}
+
+.col-full {
+  max-width: 95%;
+  margin: auto;
+  @media $s_screen {
+    max-width: 97%;
+  }
+
+}
+
+/* corrections for storefront media query  */
+@media only screen and (min-width: 768px) and (max-width: 1000px){
+  .col-full {
+    max-width: 95%;
+
+    /* max-width: 95%; */
+    .content-area {
+      width: 100%;
+    }
+
+    .entry-content {
+      .col2-set, #order_review, #order_review_heading {
+        float:none;
+        width: 55%;
+        margin: auto;
+      }
+      #order_review,  #order_review_heading {
+        width: 95%;
+      }
+      #payment .place-order {
+        width: 55%;
+        float: right;
+      }
+    }
+
+    .widget-area {
+        width: 100%;
+        float: none;
+        margin-bottom: 2.617924em
+
+      }
+  }
+  .right-sidebar .content-area {
+    float: none;
+    margin-bottom: 2.617924em;
+  }
+}
+
+@media screen and (min-width: 1000px){
+
+  .col-full {
+    max-width: 97%;
+  .entry-content {
+    .col2-set {
+      /* float:none; */
+      width: 33%;
+      margin: 0;
+      }
+    #order_review,  #order_review_heading {
+      width: 65%;
+    }
+    #payment .place-order {
+      width: 100%;
+      float: none;
+    }
+    #billing_phone_field, #billing_email_field {
+      display: block;
+      float: none;
+      width: 100%;
+    }
+   }
+  }
+}

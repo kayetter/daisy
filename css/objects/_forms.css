@@ -1,0 +1,378 @@
+/**
+ * Styles for generic form and daisy-create-form
+ *
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea a label{
+  position: relative;
+   padding: .6180469716em;
+  background-color: #F5F5F5;
+  color: #43454b;
+  outline: 0;
+  border: 0;
+  border: 1px solid #e5e5e5;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  font-weight: 400;
+  box-shadow: none;
+  &::placeholder {
+    color: $placeholder;
+    font-style: italic;
+       }
+ &:focus {
+   border: 2px solid $yellow2;
+   background: white;
+   }
+
+}
+
+/* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
+
+ .daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+   display: inline-block;
+   font-family: $font_main, $backup_font;
+   padding: 7px 35px 8px 35px;
+   background: $blue;
+   color: white;
+   border: none;
+   font-size: 100%;
+   line-height: 1.618;
+   cursor: pointer;
+   font-weight: normal;
+   transition: background 2s;
+   &:hover {
+     background: $hoverblue;
+     color: white;
+     text-decoration: none;
+   }
+   &:disabled, &:disabled:hover, &[disabled=disabled] {
+     opacity: .5!important;
+      cursor: not-allowed;
+
+   }
+
+ }
+
+
+
+.daisy-form {
+  /*counter-reset: fieldset;*/
+  position: relative;
+  font-family: $font_main, $backup_font;
+  padding: 1rem 0;
+  padding-top: 0;
+  margin: auto;
+  margin-bottom: 1rem;
+  /*h4 {
+    color: $yellow;
+    &:before {
+      counter-increment: fieldset;
+      content: counter(fieldset)". ";
+    }*/
+
+
+ /*input styles to make edit form style close to the bizcard formatting*/
+  fieldset {
+    position: relative;
+    background: white;
+    padding: 0;
+    margin: 0;
+    &.daisy-form-buttons {
+      background: $ltgray;
+    }
+  }
+
+  .label-div{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+   .flex-div {
+     align-items: center;
+     justify-content: flex-end;
+     a, input {
+       display: block;
+
+       width: 90%;
+       text-align: center;
+       @media $m_screen {
+         margin: 2rem auto;
+         padding: 1.5rem;
+         font-size: 1.6rem;
+       }
+     }
+
+     & > * {
+       margin-right: 1rem;
+     }
+
+     p {
+       margin-bottom: 0;
+     }
+   }
+
+ #drdcard-link {
+   padding-top: 1rem;
+
+   input {
+     display: inline-block;
+     max-width: 200px;
+     text-decoration: underline;
+     @media $s_screen{
+       max-width: 120px;
+     }
+   }
+   input#drdpin {
+     max-width: 85px;
+     @media $s_screen {
+       max-width: 50px;
+     }
+   }
+
+   span {
+     display: inline-block;
+     color: $darkgray;
+   }
+   #drdcard-link-input span{
+     color: $blue;
+     text-decoration: underline;
+   }
+   label {
+     display: inline-block;
+   }
+ }
+
+  input#og_title{
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: bold;
+    &:focus{
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  input#og_desc {
+    width: 100%;
+    display: block;
+    font-size: 1.2em;
+    &:focus {
+      font-size: 1em;
+    }
+  }
+
+
+  .daisy-accordion{
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    .accordion-title {
+      position: relative;
+      display: block;
+      padding-top: 1rem;
+      cursor: pointer;
+
+    }
+
+    .accordion-content {
+    padding: 1rem;
+    background: $ltgray;
+    @media $s_screen{
+      padding: 0;
+    }
+
+    }
+  }
+
+
+
+  input.daisy-form-item {
+    padding: .25rem;
+  }
+  .daisy-form-item {
+    margin: .25rem 0;
+  }
+
+  .accordion-icon-down {
+    border-bottom: 2px solid $black;
+    &:hover{
+      color: $hoverblue;
+      border-color: $hoverblue;
+    }
+    &:after {
+      font-family: 'dashicons';
+      content: "\f140";
+      position: absolute;
+      color: inherit;
+      right: 1rem;
+      top: -5px;
+      font-size: 1.8em;
+    }
+  }
+
+  .accordion-icon-up {
+    border-bottom: 2px solid $blue;
+    color: $blue;
+    &:hover{
+      color: $hoverblue;
+      border-color: $hoverblue;
+    }
+    &:after {
+      font-family: 'dashicons';
+      content: "\f142";
+      position: absolute;
+      color: inherit;
+      right: 1rem;
+      top: -5px;
+      font-size: 1.8em;
+    }
+  }
+
+
+  #drdcard-vcard p {
+    text-align: center;
+    padding: .5rem;
+    color: $blue;
+    margin: 0 auto;
+  }
+
+  .icon-action-group {
+    position: relative;
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    min-height: 100px;
+
+
+    .dashicon-ul {
+      position: relative;
+      display: flex;
+      padding: 0;
+      color: $blue;
+      flex-direction: column;
+      margin-top: 1rem;
+      margin-right: 4rem;
+      margin-left: 0;
+      &:last-of-type{
+        margin-right: 0;
+        margin-left: 4rem;
+      }
+      align-items: center;
+      justify-content: flex-start;
+      list-style: none;
+      cursor: pointer;
+        li{
+          margin: 0 auto;
+          padding: 0;
+          text-align: center;
+        }
+
+      .dashicons, .fa{
+        min-height: 50px;
+        min-width: 50px;
+        font-size: 4rem;
+      }
+
+
+      &:hover {
+        color: $hoverblue;
+      }
+
+
+   }
+ }
+ .new-bizcard-icons{
+   width: 75%;
+   margin: 0 auto;
+ }
+
+ textarea {
+   padding: 0 5px;
+   position: relative;
+ }
+
+ input[type=text], label{
+   display: block;
+ }
+
+ .daisy-cancel {
+   padding: 0 1rem;
+ }
+
+}
+
+.remove-file {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+}
+
+#create-bizcard-form, #create-vcard-form {
+
+ input[required], textarea[required]{
+
+   &:hover {
+     border: 2px solid $yellow2;
+   }
+  }
+}
+
+.daisy-activation{
+  max-width: 450px;
+}
+
+#create-vcard-form {
+  box-sizing: border-box;
+  h5 {
+    border-bottom: 1px solid gray;
+    padding-top: 1rem;
+  }
+
+
+  fieldset{
+    padding: 1rem;
+    input {
+      margin: 0 auto;
+      width: 100%;
+      background: $white;
+      &:focus{
+        background: white;
+      }
+    }
+
+
+    .item-input{
+      width: 100%;
+
+    }
+
+    .dyn-prop-item{
+      margin-top: 1rem;
+    }
+
+
+
+    .dyn-type-div{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+    }
+
+    select  {
+      display: inline-block;
+      border: none;
+      background: $lightestgray;
+
+    }
+
+  }
+
+}

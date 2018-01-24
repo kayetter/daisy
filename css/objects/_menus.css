@@ -1,0 +1,107 @@
+/**
+ * Styling for daisy theme menus (horizontal and verticle)
+ *
+ *
+ * @package Daisy theme
+ * @since 0.2.0
+ */
+
+.daisy-menu {
+  .dd-menu-selected a, .current-cat a {
+    color: black;
+  }
+
+  ul {
+
+
+    li {
+      padding: 1rem 1.5rem;
+    /* ul with class of children, only found under li with has-children */
+      .children {
+          background: $lightestgray;
+          display: block;
+          max-height: 0;
+          height: auto;
+          position: absolute;
+          opacity: 0;
+          transform: scaleY(0);
+          overflow-y: hidden;
+          transition: max-height .5s ease-out, opacity .5s ease-out;
+          li {
+            display:block;
+            background: $lightestgray;
+          }
+        } /* endo f .children*/
+
+        /* class to add to show children */
+        .show-children {
+          opacity: 1;
+          max-height: 500px;
+          background: $lightestgray;
+          transform: scaleY(1);
+        }
+    } /*end of first level li */
+
+  } /*end of .dd-top-menu*/
+}
+
+
+
+
+
+ /* Daisy Horizontal Menu */
+ .daisy-hz-menu {
+   color: $blue;
+   padding: 1rem 0;
+   border-bottom: 1px solid $ltgray;
+
+
+
+  /* top-level-menu, flex for horizontal */
+  ul {
+    display:flex;
+    list-style-type: none;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: block;
+
+      /*do not display submenu*/
+      }
+    }
+
+    /*media query nav styling for hamburger menu*/
+    @media $m_screen{
+        display: none;
+        font-size: 1.8rem;
+        /* dd-hamburger-menu class is added when #dd-hamburger icon is clicked */
+        &.dd-hamburger-menu {
+          display: block;
+        }
+        ul{
+          display: block;
+
+          li {
+            border-bottom: 1px solid $ltgray;
+          }
+
+          li.has-children ul.children {
+              position: relative;
+          }
+        }
+      } /*end of media query */
+  } /*end of .daisy-hz-menu */
+
+.daisy-verticle-menu {
+  ul {
+    li {
+      border-bottom: 1px solid $ltgray;
+    }
+
+    li.has-children ul.children {
+        position: relative;
+    }
+  }
+}
