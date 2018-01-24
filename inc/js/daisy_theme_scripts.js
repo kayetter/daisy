@@ -6,7 +6,7 @@
  * @package Daisy theme
  * @since 0.2.0
  */
-
+var $ = jQuery.noConflict();
 
 /**
    * removes the search box when document is selected
