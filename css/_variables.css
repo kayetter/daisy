@@ -1,0 +1,38 @@
+/**
+ * Variables for precss styling
+ *
+ * @hook style.css
+ * @package DD
+ * @since 0.2.0
+ */
+
+  $sand: rgb(253, 227, 194); /*#FDE3C2*/
+  $darkblue: rgb(74, 120, 197); /*	#4a78c5*/
+  $hoverblue: rgb(0, 174, 239); /*#00AEEF*/
+  $blue: rgb(5, 90, 165); /*#055aa5*/
+  $bluedisabled: rgba(5, 90, 165,.5); /*#055aa5*/
+  $yellow: rgb(229, 185, 18); /*	#e5b912*/
+  $daisyorange: rgb(245, 130, 32);
+  $yellow2: rgb(223, 158, 6); /*	#df9e06*/
+  $daisy: rgb(255, 242, 0);
+  $grn: rgb(96, 184, 97); /*	#60b861*/
+  $darkgrn: rgb(76, 164, 77);
+  $ltgrn: rgb(159, 249, 102); /*#9ff966*/
+  $white: rgb(239, 244, 236); /*	#eff4ec*/
+  $ltgray: #f0f0f0;  /*rgb(240, 240, 240)*/
+  $fontgray: rgb(109,109,109);  /*#6d6d6d*/
+  $placeholder: rgba(109,109,109,.5);  /*#6d6d6d*/
+  $darkgray: rgb(124,124,124);
+  $lightestgray: #F8F8F8;
+  $helpTip: rgb(255, 255, 175); /* #FFFFaF */
+
+  $font_main: 'Raleway';
+  $backup_font: "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+
+
+
+  $s_screen: screen and (max-width: 490px);
+  /*wordpress break point*/
+  $m_screen: screen and (max-width: 568px);
+  /*768px when sidebar moves to right*/
+  $l_screen: screen and (max-width: 768px);

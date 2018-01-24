@@ -1,0 +1,108 @@
+#overlay {
+  position: absolute;
+  /* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+   background: white;
+   background-size: 50px 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: $ltgray;*/
+  z-index: 9999;
+  /*background: #000;*/
+  /*opacity: 0.5;*/
+  /*filter: alpha(opacity=50);*/
+}
+
+.modal-background{
+  /* background: linear-gradient(rgba(240, 240, 240, .8),
+   rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
+   background: white;
+   opacity: .7;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   top: 0;
+}
+
+.daisy-modal {
+
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      z-index: 160000;
+
+      @media $m_screen {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+      }
+
+}
+
+.daisy-modal-content{
+  position: absolute;
+
+  /* for smooth scrolling effect */
+    overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  min-height: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.7);
+  background: #fcfcfc;
+}
+
+
+#modal {
+  position:fixed;
+  background:rgba(0,0,0,0.8);
+  border-radius:14px;
+  padding:8px;
+  z-index: 9999999;
+  max-width: 800px;
+  button {
+    float: right;
+    /*padding: 1rem;*/
+    border-radius: 14px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+  }
+  #modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius:14px;
+  }
+}
+
+
+#close{
+  line-height: 4;
+  z-index: 9999;
+}
+
+#dd-activation-terms{
+  max-width: 780px;
+  max-height: 150px;
+  overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
+
+  p {
+    margin: 0;
+  }
+  ul {
+    paddding:none;
+    li {
+      font-size: 1.1rem;
+    }
+  }
+}
