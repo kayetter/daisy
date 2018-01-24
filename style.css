@@ -1,3 +1,6 @@
+
+@import "objects/_vcard";
+@import "objects/_table";
 /*
  Theme Name:   Daisy
  Description:  a child theme for storefront
@@ -8,7 +11,6 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
 */
-
 /**
  * Variables for precss styling
  *
@@ -16,110 +18,79 @@
  * @package DD
  * @since 0.2.0
  */
-
 /*#FDE3C2*/
-
 /*	#4a78c5*/
-
 /*#00AEEF*/
-
 /*#055aa5*/
-
 /*#055aa5*/
-
 /*	#e5b912*/
-
 /*	#df9e06*/
-
 /*	#60b861*/
-
 /*#9ff966*/
-
 /*	#eff4ec*/
-
 /*rgb(240, 240, 240)*/
-
 /*#6d6d6d*/
-
 /*#6d6d6d*/
-
 /* #FFFFaF */
-
 /*wordpress break point*/
-
 /*768px when sidebar moves to right*/
-
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 body {
   position: relative;
   font-size: 1.4rem;
   font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 
 }
-
 h1 a i.fa, h2 a i.fa, h3 a i.fa {
     font-size: .8em;
     font-weight: normal;
   }
-
 a {
   color: rgb(5, 90, 165);
   -webkit-transition: color.5s;
   transition: color.5s
 }
-
 a:hover {
   color: rgb(0, 174, 239);
   text-decoration: underline;
 }
-
 a i:hover {
   text-decoration: none;
 }
-
 .daisy-hidden{
   display: none!important;
 }
-
 .border-blue {
   border: 2px solid rgb(5, 90, 165);
 
 }
-
 #daisy-table tr, #daisy-table td, #daisy-table th, #daisy-table tbody, #daisy-table thead{
     background: none;
       }
-
 #daisy-table td:nth-of-type(1), #daisy-table th:nth-of-type(1)  {
     visibility: collapse;
     padding: 0;
     width: 0;
     overflow: hidden;
   }
-
 .site-main .columns-3
 ul.products li.product{
   width: 100%;
   margin: 4% auto;
 }
-
-@media (min-width: 768px) {
-
+@media (min-width: 768px){
   .site-main .columns-3
-ul.products li.product {
+ul.products li.product{
     width: 42%;
   }
 }
-
 li.post-207, li.post-208{
   width:80%;
 }
-
 ul.products {
 margin-left: 0;
 margin-bottom: 0;
@@ -137,7 +108,6 @@ display: flex;
     -ms-flex-direction: row;
         flex-direction: row;
 }
-
 @-webkit-keyframes daisy-spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -148,7 +118,6 @@ display: flex;
             transform: rotate(360deg);
   }
 }
-
 @keyframes daisy-spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -159,7 +128,6 @@ display: flex;
             transform: rotate(360deg);
   }
 }
-
 .daisy-spinner {
   position: absolute;
 
@@ -169,23 +137,19 @@ display: flex;
   justify-content: center;*/
   z-index: 999999999;
 }
-
 .daisy-spinner img {
     margin: auto;
     -webkit-animation: daisy-spin 1s linear infinite;
             animation: daisy-spin 1s linear infinite;
   }
-
 .daisy-help-tip {
   text-align: left;
   position: relative
 
 }
-
 .daisy-help-tip:hover {
   color: rgb(223, 158, 6);
 }
-
 #daisy-hover-tip{
   padding: .5rem;
   color: black;
@@ -203,18 +167,15 @@ display: flex;
   max-width: 200px;
   z-index: 999
 }
-
 .svg-test {
   background: url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space 0 0;
   height: 300px;
   width: 100%px;
   background-size: 50px 50px6
 }
-
 main {
   position: relative;
 }
-
 main .bizcard-main-links{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -223,20 +184,16 @@ main .bizcard-main-links{
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-
 @media screen and (max-width: 568px) {
-
   main .page-header.flex-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-
   main .page-header.flex-div h1 {
         font-size: 2.0em;
   }
 }
-
 .flex-div{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -249,55 +206,43 @@ main .bizcard-main-links{
           align-items: center;
 
 }
-
 @media screen and (max-width: 568px) {
-
-  .flex-div {
+  .flex-div{
     display: block;
   }
 }
-
 .daisy-error{
   color: red;
 }
-
 .daisy-error ul {
     margin: 0 1rem;
   }
-
 .daisy-verified {
   color: rgb(76, 164, 77);
 }
-
 .daisy-not-verified {
   cursor:not-allowed;
   color: rgba(5, 90, 165,.5);
 }
-
 .fa-trash-o {
   cursor: pointer;
   color: rgb(5, 90, 165);
 }
-
 i {
   padding: 0 .5rem;
   text-decoration: none;
 
 }
-
 /* Dame ranch designs styling */
-
 .DRD {
   letter-spacing: 2px;
 }
-
 div, ul, li, a {
   -webkit-transition: color .5s, -webkit-text-decoration .5s;
   transition: color .5s, -webkit-text-decoration .5s;
   transition: color .5s, text-decoration .5s;
   transition: color .5s, text-decoration .5s, -webkit-text-decoration .5s;
 }
-
 #overlay {
   position: absolute;
   /* background: linear-gradient(rgba(240, 240, 240, .8),
@@ -314,7 +259,6 @@ div, ul, li, a {
   /*opacity: 0.5;*/
   /*filter: alpha(opacity=50);*/
 }
-
 .modal-background{
   /* background: linear-gradient(rgba(240, 240, 240, .8),
    rgba(240, 240, 240,.9) ), url("../../plugins/daisy/public/assets/images/DDspinner50px-blue.svg") repeat space $ltgray; */
@@ -325,7 +269,6 @@ div, ul, li, a {
    left: 0;
    top: 0;
 }
-
 .daisy-modal {
 
       position: fixed;
@@ -336,9 +279,7 @@ div, ul, li, a {
       z-index: 160000;
 
 }
-
 @media screen and (max-width: 568px) {
-
   .daisy-modal {
     top: 0;
     left: 0;
@@ -346,7 +287,6 @@ div, ul, li, a {
     bottom: 0;
   }
 }
-
 .daisy-modal-content{
   position: absolute;
 
@@ -364,7 +304,6 @@ div, ul, li, a {
           box-shadow: 0 5px 15px rgba(0,0,0,.7);
   background: #fcfcfc;
 }
-
 #modal {
   position:fixed;
   background:rgba(0,0,0,0.8);
@@ -373,7 +312,6 @@ div, ul, li, a {
   z-index: 9999999;
   max-width: 800px;
 }
-
 #modal button {
     float: right;
     /*padding: 1rem;*/
@@ -382,41 +320,33 @@ div, ul, li, a {
     margin-right: 1rem;
 
   }
-
 #modal #modal-content {
     background: white;
     padding: 2rem;
     border-radius:14px;
   }
-
 #close{
   line-height: 4;
   z-index: 9999;
 }
-
 #dd-activation-terms{
   max-width: 780px;
   max-height: 150px;
   overflow-y: scroll;
 -webkit-overflow-scrolling: touch;
 }
-
 #dd-activation-terms p {
     margin: 0;
   }
-
 #dd-activation-terms ul {
     paddding:none;
   }
-
 #dd-activation-terms ul li {
       font-size: 1.1rem;
     }
-
 /*
 * Woocommerce && storefront theme overrides
 */
-
 .woocommerce-active .site-header .site-branding {
     float: none;
     display: -webkit-box;
@@ -424,16 +354,12 @@ div, ul, li, a {
     display: flex;
     width: 100%;
 }
-
 /* remove cart-subtotal from display */
-
 .cart-subtotal {display: none;}
-
 .entry-content .woocommerce form.login, .entry-content .woocommerce form.checkout_coupon, .entry-content .woocommerce form.register, .entry-summary .woocommerce form.login, .entry-summary .woocommerce form.checkout_coupon, .entry-summary .woocommerce form.register {
       border: none;
 
     }
-
 .entry-content a.button, .entry-content button.button, .entry-content input.button, .entry-content #respond input#submit, .entry-content woocommerce-Button button, .entry-content .single_add_to_cart_button.button, .entry-summary a.button, .entry-summary button.button, .entry-summary input.button, .entry-summary #respond input#submit, .entry-summary woocommerce-Button button, .entry-summary .single_add_to_cart_button.button {
       background-color: rgb(5, 90, 165);
       color: white;
@@ -441,22 +367,17 @@ div, ul, li, a {
       -webkit-transition: background-color .5s;
       transition: background-color .5s
     }
-
-.entry-content a.button:hover, .entry-content button.button:hover, .entry-content input.button:hover, .entry-content #respond input#submit:hover, .entry-content woocommerce-Button button:hover, .entry-content .single_add_to_cart_button.button:hover, .entry-summary a.button:hover, .entry-summary button.button:hover, .entry-summary input.button:hover, .entry-summary #respond input#submit:hover, .entry-summary woocommerce-Button button:hover, .entry-summary .single_add_to_cart_button.button:hover {
+.entry-content a.button:hover, .entry-content button.button:hover, .entry-content input.button:hover, .entry-content #respond input#submit:hover, .entry-content woocommerce-Button button:hover, .entry-content .single_add_to_cart_button.button:hover, .entry-summary a.button:hover, .entry-summary button.button:hover, .entry-summary input.button:hover, .entry-summary #respond input#submit:hover, .entry-summary woocommerce-Button button:hover, .entry-summary .single_add_to_cart_button.button:hover{
   background-color: rgb(0, 174, 239);
   color: white;
 }
-
 ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2, ul.products li.product h3 {
   font-size: 2em;
 }
-
 ul.products li.product .woocommerce-LoopProduct-link:hover {
   text-decoration: none;
 }
-
 /*Used to change the screen width break point for menus*/
-
 /* @media (max-width: 800px) {
 
   .handheld-navigation, .main-navigation.toggled .handheld-navigation, .main-navigation.toggled div.menu, .menu-toggle {
@@ -468,49 +389,39 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   }
 
 } */
-
 /**
  * Re declare storefront styles
  *
  * @since 0.2.0
  * @package daisy
  */
-
 .site-header {
     background-color: white;
     padding-bottom: 1.618em;
     z-index: 999;
     border-bottom: 1px solid transparent;
 }
-
 .storefront-primary-navigation {
   font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
-
 /*position admin bar at top of screen*/
-
 @media screen and (max-width: 600px){
   #wpadminbar {
       position: fixed;
       top: 0;
   }
 }
-
 .col-full {
   max-width: 95%;
   margin: auto;
 
 }
-
 @media screen and (max-width: 490px) {
-
   .col-full {
     max-width: 97%;
   }
 }
-
 /* corrections for storefront media query  */
-
 @media only screen and (min-width: 768px) and (max-width: 1000px){
   .col-full {
     max-width: 95%;
@@ -544,7 +455,6 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
     margin-bottom: 2.617924em;
   }
 }
-
 @media screen and (min-width: 1000px){
 
   .col-full {
@@ -568,7 +478,6 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
       width: 100%;
     }
 }
-
 /**
  * Styles for bizcards display
  *
@@ -577,19 +486,15 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
  * @package DD
  * @since 0.2.0
  */
-
 .page {
   position: relative;
 }
-
 .page .bizcard-entry-header img{
       max-width: 80%;
     }
-
 .bizcards {
   position: relative;
 }
-
 .daisy-edit-icon {
   position: absolute;
   right: 0;
@@ -613,15 +518,12 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   text-align: center;
   cursor: pointer
 }
-
 .daisy-edit-icon:hover {
   background: rgb(0, 174, 239) !important;
 }
-
 .bizcard-edit{
   position: relative;
 }
-
 .bizcard-entry-header{
 
 
@@ -636,14 +538,12 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
 
 
 }
-
 .bizcard-entry-header h4 {
     color: rgb(5, 90, 165);
     font-size: 1.4em;
     border-bottom: 2px solid rgb(5, 90, 165);
     position: relative;
   }
-
 .bizcard-entry-header h4 span {
       position: absolute;
       right: 10px;
@@ -666,64 +566,52 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
       text-align: center;
       cursor: pointer
     }
-
 .bizcard-entry-header h4 span:hover {
   color: rgb(223, 158, 6) !important;
 }
-
 .bizcard-entry-header p {
     margin-bottom: 0;
   }
-
 .bizcard-entry-header .bizcard-anchor{
     text-decoration: none;
   }
-
 .bizcard-entry-header .bizimg-div {
     margin: auto;
     padding: 0 2rem;
     padding-top: 2rem;
 
   }
-
 .bizcard-entry-header .bizimg-div img{
       margin-bottom: 0;
     }
-
 .bizcard-entry-header .bizimg-select {
     position: relative;
     max-width: 486px;
   }
-
 .bizcard-entry-header .bizimg-select img {
     position: relative;
     margin: 0 auto;
     cursor: pointer
     }
-
 .bizcard-entry-header .bizimg-select img:hover {
   border: 2px solid rgb(229, 185, 18);
 }
-
 .bizcard-entry-header .bizcards-gui {
     position: relative;
     padding: .5rem 2rem 2rem;
     min-height: 7rem;
   }
-
 .bizcard-entry-header .bizcard-entry-title {
     font-size: 1.4em;
     font-weight: bold;
     padding-bottom: 0;
     margin: 0;
   }
-
 .bizcard-entry-header .bizcard-entry-excerpt {
 
     font-size: 1.2em;
     padding-bottom: 1rem;
   }
-
 .bizcard-entry-header .bizcard-status{
     display: block;
     width:100%;
@@ -738,7 +626,6 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
     color: white;
     z-index: 5;
   }
-
 .bizcard-entry-header .drd-link{
     position: relative;
     -webkit-box-pack: center;
@@ -750,14 +637,11 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
     margin-top: 2.5rem;
 
   }
-
 @media screen and (max-width: 568px) {
-
-  .bizcard-entry-header .drd-link {
+  .bizcard-entry-header .drd-link{
     margin: 2rem auto 0;
     text-align: center;
   }
-
   .bizcard-entry-header .drd-link .share-link-icons {
         font-size: 2.5rem;
         margin: 2rem auto;
@@ -767,19 +651,15 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
           margin: 0 2rem;
         }
 }
-
-.bizcard-entry-header .drd-link .link-preview {
+.bizcard-entry-header .drd-link .link-preview{
       color: rgb(229, 185, 18);
 }
-
 .bizcard-entry-header .drd-link span {
       color: rgb(109,109,109);
 }
-
 .bizcard-entry-header .drd-link span:hover {
   color: rgb(229, 185, 18);
 }
-
 .bizcard-entry-header .drd-link #send-sms {
       display: block;
       /* border-radius: 100px; */
@@ -787,19 +667,16 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
       /* background: $blue; */
       margin-left: .5rem;
 }
-
 .bizcard-entry-header .drd-link #send-sms:hover {
   color: rgb(0, 174, 239);
 }
-
-.bizcard-entry-header #daisy-download-contact {
+.bizcard-entry-header #daisy-download-contact{
     display: block;
     width: 80%;
     text-align: center;
     margin: auto;
     margin-bottom: 1rem;
 }
-
 /**
  * Styles for generic form and daisy-create-form
  *
@@ -808,7 +685,6 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
  * @package DD
  * @since 0.2.0
  */
-
 input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea a label{
   position: relative;
    padding: .6180469716em;
@@ -825,34 +701,27 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
           box-shadow: none
 
 }
-
 input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, input[type=text]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder, textarea a label::-webkit-input-placeholder {
   color: rgba(109,109,109,.5);
   font-style: italic;
 }
-
 input[type=email]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=text]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder, textarea a label:-ms-input-placeholder {
   color: rgba(109,109,109,.5);
   font-style: italic;
 }
-
 input[type=email]::-ms-input-placeholder, input[type=password]::-ms-input-placeholder, input[type=search]::-ms-input-placeholder, input[type=text]::-ms-input-placeholder, input[type=url]::-ms-input-placeholder, textarea a label::-ms-input-placeholder {
   color: rgba(109,109,109,.5);
   font-style: italic;
 }
-
 input[type=email]::placeholder, input[type=password]::placeholder, input[type=search]::placeholder, input[type=text]::placeholder, input[type=url]::placeholder, textarea a label::placeholder {
   color: rgba(109,109,109,.5);
   font-style: italic;
 }
-
 input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, input[type=text]:focus, input[type=url]:focus, textarea a label:focus {
   border: 2px solid rgb(223, 158, 6);
   background: white;
 }
-
 /* box-shadow: inset 0 1px 1px rgba(0,0,0,.125); */
-
 .daisy-button-anchor, button, form input[type=reset], form input[type=submit], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
    display: inline-block;
    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
@@ -868,18 +737,15 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
    transition: background 2s
 
  }
-
 .daisy-button-anchor:hover, button:hover, form input[type=reset]:hover, form input[type=submit]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
   background: rgb(0, 174, 239);
   color: white;
   text-decoration: none;
 }
-
 .daisy-button-anchor:disabled, .daisy-button-anchor:disabled:hover, .daisy-button-anchor[disabled=disabled], button:disabled, button:disabled:hover, button[disabled=disabled], form input[type=reset]:disabled, form input[type=reset]:disabled:hover, form input[type=reset][disabled=disabled], form input[type=submit]:disabled, form input[type=submit]:disabled:hover, form input[type=submit][disabled=disabled], .button:disabled, .button:disabled:hover, .button[disabled=disabled], .added_to_cart:disabled, .added_to_cart:disabled:hover, .added_to_cart[disabled=disabled], .widget a.button:disabled, .widget a.button:disabled:hover, .widget a.button[disabled=disabled], .site-header-cart .widget_shopping_cart a.button:disabled, .site-header-cart .widget_shopping_cart a.button:disabled:hover, .site-header-cart .widget_shopping_cart a.button[disabled=disabled] {
   opacity: .5!important;
   cursor: not-allowed;
 }
-
 .daisy-form {
   /*counter-reset: fieldset;*/
   position: relative;
@@ -890,27 +756,22 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   margin-bottom: 1rem;
 
 }
-
 /*input styles to make edit form style close to the bizcard formatting*/
-
 .daisy-form fieldset {
     position: relative;
     background: white;
     padding: 0;
     margin: 0
   }
-
 /*h4 {
     color: $yellow;
     &:before {
       counter-increment: fieldset;
       content: counter(fieldset)". ";
     }*/
-
 .daisy-form fieldset.daisy-form-buttons {
   background: #f0f0f0;
 }
-
 .daisy-form .label-div{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -919,7 +780,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-
 .daisy-form .flex-div {
      -webkit-box-align: center;
          -ms-flex-align: center;
@@ -928,100 +788,79 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
          -ms-flex-pack: end;
              justify-content: flex-end;
    }
-
 .daisy-form .flex-div a, .daisy-form .flex-div input {
        display: block;
 
        width: 90%;
        text-align: center;
      }
-
 @media screen and (max-width: 568px) {
-
   .daisy-form .flex-div a, .daisy-form .flex-div input {
     margin: 2rem auto;
     padding: 1.5rem;
     font-size: 1.6rem;
   }
 }
-
 .daisy-form .flex-div > * {
   margin-right: 1rem;
 }
-
 .daisy-form .flex-div p {
        margin-bottom: 0;
 }
-
 .daisy-form #drdcard-link {
    padding-top: 1rem;
 }
-
 .daisy-form #drdcard-link input {
      display: inline-block;
      max-width: 200px;
      text-decoration: underline;
    }
-
-@media screen and (max-width: 490px) {
-
+@media screen and (max-width: 490px){
   .daisy-form #drdcard-link input {
     max-width: 120px;
   }
 }
-
 .daisy-form #drdcard-link input#drdpin {
      max-width: 85px;
 }
-
 @media screen and (max-width: 490px) {
-
   .daisy-form #drdcard-link input#drdpin {
     max-width: 50px;
   }
 }
-
 .daisy-form #drdcard-link span {
      display: inline-block;
      color: rgb(124,124,124);
 }
-
-.daisy-form #drdcard-link #drdcard-link-input span {
+.daisy-form #drdcard-link #drdcard-link-input span{
      color: rgb(5, 90, 165);
      text-decoration: underline;
 }
-
 .daisy-form #drdcard-link label {
      display: inline-block;
 }
-
-.daisy-form input#og_title {
+.daisy-form input#og_title{
     width: 100%;
     font-size: 1.4em;
     font-weight: bold;
 }
-
-.daisy-form input#og_title:focus {
+.daisy-form input#og_title:focus{
   font-size: 1em;
   font-weight: normal;
 }
-
 .daisy-form input#og_desc {
     width: 100%;
     display: block;
     font-size: 1.2em;
 }
-
 .daisy-form input#og_desc:focus {
   font-size: 1em;
 }
-
-.daisy-form .daisy-accordion {
+.daisy-form .daisy-accordion{
     position: relative;
     width: 100%;
     margin-bottom: 2rem;
 }
-
 .daisy-form .daisy-accordion .accordion-title {
       position: relative;
       display: block;
@@ -1029,37 +868,29 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
       cursor: pointer;
 
     }
-
 .daisy-form .daisy-accordion .accordion-content {
     padding: 1rem;
     background: #f0f0f0;
 
     }
-
-@media screen and (max-width: 490px) {
-
+@media screen and (max-width: 490px){
   .daisy-form .daisy-accordion .accordion-content {
     padding: 0;
   }
 }
-
 .daisy-form input.daisy-form-item {
     padding: .25rem;
 }
-
 .daisy-form .daisy-form-item {
     margin: .25rem 0;
 }
-
 .daisy-form .accordion-icon-down {
     border-bottom: 2px solid $black;
 }
-
-.daisy-form .accordion-icon-down:hover {
+.daisy-form .accordion-icon-down:hover{
   color: rgb(0, 174, 239);
   border-color: rgb(0, 174, 239);
 }
-
 .daisy-form .accordion-icon-down:after {
   font-family: 'dashicons';
   content: "\f140";
@@ -1069,17 +900,14 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   top: -5px;
   font-size: 1.8em;
 }
-
 .daisy-form .accordion-icon-up {
     border-bottom: 2px solid rgb(5, 90, 165);
     color: rgb(5, 90, 165);
 }
-
-.daisy-form .accordion-icon-up:hover {
+.daisy-form .accordion-icon-up:hover{
   color: rgb(0, 174, 239);
   border-color: rgb(0, 174, 239);
 }
-
 .daisy-form .accordion-icon-up:after {
   font-family: 'dashicons';
   content: "\f142";
@@ -1089,14 +917,12 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   top: -5px;
   font-size: 1.8em;
 }
-
 .daisy-form #drdcard-vcard p {
     text-align: center;
     padding: .5rem;
     color: rgb(5, 90, 165);
     margin: 0 auto;
 }
-
 .daisy-form .icon-action-group {
     position: relative;
     display:-webkit-box;
@@ -1111,7 +937,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
     min-height: 100px;
 }
-
 .daisy-form .icon-action-group .dashicon-ul {
       position: relative;
       display: -webkit-box;
@@ -1129,12 +954,10 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 
    }
-
-.daisy-form .icon-action-group .dashicon-ul:last-of-type {
+.daisy-form .icon-action-group .dashicon-ul:last-of-type{
   margin-right: 0;
   margin-left: 4rem;
 }
-
 .daisy-form .icon-action-group .dashicon-ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1145,91 +968,73 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   list-style: none;
   cursor: pointer;
 }
-
-.daisy-form .icon-action-group .dashicon-ul li {
+.daisy-form .icon-action-group .dashicon-ul li{
           margin: 0 auto;
           padding: 0;
           text-align: center;
 }
-
-.daisy-form .icon-action-group .dashicon-ul .dashicons, .daisy-form .icon-action-group .dashicon-ul .fa {
+.daisy-form .icon-action-group .dashicon-ul .dashicons, .daisy-form .icon-action-group .dashicon-ul .fa{
         min-height: 50px;
         min-width: 50px;
         font-size: 4rem;
 }
-
 .daisy-form .icon-action-group .dashicon-ul:hover {
   color: rgb(0, 174, 239);
 }
-
-.daisy-form .new-bizcard-icons {
+.daisy-form .new-bizcard-icons{
    width: 75%;
    margin: 0 auto;
 }
-
 .daisy-form textarea {
    padding: 0 5px;
    position: relative;
 }
-
-.daisy-form input[type=text], .daisy-form label {
+.daisy-form input[type=text], .daisy-form label{
    display: block;
 }
-
 .daisy-form .daisy-cancel {
    padding: 0 1rem;
 }
-
 .remove-file {
   position: absolute;
   top: -10px;
   right: -10px;
   cursor: pointer;
 }
-
 #create-bizcard-form input[required]:hover, #create-bizcard-form textarea[required]:hover, #create-vcard-form input[required]:hover, #create-vcard-form textarea[required]:hover {
   border: 2px solid rgb(223, 158, 6);
 }
-
 .daisy-activation{
   max-width: 450px;
 }
-
 #create-vcard-form {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
 }
-
 #create-vcard-form h5 {
     border-bottom: 1px solid gray;
     padding-top: 1rem;
   }
-
 #create-vcard-form fieldset{
     padding: 1rem;
 
   }
-
 #create-vcard-form fieldset input {
       margin: 0 auto;
       width: 100%;
       background: rgb(239, 244, 236)
     }
-
-#create-vcard-form fieldset input:focus {
+#create-vcard-form fieldset input:focus{
   background: white;
 }
-
 #create-vcard-form fieldset .item-input{
       width: 100%;
 
     }
-
 #create-vcard-form fieldset .dyn-prop-item{
       margin-top: 1rem;
     }
-
 #create-vcard-form fieldset .dyn-type-div{
       display:-webkit-box;
       display:-ms-flexbox;
@@ -1246,225 +1051,15 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
               justify-content: flex-start;
 
     }
-
 #create-vcard-form fieldset select  {
       display: inline-block;
       border: none;
       background: #F8F8F8;
 
     }
-
-/**
- * Styles for VCard form
- *
- *
- * @hook style.css
- * @package DD
- * @since 0.2.0
- */
-
-.vcard-image-wrapper {
-  width: 200px;
-  margin: auto;
-  padding: 1rem;
-  position: relative;
-}
-
-.vcard-image-wrapper img {
-    width: 120px;
-    margin: auto;
-    padding: 1rem;
-    cursor: pointer;
-  }
-
-#vcard-archive-div{
-  position: relative;
-
-}
-
-/*vcard archive table styling*/
-
-#vcard-archive-div table.vcard-archive{
-    position: relative;
-    margin: auto;
-  }
-
-#vcard-archive-div h3 {
-    width: 100%;
-  }
-
-@media screen and (max-width: 490px) {
-
-  #vcard-archive-div h3 span {
-        display: none;
-  }
-}
-
-#vcard-archive-div h3 a {
-    display: block;
-}
-
-.daisy-window-border-top{
-  height: 40px;
-  background-color: rgb(5, 90, 165);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-#edit-vcard-form {
-  padding-top: 4rem;
-
-}
-
-#edit-vcard-form h5 {
-    font-size: 1.8rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-#edit-vcard-form fieldset {
-      border: 2px solid black;
-      padding: 1rem;
-      margin: 1rem;
-    }
-
-#edit-vcard-form input {
-      width: 100%;
-    }
-
-#edit-vcard-form .vcard-fieldset .single-line-div {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        max-width: 100%;
-      }
-
-/* Use abbreviated label when full screen */
-
-#edit-vcard-form .vcard-fieldset .single-line-div label span {
-            display: block;
-          }
-
-#edit-vcard-form .vcard-fieldset .single-line-div label span+span{
-            display: none;
-          }
-
-@media screen and (max-width: 568px) {
-
-  #edit-vcard-form .vcard-fieldset .single-line-div {
-    display: block;
-  }
-
-  #edit-vcard-form .vcard-fieldset .single-line-div div {
-            width: 100%;
-  }/*
- Use full label when m screen
-*/
-            #edit-vcard-form .vcard-fieldset .single-line-div label span {
-              display: none;
-            }
-            #edit-vcard-form .vcard-fieldset .single-line-div label span + span {
-              display: block
-            }
-}
-
-#edit-vcard-form .vcard-fieldset {/*
- end of $name-div
-*/
-}
-
-#edit-vcard-form .vcard-fieldset .single-line-div {/*
- end of media query
-*/
-}
-
-@media screen and (max-width: 568px) {
-
-  #edit-vcard-form .vcard-fieldset i.fa {
-    font-size: 2.0rem;
-  }
-}
-
-/*
- end of #vcard-name
-*/
-
-#edit-vcard-form .daisy-add-item, #edit-vcard-form .daisy-remove-item {
-    color: rgb(5, 90, 165);
-    display: inline-block;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-#edit-vcard-form .dyn-property-wrapper {
-    margin-bottom: 1rem;
-}
-
-.daisy-close-form{
-  height: 40px;
-  width: 40px;
-  color: white
-}
-
-.daisy-close-form:hover {
-  color: #f0f0f0;
-  background: transparent;
-  border: none;
-}
-
-button.remove-file{
-  height: 40px;
-  width: 40px;
-  top: 0;
-  right: 0
-}
-
-button.remove-file:hover {
-  color: rgb(0, 174, 239);
-  background: transparent;
-  border: none;
-}
-
-/* styling for name and address label+input divs to get correct proportions*/
-
-#dd-mname{
-  width: 10%;
-
-}
-
-#dd-lname{
-  width: 45%;
-}
-
-#dd-suffix {
-  width: 15%;
-}
-
-#dd-fname{
-  width: 25%
-}
-
-.dd-city{
-  width: 50%
-}
-
-.dd-state{
-  width: 27%
-}
-
-.dd-zip{
-  width: 17%
-}
-
 .sms-forms #terms {
     margin-bottom: 1rem;
   }
-
 .sms-forms #terms p {
     display: none;
     width: 90%;
@@ -1472,29 +1067,24 @@ button.remove-file:hover {
     padding: .5rem;
     margin: 1rem auto;
     }
-
 .sms-forms fieldset {
     background: none;
     width: 100%;
     margin: auto;
 
     }
-
 .sms-forms fieldset p {
       text-align: right;
       }
-
 .sms-forms label {
       display: inline-block;
     }
-
 .sms-forms .daisy-form-actions{
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end;
       margin-top: 1rem;
       }
-
 #daisy-input-veri-code{
   display: none;
   width: 75%;
@@ -1504,38 +1094,31 @@ button.remove-file:hover {
   padding: 1rem;
 
 }
-
 #daisy-input-veri-code h4 {
     text-align: center;
     margin-bottom: 0;
   }
-
 #daisy-input-veri-code h4 + p{
     text-align: center;
   }
-
 #daisy-input-veri-code input[name=code]{
     display: block;
     text-align: center;
     margin: auto;
   }
-
 #daisy-input-veri-code div {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 1rem 0;
   }
-
 #daisy-input-veri-code div a {
       padding-left: 3rem;
 
     }
-
 #daisy-input-veri-code div input {
       padding-right: 3rem;
     }
-
 /**
  * Styling for daisy theme menus (horizontal and verticle)
  *
@@ -1543,24 +1126,18 @@ button.remove-file:hover {
  * @package Daisy theme
  * @since 0.2.0
  */
-
 .daisy-menu { /*end of .dd-top-menu*/
 }
-
 .daisy-menu .dd-menu-selected a, .daisy-menu .current-cat a {
     color: black;
   }
-
 .daisy-menu ul { /*end of first level li */
 
   }
-
 .daisy-menu ul li {
       padding: 1rem 1.5rem; /* endo f .children*/
     }
-
 /* ul with class of children, only found under li with has-children */
-
 .daisy-menu ul li .children {
           background: #F8F8F8;
           display: block;
@@ -1574,14 +1151,11 @@ button.remove-file:hover {
           -webkit-transition: max-height .5s ease-out, opacity .5s ease-out;
           transition: max-height .5s ease-out, opacity .5s ease-out;
         }
-
 .daisy-menu ul li .children li {
             display:block;
             background: #F8F8F8;
           }
-
 /* class to add to show children */
-
 .daisy-menu ul li .show-children {
           opacity: 1;
           max-height: 500px;
@@ -1589,9 +1163,7 @@ button.remove-file:hover {
           -webkit-transform: scaleY(1);
                   transform: scaleY(1);
         }
-
 /* Daisy Horizontal Menu */
-
 .daisy-hz-menu {
    color: rgb(5, 90, 165);
    padding: 1rem 0;
@@ -1599,9 +1171,7 @@ button.remove-file:hover {
 
     /*media query nav styling for hamburger menu*/
   }
-
 /* top-level-menu, flex for horizontal */
-
 .daisy-hz-menu ul {
     display:-webkit-box;
     display:-ms-flexbox;
@@ -1613,27 +1183,23 @@ button.remove-file:hover {
     padding: 0;
     margin: 0;
     }
-
 .daisy-hz-menu ul li {
       display: block;
 
       /*do not display submenu*/
       }
-
-@media screen and (max-width: 568px) {
-
+@media screen and (max-width: 568px){
   .daisy-hz-menu {
     display: none;
-    font-size: 1.8rem;/*
+    font-size: 1.8rem;
+    /*
  dd-hamburger-menu class is added when #dd-hamburger icon is clicked
 */
   }
-
   .daisy-hz-menu.dd-hamburger-menu {
     display: block;
   }
-
-  .daisy-hz-menu ul {
+  .daisy-hz-menu ul{
           display: block;
   }
 
@@ -1645,27 +1211,22 @@ button.remove-file:hover {
               position: relative;
           }
 }
-
-.daisy-hz-menu {/*
+.daisy-hz-menu {
+  /*
  end of media query
 */
 }
-
 /*end of .daisy-hz-menu */
-
 .daisy-verticle-menu ul li {
       border-bottom: 1px solid #f0f0f0;
     }
-
 .daisy-verticle-menu ul li.has-children ul.children {
         position: relative;
     }
-
 .site-header .col-full {
     max-width: 100%;
     padding: 0 2rem;
   }
-
 .site-branding {
   position: relative;
   -webkit-box-pack: justify;
@@ -1679,36 +1240,28 @@ button.remove-file:hover {
 
 
 }
-
 .site-branding .tagline {
     position: relative;
     color:black;
   }
-
 @media screen and (max-width: 768px) {
-
   .site-branding .tagline {
     position: absolute;
     left: 125px;
     bottom: 0;
   }
 }
-
 @media screen and (max-width: 568px) {
-
   .site-branding .tagline {
     left: 100px;
   }
 }
-
 @media screen and (max-width: 490px) {
-
   .site-branding .tagline {
     display:none;
     position: relative;
   }
 }
-
 .site-branding .custom-logo-div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1721,99 +1274,75 @@ button.remove-file:hover {
             align-items: baseline;
     font-family: 'Poppins', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
-
-@media screen and (max-width: 568px) {
-
+@media screen and (max-width: 568px){
   .site-branding .custom-logo-div {
     display: block;
   }
 }
-
-.site-branding .custom-logo-link {
+.site-branding .custom-logo-link{
     float: none;
 }
-
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 768px){
   .site-branding .custom-logo-link img {
     max-width: 125px;
   }
 }
-
-@media screen and (max-width: 568px) {
-
+@media screen and (max-width: 568px){
   .site-branding .custom-logo-link img {
     max-width: 100px;
   }
 }
-
 .site-branding #daisy-header-menu ul {
       margin: 0;
       margin-bottom: .5rem;
       list-style: none;
     }
-
 @media screen and (max-width: 568px) {
-
   .site-branding #daisy-header-menu ul {
     padding: .5rem;
     padding-left: 0;
   }
 }
-
 /*
  @ $m_screen media query
 */
-
 .site-branding #daisy-header-menu ul li {
         display: inline-block;
         padding: 1rem;
         padding-left: 0;
 }
-
 .site-branding #daisy-header-menu ul li:last-of-type {
   padding-right: 0;
 }
-
 @media screen and (max-width: 490px) {
-
   .site-branding #daisy-header-menu ul li {
     padding: .5rem;
   }
 }
-
-@media screen and (max-width: 568px) {
-
-  .site-branding #daisy-header-menu ul li .dd-menu-item-title {
+@media screen and (max-width: 568px){
+  .site-branding #daisy-header-menu ul li .dd-menu-item-title{
     display: none;
   }
 }
-
 .site-branding #daisy-header-menu ul li .dd-menu-item-icon {
           display: none;
           font-size: 2.5rem;
 }
-
 @media screen and (max-width: 568px) {
-
   .site-branding #daisy-header-menu ul li .dd-menu-item-icon {
     display: inline-block;
   }
 }
-
 /*
  Individual nav li element styling
 */
-
-.site-branding #daisy-header-menu ul #dd-cart-icon {
+.site-branding #daisy-header-menu ul #dd-cart-icon{
         position: relative;
 }
-
 .site-branding #daisy-header-menu ul #dd-cart-icon i {
           padding-right: 10px;
 
         }
-
 .site-branding #daisy-header-menu ul #dd-cart-icon .dd-indicator{
           position: absolute;
           right: 0;
@@ -1827,76 +1356,61 @@ button.remove-file:hover {
           transition: opacity .5s
 
         }
-
 .site-branding #daisy-header-menu ul #dd-cart-icon .dd-indicator:hover {
   opacity: .5;
 }
-
 /*
  also see _searchform.css
 */
-
-.site-branding #daisy-header-menu ul #dd-search-menu-item {
+.site-branding #daisy-header-menu ul #dd-search-menu-item{
         padding: 0;
 }
-
 @media screen and (max-width: 568px) {
-
-  .site-branding #daisy-header-menu ul #dd-search-menu-item {
+  .site-branding #daisy-header-menu ul #dd-search-menu-item{
     display: none;
   }
 }
-
 .site-branding #daisy-header-menu ul #dd-hamburger {
         display: none;
 }
-
 @media screen and (max-width: 568px) {
-
   .site-branding #daisy-header-menu ul #dd-hamburger {
     display: inline-block;
     font-size: 2rem;
   }
 }
-
-.site-branding {/*
+.site-branding {
+  /*
  end #daisy-header-menu
 */
 }
-
-.site-branding #daisy-header-menu {/*
+.site-branding #daisy-header-menu{
+  /*
  end ul
 */
 }
-
 /* end .site-branding */
-
 /*
 * css styling for search input form
 *
 */
-
 .show-form {
   width: 150px;
   opacity: 1;
 }
-
 .hide-form {
   width: 0;
   opacity: 0;
 }
-
 .dd-search i {
     /* display: inline-block; */
     -webkit-transition: color, 2s;
     transition: color, 2s;
     cursor: pointer
   }
-
 .dd-search i:hover {
   color: rgb(0, 174, 239);
 }
-
 .dd-search .dd-search-form {
 
     margin: 0;
@@ -1904,7 +1418,6 @@ button.remove-file:hover {
     transition:  width 2s, opacity 2s;
 
   }
-
 .dd-search .dd-search-form input[type=submit] {
       width: 0;
       opacity: 0;
@@ -1912,167 +1425,29 @@ button.remove-file:hover {
       right: -999px;
 
     }
-
 .dd-search .dd-search-form .dd-search-input {
       padding: 0;
       -webkit-transition: width 2s, opacity 2s;
       transition: width 2s, opacity 2s;
     }
-
 .dd-search .dd-search-form .fa-placeholder::-webkit-input-placeholder{
       color: rgb(5, 90, 165);
     }
-
 .dd-search .dd-search-form .fa-placeholder:-ms-input-placeholder{
       color: rgb(5, 90, 165);
     }
-
 .dd-search .dd-search-form .fa-placeholder::-ms-input-placeholder{
       color: rgb(5, 90, 165);
     }
-
 .dd-search .dd-search-form .fa-placeholder::placeholder{
       color: rgb(5, 90, 165);
     }
-
-#vcard-archive-div table {
-    position: relative;
-    font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    width: 100%;
-    max-width: 600px;
-
-  }
-
-@media screen and (max-width: 568px) {
-
-  #vcard-archive-div table tr {
-        display: block;
-        border: 1px solid black;
-        margin: 1rem auto;
-  }
-
-  #vcard-archive-div table p {
-        padding: 1rem;
-        font-size: 1.6rem;
-        /* text-align: left; */
-  }
-
-  #vcard-archive-div table p:first-of-type:before {
-    content: "Associated Bizcards";
-    border-bottom: 1px solid rgb(124,124,124);
-    display: block;
-    font-size: 1.6rem;
-    padding-bottom: .25rem;
-    margin-bottom: 1rem;
-  }
-
-  #vcard-archive-div table td {
-          display: block;
-          text-align: center;
-  }
-
-  #vcard-archive-div table td:first-of-type {
-    font-size: 1.8rem;
-  }
-
-  #vcard-archive-div table td:first-of-type span {
-              display: block;
-  }
-
-  #vcard-archive-div table td:first-of-type span:before {
-    content: "\f2bb";
-    color: rgb(5, 90, 165);
-    font-family: fontAwesome;
-    display: inline-block;
-    top: 0;
-  }
-
-  #vcard-archive-div table td:last-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }/*
- style actions like buttons
-*/
-
-  #vcard-archive-div table td .action-link {
-            padding: 7px 35px 8px 35px;
-            padding-top: 10px;
-            background: rgb(5, 90, 165);
-            color: white;
-            border: none;
-            font-size: 100%;
-            line-height: 1.618;
-            cursor: pointer;
-            font-weight: normal;
-            -webkit-transition: background 2s;
-            transition: background 2s;
-  }
-
-  #vcard-archive-div table td .action-link:hover {
-    background: rgb(0, 174, 239);
-    color: white;
-  }
-
-  #vcard-archive-div table td .action-link:disabled, #vcard-archive-div table td .action-link:disabled:hover, #vcard-archive-div table td .action-link[disabled] {
-    opacity: .5!important;
-    cursor: not-allowed;
-  }
-
-  #vcard-archive-div table td .action-link + span {
-    display: none;
-  }
-
-  #vcard-archive-div table thead {
-        display:none;
-  }
-}
-
-/*
- end of media query
-*/
-
-#vcard-archive-div table td, #vcard-archive-div table th {
-      position: relative;
-      padding: 1rem .5rem;
-}
-
-#vcard-archive-div table td:first-of-type, #vcard-archive-div table th:first-of-type {
-  padding-left: 1rem;
-}
-
-#vcard-archive-div table td:nth-child(3), #vcard-archive-div table th:nth-child(3) {
-  text-align: center;
-}
-
-#vcard-archive-div table td:nth-child(3) span, #vcard-archive-div table th:nth-child(3) span {
-          padding: 0 1rem;
-}
-
-#vcard-archive-div table thead, #vcard-archive-div table th {
-
-        background: rgb(5, 90, 165);
-        color: white;
-        font-size: 1.6rem;
-}
-
-#vcard-archive-div table p {
-      margin: 0;
-}
-
-#vcard-archive-div table tr:nth-child(even) {
-      background: #f0f0f0;
-}
-
 .support-page {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   padding-top: 2rem;
 }
-
 .dd-category {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2086,29 +1461,22 @@ button.remove-file:hover {
           justify-content: space-between;
   width: 32%;
 }
-
 /* min-height: 200px; */
-
 .dd-category h2 {
     color: rgb(5, 90, 165);
     border-bottom: 1px solid #f0f0f0;
   }
-
 .dd-category h2 i, .dd-category h2 img {
       padding-right: 1rem;
     }
-
 .dd-category a {
     display: inline-block;
   }
-
 .dd-category p {
     width: 100%;
     max-width: 100%;
   }
-
 @media screen and (max-width: 568px) {
-
   .dd-category {
     max-width: 460px;
     width: auto;
@@ -2118,7 +1486,6 @@ button.remove-file:hover {
     padding-top: 2rem;
   }
 }
-
 /**
  * Styling for daisy theme category page
  *
@@ -2126,39 +1493,31 @@ button.remove-file:hover {
  * @package Daisy theme
  * @since 0.2.0
  */
-
 .daisy-cat-main h1 {
     text-transform: capitalize;
   }
-
 .daisy-cat-main h2{
     font-size: 2em;
   }
-
 .daisy-cat-main h2 img {
       padding-right: 0;
     }
-
 .daisy-cat-main article[class*="category-"] .entry-content, .daisy-cat-main div[class*="category-"] .entry-content {
         float: none;
         width: 100%;
       }
-
 .daisy-cat-main article[class*="category-"] .entry-header, .daisy-cat-main div[class*="category-"] .entry-header {
       margin-bottom: 2em;
       border: none;
     }
-
 .site-footer .col-full {
     max-width: 100%;
 
   }
-
 .site-footer .col-full .daisy-footer {
       font-size: 1rem;
 
     }
-
 .site-footer .col-full .daisy-footer .flex-item {
         padding: 0 1rem;
         text-align: center;
@@ -2166,65 +1525,54 @@ button.remove-file:hover {
             -ms-flex: 1 1 0px;
                 flex: 1 1 0;
       }
-
 @media screen and (max-width: 568px) {
-
   .site-footer .col-full .daisy-footer .flex-item {
     padding-top: 1rem;
   }
 }
-
 .site-footer .col-full .daisy-footer a {
         display: block;
 }
-
 .site-footer .col-full #daisy-footer-share {
       text-align: center;
       font-size: 1.6rem;
       padding-bottom: 1rem;
 }
-
 .site-footer .col-full #daisy-footer-share .flex-div {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
 
       }
-
 @media screen and (max-width: 568px) {
-
   .site-footer .col-full #daisy-footer-share .flex-div {
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
   }
 }
-
-.site-footer {/*
+.site-footer {
+  /*
  col-full end
 */
 }
-
-.site-footer .col-full {/*
+.site-footer .col-full {
+  /*
  daisy-footer-share end
 */
 }
-
 .site-footer .col-full #daisy-footer-share .flex-div .flex-item {
           -webkit-box-flex: 0;
               -ms-flex: none;
                   flex: none;
           padding: 1.6rem;
 }
-
 .site-footer .col-full #daisy-footer-share .flex-div .flex-item a {
             color: rgb(5, 90, 165)
           }
-
 .site-footer .col-full #daisy-footer-share .flex-div .flex-item a:hover {
   color: rgb(0, 174, 239);
 }
-
 /**
  * Styling for daisy theme custom secondary widget areas
  *
@@ -2232,7 +1580,6 @@ button.remove-file:hover {
  * @package Daisy theme
  * @since 0.2.0
  */
-
 .daisy-widget-area .daisy-widget.widget .daisy-widget-title {
       border-bottom: 1px solid rgba(0,0,0,.05);
       padding: 0 0 .5em;
@@ -2240,28 +1587,22 @@ button.remove-file:hover {
       color: black;
       text-decoration: none
     }
-
 .daisy-widget-area .daisy-widget.widget .daisy-widget-title:hover {
   text-decoration: underline;
 }
-
 .daisy-widget-area .daisy-widget.widget .daisy-widget-menu {
       margin-bottom: 1em;
     }
-
 .daisy-widget-area .daisy-widget.widget ul {
       margin: 0;
     }
-
 .daisy-widget-area .daisy-widget.widget ul li:before {
   content: "";
 }
-
 .daisy-widget-area .daisy-widget.widget ul li a {
           text-decoration: none;
           color: rgb(5, 90, 165);
 }
-
 .daisy-widget-area .daisy-widget.widget ul li a:hover {
   text-decoration: underline;
 }

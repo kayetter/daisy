@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #vcard-archive-div {
   table {
     position: relative;
@@ -117,3 +118,125 @@
 
   }
 }
+||||||| merged common ancestors
+=======
+#vcard-archive-div {
+  table {
+    position: relative;
+    font-family: $font_main, $backup_font;
+    width: 100%;
+    max-width: 600px;
+
+    @media $m_screen{
+      tr {
+        display: block;
+        border: 1px solid black;
+        margin: 1rem auto;
+      }
+      p {
+        padding: 1rem;
+        font-size: 1.6rem;
+        /* text-align: left; */
+        &:first-of-type:before {
+            content: "Associated Bizcards";
+            border-bottom: 1px solid $darkgray;
+            display: block;
+            font-size: 1.6rem;
+            padding-bottom: .25rem;
+            margin-bottom: 1rem;
+          }
+        }
+
+      td {
+          display: block;
+          text-align: center;
+          &:first-of-type{
+            font-size: 1.8rem;
+            span {
+              display: block;
+              &:before {
+              content: "\f2bb";
+              color: $blue;
+              font-family: fontAwesome;
+              display: inline-block;
+              top: 0;
+              }
+            }
+          }
+
+          &:last-of-type{
+            display: flex;
+            justify-content: space-around;
+          }
+
+
+          /* style actions like buttons */
+          .action-link{
+            padding: 7px 35px 8px 35px;
+            padding-top: 10px;
+            background: $blue;
+            color: white;
+            border: none;
+            font-size: 100%;
+            line-height: 1.618;
+            cursor: pointer;
+            font-weight: normal;
+            transition: background 2s;
+            &:hover {
+              background: $hoverblue;
+              color: white;
+            }
+            &:disabled, &:disabled:hover, &[disabled] {
+              opacity: .5!important;
+               cursor: not-allowed;
+
+            }
+            & + span {
+              display: none;
+            }
+          }
+
+      }
+
+      thead{
+        display:none;
+      }
+    }   /* end of media query */
+
+    td, th{
+      position: relative;
+      padding: 1rem .5rem;
+      &:first-of-type{
+        padding-left: 1rem;
+      }
+      &:nth-child(3){
+        text-align: center;
+        span {
+          padding: 0 1rem;
+        }
+      }
+
+    }
+
+    thead {
+
+        background: $blue;
+        color: white;
+        font-size: 1.6rem;
+
+    }
+
+
+    p {
+      margin: 0;
+    }
+
+
+
+    tr:nth-child(even) {
+      background: $ltgray;
+    }
+
+  }
+}
+>>>>>>> ba550ec9e0b88c58ed0558948c396d93a732fc27
