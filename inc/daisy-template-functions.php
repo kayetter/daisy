@@ -69,3 +69,36 @@ function is_post_help($post_id){
 		}
 			return false;
 	}
+
+	/**
+	 * Returns the permalink for a page based on the incoming slug.
+	 *
+	 * @param   string  $slug   The slug of the page to which we're going to link.
+	 * @return  string          The permalink of the page
+	 * @since   1.0.3
+	 */
+	function daisy_get_post_id_by_slug( $slug, $post_type = '' ) {
+
+	    // Initialize the permalink value
+	    $permalink = null;
+
+	    // Build the arguments for WP_Query
+	    $args = array(
+	        'name'          => $slug,
+	        'max_num_posts' => 1
+	    );
+
+	    // If the optional argument is set, add it to the arguments array
+	    if( '' != $post_type ) {
+	        $args = array_merge( $args, array( 'post_type' => $post_type ) );
+	    }
+
+	    // Run the query (and reset it)
+	    $query = new WP_Query( $args );
+	    if( $query->have_posts() ) {
+	        $query->the_post();
+	        $post_id = get_the_ID();
+	        wp_reset_postdata();
+	    }
+	    return $post_id;
+	}

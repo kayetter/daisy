@@ -7,6 +7,13 @@
  * @since 0.2.0
  */
 
+ /**
+  * Enqueue styles, fonts and scripts
+  *
+  * @hook action 'wp_enqueue_scripts'
+  * @package Daisy theme
+  * @since 0.2.0
+  */
  add_action( 'wp_enqueue_scripts', 'load_daisy_styles');
  function load_daisy_styles(){
      wp_enqueue_style('daisy-fonts', daisy_fonts_url(), DAISY_THEME_VERSION);
@@ -24,7 +31,13 @@
 
 
 
- //add poppins and quicksand
+ /**
+  * Download google fonts raleway, poppins, quicksand and PTSans
+  *
+  * @hook action 'wp_enqueue_scripts'
+  * @package daisy theme
+  * @since 0.2.0
+  */
  function daisy_fonts_url() {
      	$fonts_url = '';
 

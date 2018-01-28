@@ -14,7 +14,6 @@ do_action( 'storefront_loop_before' );
 		get_posts( 'category_name=help' );
 		the_post();
 		get_template_part( 'content', 'category');
-		echo "this is the post_id".$post->ID;
 	} else {
 
 	while ( have_posts() ) : the_post();

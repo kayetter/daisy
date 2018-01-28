@@ -8,7 +8,7 @@
  */
 
 
-$version = "1.0.2";
+$version = "1.0.3";
 define("DAISY_THEME_VERSION", $version);
 
 require_once( 'inc/wp-class-functions.php');
@@ -18,3 +18,4 @@ require_once( 'inc/daisy-hooks.php');
 require_once( 'inc/daisy-wp-functions.php');
 require_once( 'inc/daisy-storefront-functions.php');
 require_once( 'inc/woocommerce-hooks.php');
+require_once( 'inc/daisy-shortcodes.php');
