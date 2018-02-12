@@ -56,7 +56,31 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
 
  }
 
+.daisy-close-form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  background: 0 0;
+  color: #666;
+  z-index: 1000;
+  cursor: pointer;
+  outline: 0;
+  transition: color .1s ease-in-out,background .1s ease-in-out;
 
+  &:before {
+
+   content: "\f158";
+   font: 400 20px/1 dashicons;
+   speak: none;
+   vertical-align: middle;
+   cursor: pointer;
+  }
+}
 
 .daisy-form {
   /*counter-reset: fieldset;*/

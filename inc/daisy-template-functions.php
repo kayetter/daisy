@@ -24,7 +24,7 @@
 
 		$help_link = home_url();
 		if(term_exists("help")){
-			$help_link = get_term_link("help","category");
+			$help_link = get_permalink(daisy_get_post_id_by_slug("get-help"));
 		}
 
     ob_start();
@@ -80,7 +80,7 @@ function is_post_help($post_id){
 	function daisy_get_post_id_by_slug( $slug, $post_type = '' ) {
 
 	    // Initialize the permalink value
-	    $permalink = null;
+	    $post_id = null;
 
 	    // Build the arguments for WP_Query
 	    $args = array(

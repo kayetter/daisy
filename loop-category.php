@@ -11,9 +11,11 @@
 do_action( 'storefront_loop_before' );
 
 	if(is_category("help")){
-		get_posts( 'category_name=help' );
-		the_post();
-		get_template_part( 'content', 'category');
+		$posts = get_posts(array('numberposts'=>1,'name'=>'get-help') );
+		foreach ($posts as $post):
+			setup_postdata($post);
+			get_template_part( 'content', 'category');
+		endforeach;
 	} else {
 
 	while ( have_posts() ) : the_post();
@@ -23,6 +25,10 @@ do_action( 'storefront_loop_before' );
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
 		get_template_part( 'content', 'category');
+		$terms = get_the_terms($post, 'category');
+		foreach($terms as $term){
+			echo $term->name;
+		}
 
 	endwhile;
 }

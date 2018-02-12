@@ -298,6 +298,15 @@ div, ul, li, a {
   transition: color .5s, text-decoration .5s, -webkit-text-decoration .5s;
 }
 
+a.anchor-block {
+  display: block;
+}
+
+*:focus {
+    border: none;
+    outline: none;
+}
+
 #overlay {
   position: absolute;
   /* background: linear-gradient(rgba(240, 240, 240, .8),
@@ -880,6 +889,32 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   cursor: not-allowed;
 }
 
+.daisy-close-form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  background: 0 0;
+  color: #666;
+  z-index: 1000;
+  cursor: pointer;
+  outline: 0;
+  -webkit-transition: color .1s ease-in-out,background .1s ease-in-out;
+  transition: color .1s ease-in-out,background .1s ease-in-out
+}
+
+.daisy-close-form:before {
+  content: "\f158";
+  font: 400 20px/1 dashicons;
+  speak: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
 .daisy-form {
   /*counter-reset: fieldset;*/
   position: relative;
@@ -1262,6 +1297,11 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
  * @package DD
  * @since 0.2.0
  */
+
+#edit-vcard-form {
+  overflow-y: auto;
+  height: 100%;
+}
 
 .vcard-image-wrapper {
   width: 200px;
@@ -2151,29 +2191,28 @@ button.remove-file:hover {
       color: rgb(5, 90, 165);
     }
 
-#vcard-archive-div table {
+.archive-div table {
     position: relative;
     font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     width: 100%;
-    max-width: 600px;
 
   }
 
 @media screen and (max-width: 568px) {
 
-  #vcard-archive-div table tr {
+  .archive-div table tr {
         display: block;
         border: 1px solid black;
         margin: 1rem auto;
   }
 
-  #vcard-archive-div table p {
+  .archive-div table p {
         padding: 1rem;
         font-size: 1.6rem;
         /* text-align: left; */
   }
 
-  #vcard-archive-div table p:first-of-type:before {
+  .archive-div table p:first-of-type:before {
     content: "Associated Bizcards";
     border-bottom: 1px solid rgb(124,124,124);
     display: block;
@@ -2182,20 +2221,20 @@ button.remove-file:hover {
     margin-bottom: 1rem;
   }
 
-  #vcard-archive-div table td {
+  .archive-div table td {
           display: block;
           text-align: center;
   }
 
-  #vcard-archive-div table td:first-of-type {
+  .archive-div table td:first-of-type {
     font-size: 1.8rem;
   }
 
-  #vcard-archive-div table td:first-of-type span {
+  .archive-div table td:first-of-type span {
               display: block;
   }
 
-  #vcard-archive-div table td:first-of-type span:before {
+  .archive-div table td:first-of-type span:before {
     content: "\f2bb";
     color: rgb(5, 90, 165);
     font-family: fontAwesome;
@@ -2203,17 +2242,26 @@ button.remove-file:hover {
     top: 0;
   }
 
-  #vcard-archive-div table td:last-of-type {
+  .archive-div table td:last-of-type {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-  }/*
+  }
+
+  .archive-div table td .flex-div {
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+  }
+            .archive-div table td .flex-div img {
+              display: block;
+            }/*
  style actions like buttons
 */
 
-  #vcard-archive-div table td .action-link {
+  .archive-div table td .action-link {
             padding: 7px 35px 8px 35px;
             padding-top: 10px;
             background: rgb(5, 90, 165);
@@ -2227,21 +2275,21 @@ button.remove-file:hover {
             transition: background 2s;
   }
 
-  #vcard-archive-div table td .action-link:hover {
+  .archive-div table td .action-link:hover {
     background: rgb(0, 174, 239);
     color: white;
   }
 
-  #vcard-archive-div table td .action-link:disabled, #vcard-archive-div table td .action-link:disabled:hover, #vcard-archive-div table td .action-link[disabled] {
+  .archive-div table td .action-link:disabled, .archive-div table td .action-link:disabled:hover, .archive-div table td .action-link[disabled] {
     opacity: .5!important;
     cursor: not-allowed;
   }
 
-  #vcard-archive-div table td .action-link + span {
+  .archive-div table td .action-link + span {
     display: none;
   }
 
-  #vcard-archive-div table thead {
+  .archive-div table thead {
         display:none;
   }
 }
@@ -2250,35 +2298,35 @@ button.remove-file:hover {
  end of media query
 */
 
-#vcard-archive-div table td, #vcard-archive-div table th {
+.archive-div table td, .archive-div table th {
       position: relative;
       padding: 1rem .5rem;
 }
 
-#vcard-archive-div table td:first-of-type, #vcard-archive-div table th:first-of-type {
+.archive-div table td:first-of-type, .archive-div table th:first-of-type {
   padding-left: 1rem;
 }
 
-#vcard-archive-div table td:nth-child(3), #vcard-archive-div table th:nth-child(3) {
+.archive-div table td:nth-child(3), .archive-div table th:nth-child(3) {
   text-align: center;
 }
 
-#vcard-archive-div table td:nth-child(3) span, #vcard-archive-div table th:nth-child(3) span {
+.archive-div table td:nth-child(3) span, .archive-div table th:nth-child(3) span {
           padding: 0 1rem;
 }
 
-#vcard-archive-div table thead, #vcard-archive-div table th {
+.archive-div table thead, .archive-div table th {
 
         background: rgb(5, 90, 165);
         color: white;
         font-size: 1.6rem;
 }
 
-#vcard-archive-div table p {
+.archive-div table p {
       margin: 0;
 }
 
-#vcard-archive-div table tr:nth-child(even) {
+.archive-div table tr:nth-child(even) {
       background: #f0f0f0;
 }
 
@@ -2665,6 +2713,363 @@ button.remove-file:hover {
 
 .daisy-widget-area .daisy-widget.widget ul li a:hover {
   text-decoration: underline;
+}
+
+.type-post p {
+    margin-bottom: 1rem;
+  }
+
+.type-post .entry-content ol, .type-post .entry-content ul {
+
+      margin: 1rem 0;
+    }
+
+.type-post .entry-content ol li, .type-post .entry-content ul li {
+        margin-top: .5rem;
+        margin-left: 1.5rem;
+      }
+
+.type-post .entry-content ol li img, .type-post .entry-content ul li img {
+          margin: 1rem auto;
+        }
+
+.type-post .entry-content ol {
+      counter-reset: daisy-post-counter;
+      list-style:none;
+    }
+
+.type-post .entry-content ol > li {
+          margin-bottom: 1.5rem
+      }
+
+.type-post .entry-content ol > li:before {
+  content: counter(daisy-post-counter) ".";
+  counter-increment: daisy-post-counter;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-family: 'Quicksand', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: rgb(5, 90, 165);
+  padding-right: 1rem;
+}
+
+/**
+ * Stylesheet for the restyling of edit-image frames.
+ * plugin
+ * @since 2.0.0
+ * @package DD
+ */
+
+.daisy-modal-content {
+  overflow: hidden;
+}
+
+[id^='imgedit-panel-']{
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+
+}
+
+[id^='imgedit-panel-'] .button {
+    background: rgb(5, 90, 165);
+    color: white;
+    font-weight: normal;
+    -webkit-transition: background .5s linear;
+    transition: background .5s linear
+  }
+
+[id^='imgedit-panel-'] .button:hover {
+  background: rgb(0, 174, 239);
+}
+
+[id^='imgedit-panel-'] p {
+    margin: 8px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0;
+  }
+
+[id^='imgedit-panel-'] .imgedit-settings {
+    display: block;
+      }
+
+@media screen and (max-width: 568px) {
+
+  [id^='imgedit-panel-'] .imgedit-settings {
+    display: none;
+  }
+}
+
+[id^='imgedit-panel-'] .imgedit-settings {
+  background: #f3f3f3;
+  border-left: 1px solid #ddd;
+  padding: 20px 16px 16px;
+  max-width: 250px;
+  max-height: 490px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;/*
+ end fieldset
+*/
+}
+
+/*
+ style the help buttons
+*/
+
+[id^='imgedit-panel-'] .imgedit-settings h2 {
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      color: #666;
+      margin: 3px 0 0;
+}
+
+[id^='imgedit-panel-'] .imgedit-settings .dashicons, [id^='imgedit-panel-'] .imgedit-settings .dashicons-before:before {
+        display: inline-block;
+        border: 1px solid transparent;
+        margin: 0;
+        padding: 0;
+        background: 0 0;
+        color: rgb(5, 90, 165);
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        width: 20px;
+        height: 20px;
+        font-family: dashicons;
+        text-decoration: inherit;
+        font-weight: 400;
+        font-style: normal;
+        vertical-align: top;
+        text-align: center;
+        -webkit-transition: color .1s ease-in 0;
+        transition: color .1s ease-in 0;
+}
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group {
+        display: block;
+        float: none;
+        overflow: visible;
+        background: 0 0;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin: 0 0 16px;
+        padding: 0 0 16px;
+        position: relative;
+}
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group .imgedit-help {
+          display: none;
+          font-style: italic;
+
+          }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group h2 button.button-link {
+          background: transparent;
+          display: inline-block;
+          padding: 0;
+          text-align: left;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 12px;
+          color: #666;
+          margin: 3px 0 0;
+        }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset {
+          margin: 8px 0;
+          padding: 0;
+          background: inherit;
+          }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset .no-wrap {
+              white-space: nowrap;
+              font-size: 12px;
+              line-height: inherit;
+            }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset .no-wrap label {
+                display: inline;
+                font-size: 13px
+              }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset .no-wrap .imgedit-separator {
+                display: inline-block;
+                width: 7px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 13px;
+                color: #444;
+              }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset input:not([type=radio]) {
+              margin-top: 0;
+              vertical-align: middle;
+              width: 50px;
+              font-size: 13px;
+              padding: 5px 8px;
+              background-color: white;
+
+            }
+
+[id^='imgedit-panel-'] .imgedit-settings .imgedit-group fieldset legend {
+              margin: 0;
+              margin-bottom: 5px;
+              padding: 0;
+              font-weight: normal;
+              background: transparent;
+          }
+
+/*
+ end imgedit-group
+*/
+
+[id^='imgedit-panel-'] .imgedit-save-target fieldset {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+}
+
+[id^='imgedit-panel-'] .imgedit-save-target fieldset input[type=radius] {
+        border-radius: 50%;
+        margin: -4px 4px 0 0;
+        margin-right: 4px;
+        line-height: 10px;
+        border: 1px solid #b4b9be;
+        background: #fff;
+        color: #555;
+        clear: none;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 0;
+        height: 16px;
+        outline: 0;
+        padding: 0!important;
+        text-align: center;
+        vertical-align: middle;
+        width: 16px;
+        min-width: 16px;
+        -webkit-appearance: none;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+                box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        -webkit-transition: .05s border-color ease-in-out;
+        transition: .05s border-color ease-in-out;
+      }
+
+/*
+ end imgedit-settings
+*/
+
+[id^='imgedit-panel-'] .imgedit-panel-content {
+      padding: 16px;
+      -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+              flex-grow: 2;
+      max-height: 490px;
+}
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        clear: none;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        min-width: 300px;
+        margin: 0 0 12px;
+      }
+
+/*button content*/
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-crop:before {
+          content: "\f165";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-rleft:before {
+          content: "\f166";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-rright:before {
+          content: "\f167";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-flipv:before {
+          content: "\f168";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-fliph:before {
+          content: "\f169";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-undo:before {
+          content: "\f171";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .imgedit-redo:before {
+          content: "\f172";
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .button {
+          float: none;
+          width: 100%;
+          max-width: 32px;
+          height: 32px;
+          margin: 0 8px 0 0;
+          padding: 0;
+          background: #f1f1f1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          line-height: 16px;
+          color: #72777c
+        }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu .button:before {
+  font: 400 20px/1 dashicons;
+  color: #72777c;
+  speak: none;
+  vertical-align: middle;
+}
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-crop-wrap img {
+          background-image: linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4),linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4);
+          background-position: 0 0,10px 10px;
+          background-size: 20px 20px;
+          max-height: 350px;
+          max-width: 100%;
+            }
+
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-crop-wrap div:first-of-type {
+              position: absolute;
+              overflow: hidden;
+              z-index: 160002;
+            }
+
+[id^='imgedit-panel-'] .imgedit-submit {
+      margin: 8px 0 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=../daisy/css/maps/style.css.map */

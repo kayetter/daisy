@@ -26,3 +26,5 @@
 @import "objects/_category";
 @import "objects/_footers";
 @import "objects/_widgets";
+@import "objects/_posts";
+@import "admin/_image-edit";

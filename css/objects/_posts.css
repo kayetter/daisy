@@ -1,0 +1,35 @@
+.type-post {
+  p {
+    margin-bottom: 1rem;
+  }
+  .entry-content {
+    ol, ul {
+
+      margin: 1rem 0;
+      li {
+        margin-top: .5rem;
+        margin-left: 1.5rem;
+        img {
+          margin: 1rem auto;
+        }
+      }
+    }
+    ol {
+      counter-reset: daisy-post-counter;
+      list-style:none;
+      > li {
+          margin-bottom: 1.5rem;
+          &:before {
+          content: counter(daisy-post-counter) ".";
+          counter-increment: daisy-post-counter;
+          font-size: 2.0rem;
+          font-weight: bold;
+          font-family: 'Quicksand', $backup_font;
+          color: $blue;
+          padding-right: 1rem;
+        }
+      }
+    }
+
+  }
+}

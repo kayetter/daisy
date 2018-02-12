@@ -30,10 +30,11 @@ function daisy_primary_nav(){
 
 	 $bizcard_sub = array(
 	       'new-bizcard'=>array(
-	    "title"=> "New Bizcard"),
+	    'title'=> 'New Bizcard'),
 	     'manage-vcards'=>array(),
+	     'manage-bizimgs'=>array(),
 	     'new-vcard' => array(
-	       "title"=> "New VCard"),
+	       'title'=> 'New VCard')
 	   );
 		 require_once(get_stylesheet_directory()."/partials/daisy_primary_nav.php");
 }
@@ -155,7 +156,7 @@ function daisy_cat_sidebar_after(){ ?>
 /**
  * HTML for primary category menu of help topics
  *
- * @hook action daisy_cat_sidebar, 30
+ * @hook action daisy_cat, 30
  *
  * @package daisy
  */
@@ -203,7 +204,7 @@ function daisy_list_categories($term_name="",$depth=0,$cat_id=0){
 
 
 function daisy_category_menu_widget(){ ?>
-	<div id="daisy-cat-menu" class="daisy-widget widget daisy-verticle-menu daisy-menu"><span class="gamma daisy-widget-title widget-title">Help Topics</span>
+	<div id="daisy-cat-menu" class="daisy-widget widget daisy-verticle-menu daisy-menu"><span class="gamma daisy-widget-title widget-title"><a href="<?php echo get_permalink(daisy_get_post_id_by_slug("get-help")) ?>">Help Topics</a></span>
 		<ul class="dd-top-menu"> <?php
 				 echo daisy_list_categories("help",2); ?>
 			 </ul>

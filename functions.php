@@ -8,7 +8,7 @@
  */
 
 
-$version = "1.0.3";
+$version = "2.0.0";
 define("DAISY_THEME_VERSION", $version);
 
 require_once( 'inc/wp-class-functions.php');

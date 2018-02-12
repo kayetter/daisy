@@ -23,10 +23,13 @@ function get_daisy_permalink($atts){
   ), $atts ) );
 
   $post_id = daisy_get_post_id_by_slug($slug);
+  if($post_id){
+      ob_start();
+    ?>
+    <a  href="<?php echo get_permalink($post_id) ?>" ><?php echo get_the_title($post_id) ?></a>
 
-  ?>
-  <a href="<?php echo get_permalink($post_id) ?>" ><?php echo get_the_title($post_id) ?></a>
-
-  <?php
+    <?php
+    return ob_get_clean();
+  }
 
 }

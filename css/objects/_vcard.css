@@ -7,7 +7,10 @@
  * @since 0.2.0
  */
 
-
+#edit-vcard-form {
+  overflow-y: auto;
+  height: 100%;
+}
 .vcard-image-wrapper {
   width: 200px;
   margin: auto;

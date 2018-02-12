@@ -26,6 +26,7 @@
 	 * @hooked storefront_post_nav         - 10
 	 * @hooked storefront_display_comments - 20
 	 */
+	remove_action('storefront_single_post_bottom', 'storefront_post_nav', 10);
 	do_action( 'storefront_single_post_bottom' );
 	?>
 

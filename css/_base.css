@@ -203,3 +203,12 @@ i {
 div, ul, li, a {
   transition: color .5s, text-decoration .5s;
 }
+
+a.anchor-block {
+  display: block;
+}
+
+*:focus {
+    border: none;
+    outline: none;
+}
