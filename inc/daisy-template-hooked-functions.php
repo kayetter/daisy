@@ -31,10 +31,10 @@ function daisy_primary_nav(){
 	 $bizcard_sub = array(
 	       'new-bizcard'=>array(
 	    'title'=> 'New Bizcard'),
+			'new-vcard' => array(
+				'title'=> 'New VCard'),
 	     'manage-vcards'=>array(),
-	     'manage-bizimgs'=>array(),
-	     'new-vcard' => array(
-	       'title'=> 'New VCard')
+	     'manage-bizimgs'=>array()
 	   );
 		 require_once(get_stylesheet_directory()."/partials/daisy_primary_nav.php");
 }
