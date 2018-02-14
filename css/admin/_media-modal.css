@@ -1,0 +1,13 @@
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > div.attachment-details.save-ready > div > div.details {
+  a, button {
+    display: none;
+  }
+}
+
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > div.attachment-details.save-ready > label {
+  display: none;
+}
+
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > form {
+  display: none;
+}

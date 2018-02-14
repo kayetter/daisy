@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      1.0.3
+ Version:      2.0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -28,3 +28,4 @@
 @import "objects/_widgets";
 @import "objects/_posts";
 @import "admin/_image-edit";
+@import "admin/_media-modal";

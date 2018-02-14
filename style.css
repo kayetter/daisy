@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      1.0.3
+ Version:      2.0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -2249,14 +2249,8 @@ button.remove-file:hover {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-
-  .archive-div table td .flex-div {
-            -webkit-box-pack: start;
-                -ms-flex-pack: start;
-                    justify-content: flex-start;
-  }
             .archive-div table td .flex-div img {
-              display: block;
+              margin: auto;
             }/*
  style actions like buttons
 */
@@ -2315,6 +2309,24 @@ button.remove-file:hover {
           padding: 0 1rem;
 }
 
+.archive-div table td .flex-div, .archive-div table th .flex-div {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+}
+
+.archive-div table td .flex-div img, .archive-div table th .flex-div img {
+          display: block;
+          max-width: 60px;
+        }
+
 .archive-div table thead, .archive-div table th {
 
         background: rgb(5, 90, 165);
@@ -2326,12 +2338,10 @@ button.remove-file:hover {
       margin: 0;
 }
 
-.archive-div table tr:nth-child(even) {
+.archive-div table tr:nth-child(2n) td {
       background: #f0f0f0;
 }
 
-||||||| merged common ancestors
-=======
 #vcard-archive-div table {
     position: relative;
     font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
@@ -2342,25 +2352,19 @@ button.remove-file:hover {
 
 @media screen and (max-width: 568px) {
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table tr {
+  #vcard-archive-div table tr {
         display: block;
         border: 1px solid black;
         margin: 1rem auto;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table p {
+  #vcard-archive-div table p {
         padding: 1rem;
         font-size: 1.6rem;
         /* text-align: left; */
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table p:first-of-type:before {
+  #vcard-archive-div table p:first-of-type:before {
     content: "Associated Bizcards";
     border-bottom: 1px solid rgb(124,124,124);
     display: block;
@@ -2369,28 +2373,20 @@ button.remove-file:hover {
     margin-bottom: 1rem;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td {
+  #vcard-archive-div table td {
           display: block;
           text-align: center;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td:first-of-type {
+  #vcard-archive-div table td:first-of-type {
     font-size: 1.8rem;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td:first-of-type span {
+  #vcard-archive-div table td:first-of-type span {
               display: block;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td:first-of-type span:before {
+  #vcard-archive-div table td:first-of-type span:before {
     content: "\f2bb";
     color: rgb(5, 90, 165);
     font-family: fontAwesome;
@@ -2398,9 +2394,7 @@ button.remove-file:hover {
     top: 0;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td:last-of-type {
+  #vcard-archive-div table td:last-of-type {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2410,9 +2404,7 @@ button.remove-file:hover {
  style actions like buttons
 */
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link {
+  #vcard-archive-div table td .action-link {
             padding: 7px 35px 8px 35px;
             padding-top: 10px;
             background: rgb(5, 90, 165);
@@ -2426,33 +2418,21 @@ button.remove-file:hover {
             transition: background 2s;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link:hover {
+  #vcard-archive-div table td .action-link:hover {
     background: rgb(0, 174, 239);
     color: white;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link:disabled, ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link:disabled:hover, ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link[disabled] {
+  #vcard-archive-div table td .action-link:disabled, #vcard-archive-div table td .action-link:disabled:hover, #vcard-archive-div table td .action-link[disabled] {
     opacity: .5!important;
     cursor: not-allowed;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table td .action-link + span {
+  #vcard-archive-div table td .action-link + span {
     display: none;
   }
 
-  ||||||| merged common ancestors
-=======
-#vcard-archive-div table thead {
+  #vcard-archive-div table thead {
         display:none;
   }
 }
@@ -2461,41 +2441,23 @@ button.remove-file:hover {
  end of media query
 */
 
-||||||| merged common ancestors
-=======
-#vcard-archive-div table td, ||||||| merged common ancestors
-=======
-#vcard-archive-div table th {
+#vcard-archive-div table td, #vcard-archive-div table th {
       position: relative;
       padding: 1rem .5rem;
 }
 
-||||||| merged common ancestors
-=======
-#vcard-archive-div table td:first-of-type, ||||||| merged common ancestors
-=======
-#vcard-archive-div table th:first-of-type {
+#vcard-archive-div table td:first-of-type, #vcard-archive-div table th:first-of-type {
   padding-left: 1rem;
 }
 
-||||||| merged common ancestors
-=======
-#vcard-archive-div table td:nth-child(3), ||||||| merged common ancestors
-=======
-#vcard-archive-div table th:nth-child(3) {
+#vcard-archive-div table td:nth-child(3), #vcard-archive-div table th:nth-child(3) {
   text-align: center;
 }
 
-||||||| merged common ancestors
-=======
-#vcard-archive-div table td:nth-child(3) span, ||||||| merged common ancestors
-=======
-#vcard-archive-div table th:nth-child(3) span {
+#vcard-archive-div table td:nth-child(3) span, #vcard-archive-div table th:nth-child(3) span {
           padding: 0 1rem;
 }
 
-||||||| merged common ancestors
-=======
 #vcard-archive-div table thead {
 
         background: rgb(5, 90, 165);
@@ -2503,16 +2465,8 @@ button.remove-file:hover {
         font-size: 1.6rem;
 }
 
-||||||| merged common ancestors
-=======
 #vcard-archive-div table p {
       margin: 0;
-}
-
-||||||| merged common ancestors
-=======
-#vcard-archive-div table tr:nth-child(even) {
-      background: #f0f0f0;
 }
 
 .support-page {
@@ -3050,25 +3004,40 @@ button.remove-file:hover {
   vertical-align: middle;
 }
 
+[id^='imgedit-panel-'] .imgedit-panel-content .imgedit-crop-wrap {
+        position: relative;
+      }
+
 [id^='imgedit-panel-'] .imgedit-panel-content .imgedit-crop-wrap img {
+          position: relative;
           background-image: linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4),linear-gradient(45deg,#c4c4c4 25%,transparent 25%,transparent 75%,#c4c4c4 75%,#c4c4c4);
           background-position: 0 0,10px 10px;
           background-size: 20px 20px;
-          max-height: 350px;
-          max-width: 100%;
             }
 
 [id^='imgedit-panel-'] .imgedit-panel-content .imgedit-crop-wrap div:first-of-type {
-              position: absolute;
-              overflow: hidden;
-              z-index: 160002;
-            }
+            position: absolute;
+            overflow: hidden;
+            z-index: 160002;
+          }
 
 [id^='imgedit-panel-'] .imgedit-submit {
       margin: 8px 0 0;
 }
 
 .hidden {
+  display: none;
+}
+
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > div.attachment-details.save-ready > div > div.details a, #__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > div.attachment-details.save-ready > div > div.details button {
+    display: none;
+  }
+
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > div.attachment-details.save-ready > label {
+  display: none;
+}
+
+#__wp-uploader-id-0 > div.media-frame-content > div > div.media-sidebar > form {
   display: none;
 }
 
