@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      2.0.1
+ Version:      2.0.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -576,6 +576,10 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
       float: none;
       width: 100%;
     }
+}
+
+.widget-area .widget a:not(.button) {
+  font-weight: normal;
 }
 
 /**
@@ -1744,12 +1748,57 @@ button.remove-file:hover {
       display: inline-block;
     }
 
-.sms-forms .daisy-form-actions{
+.sms-forms .item-input .flex-div {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+      }
+
+@media screen and (max-width: 568px) {
+
+  .sms-forms .item-input .flex-div label, .sms-forms .item-input .flex-div p {
+            display: block;
+            text-align: center;
+            width: auto;
+  }
+}
+
+.sms-forms .item-input .flex-div input {
+          width: auto;
+}
+
+.sms-forms .daisy-form-actions {
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end;
       margin-top: 1rem;
-      }
+}
+
+.sms-forms .daisy-form-actions.flex-div a, .sms-forms .daisy-form-actions.flex-div input {
+          max-width: 150px;
+}
+
+@media screen and (max-width: 568px) {
+
+  .sms-forms .daisy-form-actions {
+    margin: 0 auto;
+  }
+          .sms-forms .daisy-form-actions .flex-div a, .sms-forms .daisy-form-actions .flex-div input {
+            max-width: 100%;
+          }
+}
+
+.sms-forms #daisy-delete-sms {
+  width: auto;
+}
+
+@media screen and (max-width: 568px) {
+
+  .sms-forms #daisy-delete-sms {
+    margin: 0 auto;
+    padding: .25rem;
+  }
+}
 
 #daisy-input-veri-code{
   display: none;
@@ -1803,7 +1852,7 @@ button.remove-file:hover {
 .daisy-menu { /*end of .dd-top-menu*/
 }
 
-.daisy-menu .dd-menu-selected a, .daisy-menu .current-cat a {
+.daisy-menu .dd-menu-selected a, .daisy-menu .current-cat > a {
     color: black;
   }
 
@@ -2705,6 +2754,10 @@ button.remove-file:hover {
   color: rgb(5, 90, 165);
   padding-right: 1rem;
 }
+
+.type-post .entry-content .figcaption {
+      text-align: center;
+    }
 
 /**
  * Stylesheet for the restyling of edit-image frames.

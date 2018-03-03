@@ -7,9 +7,10 @@
  */
 
 .daisy-menu {
-  .dd-menu-selected a, .current-cat a {
+  .dd-menu-selected a, .current-cat > a {
     color: black;
   }
+
 
   ul {
 

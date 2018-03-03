@@ -96,3 +96,7 @@
    }
   }
 }
+
+.widget-area .widget a:not(.button) {
+  font-weight: normal;
+}

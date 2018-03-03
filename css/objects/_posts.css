@@ -31,5 +31,9 @@
       }
     }
 
+    .figcaption {
+      text-align: center;
+    }
+
   }
 }

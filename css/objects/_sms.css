@@ -26,11 +26,46 @@
       display: inline-block;
     }
 
+    .item-input{
+      .flex-div {
+        justify-content: flex-start;
+        @media $m_screen {
+          label, p {
+            display: block;
+            text-align: center;
+            width: auto;
+          }
+        }
+        input {
+          width: auto;
+        }
+      }
+    }
+
     .daisy-form-actions{
       justify-content: flex-end;
       margin-top: 1rem;
+      &.flex-div {
+        a, input {
+          max-width: 150px;
+        }
       }
-
+      @media $m_screen {
+        margin: 0 auto;
+        .flex-div {
+          a, input {
+            max-width: 100%;
+          }
+      }
+      }
+    }
+#daisy-delete-sms {
+  width: auto;
+  @media $m_screen {
+    margin: 0 auto;
+    padding: .25rem;
+  }
+}
 }
 
 
