@@ -19,10 +19,10 @@ function get_daisy_permalink($atts){
 
   extract( shortcode_atts( array(
   'slug' => "help",
-
+  'post_type' => ''
   ), $atts ) );
 
-  $post_id = daisy_get_post_id_by_slug($slug);
+  $post_id = daisy_get_post_id_by_slug($slug, $post_type);
   if($post_id){
       ob_start();
     ?>

@@ -212,3 +212,12 @@ a.anchor-block {
     border: none;
     outline: none;
 }
+
+ol, ul {
+  list-style-position: outside;
+  margin-left: 0;
+  padding-left: 1rem;
+  li {
+    padding-left: 1rem;
+  }
+}

@@ -307,6 +307,16 @@ a.anchor-block {
     outline: none;
 }
 
+ol, ul {
+  list-style-position: outside;
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+ol li, ul li {
+    padding-left: 1rem;
+  }
+
 #overlay {
   position: absolute;
   /* background: linear-gradient(rgba(240, 240, 240, .8),
@@ -2736,6 +2746,10 @@ button.remove-file:hover {
           margin: 1rem auto;
         }
 
+.type-post .entry-content ol li ul > li, .type-post .entry-content ul li ul > li {
+          margin-left: 4rem;
+        }
+
 .type-post .entry-content ol {
       counter-reset: daisy-post-counter;
       list-style:none;
@@ -2757,6 +2771,10 @@ button.remove-file:hover {
 
 .type-post .entry-content .figcaption {
       text-align: center;
+    }
+
+.type-post .entry-content img {
+      max-width: 560px;
     }
 
 /**
