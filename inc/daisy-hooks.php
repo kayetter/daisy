@@ -28,6 +28,14 @@ add_action('daisy_cat_sidebar', 'daisy_cat_sidebar_after', 40);
 //display category menu for help
 add_action('daisy_cat', 'daisy_list_categories', 10,3);
 
-//displays title content of post
+//displays content of post
 add_action('daisy_cat_post_content', 'daisy_post_header', 10);
 add_action('daisy_cat_post_content', 'storefront_post_content', 20);
+
+
+//displays post excerpt on category loop
+add_action('daisy_cat_loop_content', 'daisy_cat_loop_content', 10);
+
+//post navigation for category pages
+
+add_action('storefront_single_post_bottom', 'daisy_category_page_nav', 10);

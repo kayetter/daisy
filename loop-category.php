@@ -25,10 +25,10 @@ do_action( 'storefront_loop_before' );
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
 		get_template_part( 'content', 'category');
-		$terms = get_the_terms($post, 'category');
-		foreach($terms as $term){
-			echo $term->name;
-		}
+		// $terms = get_the_terms($post, 'category');
+		// foreach($terms as $term){
+		// 	echo $term->name;
+		// }
 
 	endwhile;
 }

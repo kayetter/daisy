@@ -181,7 +181,7 @@ function sort_category_on_meta() {
   if(is_category()){
 
     set_query_var('meta_key','dd_sort');
-    set_query_var('orderby', 'meta_value_num');
+    set_query_var('orderby', 'category_name,dd_sort');
     set_query_var('order', 'ASC');
   }
 

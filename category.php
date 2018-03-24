@@ -12,16 +12,20 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main daisy-cat-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
-
 			<header class="page-header">
-				<?php if(!is_category("help")): ?>
-				<h1><?php echo ucwords(single_term_title("", false)); ?></h1>
+				<?php if(!is_single() && !is_category('help')): ?>
+				<div class="breadcrumb">
+					<?php echo the_category('<i class="fa fa-caret-right"></i>','multiple'); ?>
+				</div>
 			<?php endif; ?>
+				<?php if(!is_category("help")): ?>
+					<h1><?php echo ucwords(single_term_title("", false)); ?></h1>
+				<?php endif; ?>
 			</header><!-- .page-header -->
 
-			<?php if(is_single()){
-				the_post();
+		<?php if ( have_posts() ) :
+
+ 			if(is_single()){
 				get_template_part('content', 'category-single');
 
 
@@ -29,6 +33,7 @@ get_header(); ?>
 			} else {
 			 get_template_part( 'loop', 'category' );
 		 }
+
 		else :
 
 			get_template_part( 'content', 'none' );

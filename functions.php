@@ -19,3 +19,4 @@ require_once( 'inc/daisy-wp-functions.php');
 require_once( 'inc/daisy-storefront-functions.php');
 require_once( 'inc/woocommerce-hooks.php');
 require_once( 'inc/daisy-shortcodes.php');
+require_once( 'inc/class-daisy_help_widget.php');

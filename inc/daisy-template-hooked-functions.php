@@ -91,7 +91,9 @@ function add_daisy_footer_info(){
  * @see content-daisy.php
  * @package daisy
  */
-function daisy_cat_post_submenu(){ ?>
+function daisy_cat_post_submenu(){
+	$count = false;
+	?>
 
 			<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget">
 				<?php
@@ -106,8 +108,23 @@ function daisy_cat_post_submenu(){ ?>
 					}
 
 					$title = ucwords($term->name);
+					$args = array(
+						'category_name'=>$term->slug,
 
-					$sub = new WP_Query(array('category_name'=>$term->slug));
+						'meta_key' => 'dd_sort',
+						'orderby' => 'category_name,dd_sort',
+						'order' => 'ASC'
+					);
+
+					$sub = new WP_Query($args);
+					if($sub->post_count > 4){
+						$count = true;
+					}
+
+					$args['posts_per_page'] = 4;
+
+					$sub = new WP_Query($args);
+
 					if($sub->have_posts()):
 				 ?>
 
@@ -118,8 +135,12 @@ function daisy_cat_post_submenu(){ ?>
    						endwhile;
 
 							wp_reset_query();
-						 ?>
 
+
+						 if($count){ ?>
+
+							 <li><a style="text-decoration: underline" href="<?php echo get_category_link($term->term_id) ?>">See All</a> </li>
+						 <?php	 } ?>
 								</ul>
 							</div>
 			<?php
@@ -217,11 +238,17 @@ function daisy_category_menu_widget(){ ?>
  * @since 0.2.0
  */
 function daisy_post_header() {
+	global $post;
+	$cat = get_the_category($post->ID);
 	?>
 	<header class="entry-header">
 	<?php
-	if ( is_single() ) {
+	if ( is_single()) {
 		the_title( '<h2 class="entry-title">', '</h2>' );
+		if($cat[0]->slug != 'help'){
+			echo the_category(" | ",'multiple');
+		}
+
 	} else {
 		if ( 'post' == get_post_type() ) {
 		}
@@ -230,5 +257,106 @@ function daisy_post_header() {
 	}
 	?>
 	</header><!-- .entry-header -->
+	<?php
+}
+
+/**
+ * get adjacent post link by category
+ * @see daisy_category_page_nav
+ * @param string $link_type next | prev
+ * @since 2.0.3
+ * @return string html anchor with category link
+ */
+function get_adjacent_cat_link($link_type='next') {
+	global $post;
+	$post_id = $post->ID; // current post ID
+	$cat = get_the_category();
+	$current_cat_id = $cat[0]->cat_ID; // current category ID
+
+	$args = array(
+	    'category' => $current_cat_id,
+			'meta_key' => 'dd_sort',
+	    'orderby'  => 'dd_sort',
+	    'order'    => 'ASC'
+	);
+	$posts = get_posts( $args );
+	// get IDs of posts retrieved from get_posts
+	$ids = array();
+	foreach ( $posts as $thepost ) {
+	    $ids[] = $thepost->ID;
+	}
+	// get and echo previous and next post in the same category
+	$thisindex = array_search( $post_id, $ids );
+	$previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
+	$nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
+
+	if ( $previd && $link_type=='prev') {
+	    return '<a rel="prev" href="'.get_permalink($previd).'">'.get_the_title($previd).'</a>';
+	}
+	if ( $nextid && $link_type=='next') {
+		return '<a rel="next" href="'.get_permalink($nextid).'">'.get_the_title($nextid).'</a>';
+	}
+	return "";
+}
+
+
+/**
+ * Daisy category page navigation linkes
+ *
+ * @hook storefront_single_post_bottom
+ * @since 2.0.3
+ * @return string html page navigation
+ */
+function daisy_category_page_nav() {	?>
+	<nav id="post-navigation" class="navigation post-navigation" role="navigation" aria-label="Post Navigation"><span class="screen-reader-text">Post navigation</span><div class="nav-links">
+	    <div class="nav-previous">
+	        <?php echo get_adjacent_cat_link('prev')?>
+	    </div>
+	    <div class="nav-next">
+	        <?php echo get_adjacent_cat_link('next'); ?>
+	    </div>
+		</div><!-- #nav-above -->
+	</nav>
+	<?php
+}
+
+
+/**
+ * Returns excerpt content for loop-category
+ *
+ * @hooked daisy_cat_loop_content
+ */
+function daisy_cat_loop_content() {
+	?>
+	<div class="entry-header">
+		<h2>
+			<a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
+		</h2>
+	</div>
+	<div class="entry-content">
+	<?php
+
+	if(is_category('help')){
+		the_content(
+			sprintf(
+				__( 'Continue reading %s', 'storefront' ),
+				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			)
+		);
+	} else {
+
+		the_excerpt();
+	}
+
+
+
+	// do_action( 'storefront_post_content_after' );
+
+	wp_link_pages( array(
+		'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+		'after'  => '</div>',
+	) );
+	?>
+	</div><!-- .entry-content -->
 	<?php
 }

@@ -23,11 +23,16 @@
 	/**
 	 * Functions hooked in to storefront_single_post_bottom action
 	 *
+	 * @hooked 'daisy_cat_post_nav'				- 10
 	 * @hooked storefront_post_nav         - 10
 	 * @hooked storefront_display_comments - 20
 	 */
-	remove_action('storefront_single_post_bottom', 'storefront_post_nav', 10);
-	do_action( 'storefront_single_post_bottom' );
+	 $cat=get_the_category();
+	 if($cat[0]->slug != 'help'){
+
+			remove_action('storefront_single_post_bottom', 'storefront_post_nav', 10);
+			do_action( 'storefront_single_post_bottom');
+		}
 	?>
 
 </div><!-- #post-## -->

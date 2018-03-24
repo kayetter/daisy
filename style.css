@@ -592,6 +592,10 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   font-weight: normal;
 }
 
+embed, iframe, object, video {
+    max-width: 460px;
+}
+
 /**
  * Styles for bizcards display
  *
@@ -2594,7 +2598,7 @@ button.remove-file:hover {
   }
 
 .daisy-cat-main h2{
-    font-size: 2em;
+    font-size: 2.2rem;
   }
 
 .daisy-cat-main h2 img {
@@ -2610,6 +2614,14 @@ button.remove-file:hover {
       margin-bottom: 2em;
       border: none;
     }
+
+.daisy-cat-main .support-page .dd-category h2 img {
+          margin: 0;
+        }
+
+.daisy-cat-main .breadcrumb {
+    margin-bottom: 1rem;
+  }
 
 .site-footer .col-full {
     max-width: 100%;

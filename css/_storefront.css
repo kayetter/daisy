@@ -100,3 +100,7 @@
 .widget-area .widget a:not(.button) {
   font-weight: normal;
 }
+
+embed, iframe, object, video {
+    max-width: 460px;
+}
