@@ -38,4 +38,7 @@ do_action( 'storefront_loop_before' );
  *
  * @hooked storefront_paging_nav - 10
  */
-do_action( 'storefront_loop_after' );
+ if(!is_category('help')){
+
+	 do_action( 'storefront_loop_after' );
+ }

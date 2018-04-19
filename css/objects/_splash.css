@@ -1,0 +1,81 @@
+/**
+ * Styling for front-page splash screen
+ *
+ *
+ * @package Daisy theme
+ * @since 2.0.0
+ */
+
+#splash-div{
+  display: flex;
+  @media $s_screen{
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  justify-content: space-around;
+  align-items: flex-start;
+  /* height: 100vh; */
+  width: 80vw;
+  margin: auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat:no-repeat;
+  @media $xl_screen {
+    width:100vw;
+    justify-content: space-between;
+  }
+  h1{
+    text-align: left;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .splash-button-wrap {
+    margin-top: 10rem;
+    @media $s_screen {
+      margin-top: 5rem;
+    }
+
+    .splash-button{
+      display: block;
+      margin: 2rem;
+      max-width: 200px;
+      font-size: 2.4rem;
+      border-radius: 20px;
+      text-align: center;
+      background: $hoverblue;
+      color: white;
+      border: 4px double white;
+      transition: background-color .5s linear;
+      &:hover {
+        text-decoration: none;
+        background-color: $blue;
+      }
+    }
+  }
+  .splash-panel{
+    width: 50%;
+    @media $s_screen{
+      width: 100%;
+    }
+  }
+  #splash-img {
+    max-width: 400px;
+    display: block;
+    @media $s_screen{
+      display: none;
+    }
+  }
+}
+
+.home {
+  .content-area {
+    margin-bottom: 0;
+
+
+  }
+  .site-main {
+    margin-bottom: 1rem;
+  }
+
+}

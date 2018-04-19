@@ -1,4 +1,5 @@
 .site-header {
+  padding-top: 1rem;
   .col-full {
     max-width: 100%;
     padding: 0 2rem;
@@ -11,6 +12,7 @@
   align-items: flex-start;
   color: $blue;
   width: 100%;
+  margin-bottom: 1rem;
   .tagline {
     position: relative;
     color:black;

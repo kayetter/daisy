@@ -103,4 +103,9 @@
 
 embed, iframe, object, video {
     max-width: 460px;
+    max-height: 276px;
+}
+
+.embed-youtube {
+  margin-bottom: 3rem;
 }

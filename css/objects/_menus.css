@@ -53,7 +53,7 @@
  /* Daisy Horizontal Menu */
  .daisy-hz-menu {
    color: $blue;
-   padding: 1rem 0;
+   padding: 0 0 1rem;;
    border-bottom: 1px solid $ltgray;
 
 

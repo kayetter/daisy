@@ -44,6 +44,9 @@ ul.products li.product .woocommerce-LoopProduct-link {
   }
 }
 
+/*table.shop_table.order_details + header, table.shop_table.shop_table_responsive.my_account_orders {
+  display: none;
+}*/
 
 
 

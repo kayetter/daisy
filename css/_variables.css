@@ -36,3 +36,4 @@
   $m_screen: screen and (max-width: 568px);
   /*768px when sidebar moves to right*/
   $l_screen: screen and (max-width: 768px);
+  $xl_screen: screen and (max-width: 960px);

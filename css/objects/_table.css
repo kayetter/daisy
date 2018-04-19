@@ -1,4 +1,10 @@
-
+/**
+ * Archive table for manage bizcards and vcards
+ *
+ *
+ * @package Daisy theme
+ * @since 2.0.0
+ */
 .archive-div {
   table {
     position: relative;
