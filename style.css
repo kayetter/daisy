@@ -478,6 +478,10 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
   text-decoration: none;
 }
 
+.pagination .page-numbers li .page-numbers.current, .woocommerce-pagination .page-numbers li .page-numbers.current {
+  color: white;
+}
+
 /*table.shop_table.order_details + header, table.shop_table.shop_table_responsive.my_account_orders {
   display: none;
 }*/

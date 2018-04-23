@@ -20,9 +20,9 @@ get_header('bizcard'); ?>
 			<div id="splash-div"  >
 
  				<div class='splash-panel' id="splash-copy">
-					<h1>Dopey Daisy<br> Electronic Business Cards
-					</h1>
-					<p>A device-independent e-business card solution for all your networking needs. No app required.</p>
+					<h1>Dopey Daisy Bizcards</h1>
+					<h2>Digital business cards -- make sharing simple.</h2>
+					<p>A device-independent digital business card solution for all your networking needs. No app required.</p>
 					<div class="splash-button-wrap">
  						<a class="splash-button" href="<?php echo the_permalink(wc_get_page_id("Shop")) ?>">See How</a>
  						<a class="splash-button" href="<?php echo the_permalink(wc_get_page_id("Shop")) ?>">Shop Now</a>
