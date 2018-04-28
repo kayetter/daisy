@@ -174,19 +174,21 @@ function daisy_remove_excerpt_p_tags($content){
 /**
  	 * Sort Category pages on meta tag dd_sort
  	 *
- 	 * @hook filter 'pre_get_posts'
+ 	 * @hook filter 'posts_orderby'
  	 * @return void
 	 */
 function sort_category_on_meta() {
   if(is_category()){
 
     set_query_var('meta_key','dd_sort');
-    set_query_var('orderby', 'category_name,dd_sort');
+    set_query_var('orderby', 'tax_query');
+    // set_query_var('orderby', 'meta_value_num');
     set_query_var('order', 'ASC');
   }
 
 }
-add_action('pre_get_posts', 'sort_category_on_meta');
+add_action('pre_get_posts', 'sort_category_on_meta', 10);
+
 
 /**
  	 * Applies category.php template to single.
@@ -204,11 +206,11 @@ function apply_category_single($single_template){
 }
 add_filter( "single_template", "apply_category_single");
 
-function jetpackme_remove_rp() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-        remove_filter( 'the_content', $callback, 40 );
-    }
-}
-add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+// function jetpackme_remove_rp() {
+//     if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+//         $jprp = Jetpack_RelatedPosts::init();
+//         $callback = array( $jprp, 'filter_add_target_to_dom' );
+//         remove_filter( 'the_content', $callback, 40 );
+//     }
+// }
+// add_filter( 'wp', 'jetpackme_remove_rp', 20 );

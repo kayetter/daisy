@@ -87,66 +87,65 @@ function add_daisy_footer_info(){
 /**
  * Category nav menu used in sidebar
  *
- * @hook action daisy_cat_sidebar, 20
+ * @hook action daisy_cat_sidebar, 20, 1
  * @see content-daisy.php
  * @package daisy
  */
-function daisy_cat_post_submenu(){
-	$count = false;
-	?>
+function daisy_cat_post_submenu($cat=""){
+	if($cat==""){
+		return;
+	}
 
-			<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget">
-				<?php
-					if(is_single()){
-						global $post;
-						$terms = get_the_terms($post->ID, 'category');
-						if(!empty($terms)){
-							$term = $terms[0];
-						} else { return "";}
-					} elseif(is_category()) {
-						$term = get_queried_object();
-					}
+	$category = get_the_category_by_ID($cat);
 
-					$title = ucwords($term->name);
-					$args = array(
-						'category_name'=>$term->slug,
+	$title = ucwords($category); ?>
+	<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget">
+		<span class="gamma daisy-widget-title widget-title">
+			<a href="<?php echo get_category_link($cat) ?>" > <?php echo $title ?></a>
+		</span>
+	<?php
 
-						'meta_key' => 'dd_sort',
-						'orderby' => 'category_name,dd_sort',
-						'order' => 'ASC'
-					);
+	//if category has children display child category links
+	if(category_has_children($cat)):
 
-					$sub = new WP_Query($args);
-					if($sub->post_count > 4){
-						$count = true;
-					}
+		$categories = get_categories(array('parent'=>$cat));?>
+		<ul>
+			<?php		foreach($categories as $category):	?>
+				<li><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo ucwords($category->name) ?></a></li>
+			<?php endforeach; ?>
+		</ul>
 
-					$args['posts_per_page'] = 4;
+	<?php  else:
+		//otherwise get 4 posts from the current category excluding the current post
+		global $post;
 
-					$sub = new WP_Query($args);
-
-					if($sub->have_posts()):
-				 ?>
-
-						<a href="<?php echo get_permalink() ?> " class="gamma daisy-widget-title widget-title"><?php echo $title ?></a>
-	      		<ul>
-						<?php 	while($sub->have_posts()): $sub->the_post();  ?>
-        		<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
-   						endwhile;
-
-							wp_reset_query();
+			$args = array(
+				'posts_per_page'=> 4,
+				'cat'=>$cat,
+				'meta_key' => 'dd_sort',
+				'post__not_in'=> array($post->ID),
+				'orderby' => 'meta_value_num',
+				'order' => 'ASC'
+			);
 
 
-						 if($count){ ?>
 
-							 <li><a style="text-decoration: underline" href="<?php echo get_category_link($term->term_id) ?>">See All</a> </li>
-						 <?php	 } ?>
-								</ul>
-							</div>
-			<?php
-		endif;
+			$sub = new WP_Query($args);
 
-}
+			if($sub->have_posts()):	 ?>
+  			<ul>
+				<?php 	while($sub->have_posts()): $sub->the_post();  ?>
+    			<li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></li> <?php
+						endwhile;
+
+					wp_reset_query(); ?>
+
+				</ul>
+			<?php	endif;
+		endif; ?>
+		</div> <?php
+	}
+
 
 /**
  * opening tag for sidebar
@@ -244,10 +243,15 @@ function daisy_post_header() {
 	<header class="entry-header">
 	<?php
 	if ( is_single()) {
+		if($cat[0]->slug=='help'){
+			the_title('<h1>','</h1>');
+		} else {
+
 		the_title( '<h2 class="entry-title">', '</h2>' );
 		if($cat[0]->slug != 'help'){
 			echo the_category(" | ",'multiple');
 		}
+	}
 
 	} else {
 		if ( 'post' == get_post_type() ) {
@@ -332,6 +336,9 @@ function daisy_cat_loop_content() {
 		<h2>
 			<a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a>
 		</h2>
+		<div class="breadcrumb">
+			<?php echo the_category(' | ','multiple'); ?>
+		</div>
 	</div>
 	<div class="entry-content">
 	<?php
@@ -340,7 +347,7 @@ function daisy_cat_loop_content() {
 		the_content(
 			sprintf(
 				__( 'Continue reading %s', 'storefront' ),
-				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+				'<daisy/css class="screen-reader-text">' . get_the_title() . '</span>'
 			)
 		);
 	} else {

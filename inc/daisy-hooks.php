@@ -21,7 +21,7 @@ add_action('daisy_footer', 'add_daisy_footer_info', 20);
 
 //Daisy Sidebar on Category Pages
 add_action('daisy_cat_sidebar', 'daisy_cat_sidebar_before', 10);
-add_action('daisy_cat_sidebar', 'daisy_cat_post_submenu', 20);
+add_action('daisy_cat_sidebar', 'daisy_cat_post_submenu', 20, 1);
 add_action('daisy_cat_sidebar', 'daisy_category_menu_widget', 30);
 add_action('daisy_cat_sidebar', 'daisy_cat_sidebar_after', 40);
 

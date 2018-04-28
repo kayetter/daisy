@@ -56,7 +56,7 @@ endif; ?>
     <li ><a href="<?php echo the_permalink(wc_get_page_id("myaccount")) ?>"><?php echo is_user_logged_in()?"My Account":"Login" ?> </a></li>
 
 <?php
-  if(current_user_can("delete_plugins")): ?>
+  if(current_user_can("edit_others_posts")): ?>
     <li ><a href="<?php echo the_permalink(get_page_by_path("daisy-print-pre")) ?>">Daisy Print Pre</a></li> <?php
   endif;
   ?>

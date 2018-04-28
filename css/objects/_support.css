@@ -12,6 +12,7 @@
   h2 {
     color: $blue;
     border-bottom: 1px solid $ltgray;
+    line-height: 2;
     i, img {
       padding-right: 1rem;
     }

@@ -602,6 +602,12 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
 
 .widget-area .widget a:not(.button) {
   font-weight: normal;
+  /* text-decoration: none;
+  transition: color .5s linear, text-decoration .5s linear;
+  &:hover {
+    color: $hoverblue;
+    text-decoration: underline;
+  } */
 }
 
 embed, iframe, object, video {
@@ -2588,6 +2594,7 @@ button.remove-file:hover {
 .dd-category h2 {
     color: rgb(5, 90, 165);
     border-bottom: 1px solid #f0f0f0;
+    line-height: 2;
   }
 
 .dd-category h2 i, .dd-category h2 img {
@@ -2737,36 +2744,45 @@ button.remove-file:hover {
  * @since 0.2.0
  */
 
-.daisy-widget-area .daisy-widget.widget .daisy-widget-title {
-      border-bottom: 1px solid rgba(0,0,0,.05);
-      padding: 0 0 .5em;
-      margin-bottom: .5em;
-      color: black;
-      text-decoration: none
-    }
+.widget-area .widget.daisy-widget-area .widget-title {
+        border-bottom: 1px solid rgba(0,0,0,.05);
+        padding: 0 0 .5em;
+        margin-bottom: .5em;
+        color: black;
+        text-decoration: none
+      }
 
-.daisy-widget-area .daisy-widget.widget .daisy-widget-title:hover {
+.widget-area .widget.daisy-widget-area .widget-title:hover {
   text-decoration: underline;
 }
 
-.daisy-widget-area .daisy-widget.widget .daisy-widget-menu {
-      margin-bottom: 1em;
-    }
+.widget-area .widget.daisy-widget-area .daisy-widget-menu {
+        margin-bottom: 1em;
+      }
 
-.daisy-widget-area .daisy-widget.widget ul {
-      margin: 0;
-    }
+.widget-area .widget.daisy-widget-area ul {
+        margin: 0;
+      }
 
-.daisy-widget-area .daisy-widget.widget ul li:before {
+.widget-area .widget.daisy-widget-area ul li {
+          margin: 1rem 0
+        }
+
+.widget-area .widget.daisy-widget-area ul li:before {
   content: "";
 }
 
-.daisy-widget-area .daisy-widget.widget ul li a {
-          text-decoration: none;
-          color: rgb(5, 90, 165);
+.widget-area .widget.daisy-widget-area ul li .daisy-widget-anchor {
+            text-decoration: none;
+            -webkit-transition: color .5s linear, -webkit-text-decoration .5s linear;
+            transition: color .5s linear, -webkit-text-decoration .5s linear;
+            transition: color .5s linear, text-decoration .5s linear;
+            transition: color .5s linear, text-decoration .5s linear, -webkit-text-decoration .5s linear;
+            color: rgb(5, 90, 165);
 }
 
-.daisy-widget-area .daisy-widget.widget ul li a:hover {
+.widget-area .widget.daisy-widget-area ul li .daisy-widget-anchor:hover {
+  color: rgb(0, 174, 239);
   text-decoration: underline;
 }
 

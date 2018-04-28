@@ -6,39 +6,43 @@
  * @since 0.2.0
  */
 
+.widget-area {
+  .widget.daisy-widget-area {
 
-.daisy-widget-area {
-  .daisy-widget.widget   {
 
-    .daisy-widget-title {
-      border-bottom: 1px solid rgba(0,0,0,.05);
-      padding: 0 0 .5em;
-      margin-bottom: .5em;
-      color: black;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    .daisy-widget-menu {
-      margin-bottom: 1em;
-    }
-
-    ul {
-      margin: 0;
-      li {
-        &:before {
-          content: "";
+      .widget-title {
+        border-bottom: 1px solid rgba(0,0,0,.05);
+        padding: 0 0 .5em;
+        margin-bottom: .5em;
+        color: black;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
         }
-        a {
-          text-decoration: none;
-          color: $blue;
-          &:hover {
-            text-decoration: underline;
+      }
+      .daisy-widget-menu {
+        margin-bottom: 1em;
+      }
+
+      ul {
+        margin: 0;
+        li {
+          margin: 1rem 0;
+          &:before {
+            content: "";
+          }
+          .daisy-widget-anchor {
+            text-decoration: none;
+            transition: color .5s linear, text-decoration .5s linear;
+            color: $blue;
+            &:hover {
+              color: $hoverblue;
+              text-decoration: underline;
+            }
           }
         }
       }
-    }
+
 
   }
 }

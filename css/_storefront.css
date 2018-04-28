@@ -99,6 +99,12 @@
 
 .widget-area .widget a:not(.button) {
   font-weight: normal;
+  /* text-decoration: none;
+  transition: color .5s linear, text-decoration .5s linear;
+  &:hover {
+    color: $hoverblue;
+    text-decoration: underline;
+  } */
 }
 
 embed, iframe, object, video {

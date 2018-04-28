@@ -23,7 +23,7 @@ class Daisy_Help_Widget extends WP_Widget {
   public function __construct() {
     global $wp_query;
     $widget_options = array(
-      'classname' => 'help-widget',
+      'classname' => 'daisy-widget-area',
       'description' => 'Displays list of FAQ help items',
     );
     parent::__construct( 'help_widget', 'Bizcard Help Widget', $widget_options );
@@ -31,7 +31,7 @@ class Daisy_Help_Widget extends WP_Widget {
   }
 
   public function widget( $args, $instance ) {
-    $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Sharing Tips' );
+    $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'FAQs and Tips' );
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 
@@ -48,7 +48,7 @@ class Daisy_Help_Widget extends WP_Widget {
 
       <?php  while($tips->have_posts()):  $tips->the_post(); ?>
 
-        <li><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a> </li>
+        <li><a class="daisy-widget-anchor" href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a> </li>
 
       <?php
         endwhile;
