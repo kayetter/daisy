@@ -21,7 +21,7 @@ while ( have_posts() ) : the_post();
 	 <a href="<?php echo get_the_permalink() ?>"><?php the_title('<h3>',"</h3>"); ?></a>
 
 	 <?php
-	if(get_post_type()=='bizcards'){
+	if(get_post_type()=='bizcard'){
 		the_post_thumbnail('small');
 	}
 	the_excerpt();

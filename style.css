@@ -3,7 +3,7 @@
  Description:  a child theme for storefront
  Author:       Kristin Yetter
  Template:     storefront
- Version:      2.0.2
+ Version:      2.3.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  daisy
@@ -51,8 +51,7 @@
 
 html {
   font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -73,7 +72,6 @@ h3 {
 
 a {
   color: rgb(5, 90, 165);
-  -webkit-transition: color.5s;
   transition: color.5s
 }
 
@@ -128,18 +126,10 @@ ul.products {
 margin-left: 0;
 margin-bottom: 0;
 clear:none;
-display: -webkit-box;
-display: -ms-flexbox;
 display: flex;
--webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
--ms-flex-wrap: wrap;
-    flex-wrap: wrap;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
-    -ms-flex-direction: row;
-        flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
+flex-direction: row;
 }
 
 @-webkit-keyframes daisy-spin {
@@ -198,8 +188,7 @@ display: flex;
   line-height: 1;
   display: none;
   background: white;
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
-          box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.35);
   border: .5px solid black;
   position: fixed;
   top: 0;
@@ -220,19 +209,13 @@ main {
 }
 
 main .bizcard-main-links{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
 
 @media screen and (max-width: 568px) {
 
   main .page-header.flex-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 
@@ -242,15 +225,9 @@ main .bizcard-main-links{
 }
 
 .flex-div{
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -296,7 +273,6 @@ i {
 }
 
 div, ul, li, a {
-  -webkit-transition: color .5s, -webkit-text-decoration .5s;
   transition: color .5s, -webkit-text-decoration .5s;
   transition: color .5s, text-decoration .5s;
   transition: color .5s, text-decoration .5s, -webkit-text-decoration .5s;
@@ -383,8 +359,7 @@ ol li, ul li {
   bottom: 0;
   overflow: auto;
   min-height: 300px;
-  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.7);
-          box-shadow: 0 5px 15px rgba(0,0,0,.7);
+  box-shadow: 0 5px 15px rgba(0,0,0,.7);
   background: #fcfcfc;
 }
 
@@ -442,8 +417,6 @@ ol li, ul li {
 
 .woocommerce-active .site-header .site-branding {
     float: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
 }
@@ -461,7 +434,6 @@ ol li, ul li {
       background-color: rgb(5, 90, 165);
       color: white;
       font-family: 'Raleway', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      -webkit-transition: background-color .5s;
       transition: background-color .5s
     }
 
@@ -480,6 +452,10 @@ ul.products li.product .woocommerce-LoopProduct-link:hover {
 
 .pagination .page-numbers li .page-numbers.current, .woocommerce-pagination .page-numbers li .page-numbers.current {
   color: white;
+}
+
+.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+  margin-bottom: 1rem;
 }
 
 /*table.shop_table.order_details + header, table.shop_table.shop_table_responsive.my_account_orders {
@@ -619,6 +595,20 @@ embed, iframe, object, video {
   margin-bottom: 3rem;
 }
 
+@media (min-width: 768px)
+.storefront-full-width-content .content-area {
+    width: 73.9130434783%;
+    float: left;
+    margin-right: 4.347826087%;
+}
+
+@media (min-width: 768px)
+.right-sidebar .content-area {
+    width: 73.9130434783%;
+    float: left;
+    margin-right: 4.347826087%;
+}
+
 /**
  * Styles for bizcards display
  *
@@ -636,7 +626,7 @@ embed, iframe, object, video {
       max-width: 80%;
     }
 
-.bizcards {
+.bizcard {
   position: relative;
 }
 
@@ -654,14 +644,13 @@ embed, iframe, object, video {
   z-index: 5;
   background: rgb(5, 90, 165)!important;
   border-radius: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 3px;
   border: 2px solid #fff;
-  -webkit-box-shadow: 0 2px 1px rgba(46,68,83,.15);
-          box-shadow: 0 2px 1px rgba(46,68,83,.15);
+  box-shadow: 0 2px 1px rgba(46,68,83,.15);
   text-align: center;
   cursor: pointer
+
 }
 
 .daisy-edit-icon:hover {
@@ -708,8 +697,7 @@ embed, iframe, object, video {
       z-index: 5;
       /*background: #0085ba!important;
       border-radius: 50%;*/
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
+      box-sizing: border-box;
       padding: 3px;
       /*border: 2px solid #fff;*/
       /*box-shadow: 0 2px 1px rgba(46,68,83,.15);*/
@@ -755,7 +743,7 @@ embed, iframe, object, video {
   border: 2px solid rgb(229, 185, 18);
 }
 
-.bizcard-entry-header .bizcards-gui {
+.bizcard-entry-header .bizcard-gui {
     position: relative;
     padding: .5rem 2rem 2rem;
     min-height: 7rem;
@@ -791,12 +779,8 @@ embed, iframe, object, video {
 
 .bizcard-entry-header .drd-link{
     position: relative;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     margin-top: 2.5rem;
 
   }
@@ -850,6 +834,13 @@ embed, iframe, object, video {
     margin-bottom: 1rem;
 }
 
+.fa-camera:before {
+  font-size: x-large;
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+}
+
 /**
  * Styles for generic form and daisy-create-form
  *
@@ -868,11 +859,9 @@ input[type=email], input[type=password], input[type=search], input[type=text], i
   border: 0;
   border: 1px solid #e5e5e5;
   -webkit-appearance: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-weight: 400;
-  -webkit-box-shadow: none;
-          box-shadow: none
+  box-shadow: none
 
 }
 
@@ -914,7 +903,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
    line-height: 1.618;
    cursor: pointer;
    font-weight: normal;
-   -webkit-transition: background 2s;
    transition: background 2s
 
  }
@@ -944,7 +932,6 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
   z-index: 1000;
   cursor: pointer;
   outline: 0;
-  -webkit-transition: color .1s ease-in-out,background .1s ease-in-out;
   transition: color .1s ease-in-out,background .1s ease-in-out
 }
 
@@ -988,21 +975,13 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 }
 
 .daisy-form .label-div{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
 
 .daisy-form .flex-div {
-     -webkit-box-align: center;
-         -ms-flex-align: center;
-             align-items: center;
-     -webkit-box-pack: end;
-         -ms-flex-pack: end;
-             justify-content: flex-end;
+     align-items: center;
+     justify-content: flex-end;
    }
 
 .daisy-form .flex-div a, .daisy-form .flex-div input {
@@ -1175,30 +1154,19 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 
 .daisy-form .icon-action-group {
     position: relative;
-    display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
 
     min-height: 100px;
 }
 
 .daisy-form .icon-action-group .dashicon-ul {
       position: relative;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       padding: 0;
       color: rgb(5, 90, 165);
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
+      flex-direction: column;
       margin-top: 1rem;
       margin-right: 4rem;
       margin-left: 0
@@ -1212,12 +1180,8 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 }
 
 .daisy-form .icon-action-group .dashicon-ul {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   list-style: none;
   cursor: pointer;
 }
@@ -1272,8 +1236,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
 }
 
 #create-vcard-form {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 
 }
 
@@ -1307,19 +1270,10 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
     }
 
 #create-vcard-form fieldset .dyn-type-div{
-      display:-webkit-box;
-      display:-ms-flexbox;
       display:flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
 
     }
 
@@ -1416,12 +1370,8 @@ input[type=email]:focus, input[type=password]:focus, input[type=search]:focus, i
     }
 
 #edit-vcard-form .vcard-fieldset .single-line-div {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        justify-content: space-between;
         max-width: 100%;
       }
 
@@ -1586,8 +1536,7 @@ button.remove-file:hover {
 
 #vcard-archive-div h3 {
     width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
 
 @media screen and (max-width: 490px) {
@@ -1632,12 +1581,8 @@ button.remove-file:hover {
     }
 
 #edit-vcard-form .vcard-fieldset .single-line-div {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        justify-content: space-between;
         max-width: 100%;
       }
 
@@ -1786,9 +1731,7 @@ button.remove-file:hover {
     }
 
 .sms-forms .item-input .flex-div {
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        justify-content: flex-start;
       }
 
 @media screen and (max-width: 568px) {
@@ -1805,9 +1748,7 @@ button.remove-file:hover {
 }
 
 .sms-forms .daisy-form-actions {
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end;
+      justify-content: flex-end;
       margin-top: 1rem;
 }
 
@@ -1863,9 +1804,7 @@ button.remove-file:hover {
   }
 
 #daisy-input-veri-code div {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     margin: 1rem 0;
   }
 
@@ -1913,7 +1852,6 @@ button.remove-file:hover {
           -webkit-transform: scaleY(0);
                   transform: scaleY(0);
           overflow-y: hidden;
-          -webkit-transition: max-height .5s ease-out, opacity .5s ease-out;
           transition: max-height .5s ease-out, opacity .5s ease-out;
         }
 
@@ -1945,13 +1883,9 @@ button.remove-file:hover {
 /* top-level-menu, flex for horizontal */
 
 .daisy-hz-menu ul {
-    display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
     list-style-type: none;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
     padding: 0;
     margin: 0;
     }
@@ -2014,12 +1948,8 @@ button.remove-file:hover {
 
 .site-branding {
   position: relative;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
   color: rgb(5, 90, 165);
   width: 100%;
   margin-bottom: 1rem;
@@ -2057,15 +1987,9 @@ button.remove-file:hover {
 }
 
 .site-branding .custom-logo-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    justify-content: flex-start;
+    align-items: baseline;
     font-family: 'Poppins', "Source Sans Pro",HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
@@ -2170,7 +2094,6 @@ button.remove-file:hover {
           padding: 1px 6px;
           border-radius: 50px;
           font-size: 10px;
-          -webkit-transition: opacity .5s;
           transition: opacity .5s
 
         }
@@ -2235,7 +2158,6 @@ button.remove-file:hover {
 
 .dd-search i {
     /* display: inline-block; */
-    -webkit-transition: color, 2s;
     transition: color, 2s;
     cursor: pointer
   }
@@ -2247,7 +2169,6 @@ button.remove-file:hover {
 .dd-search .dd-search-form {
 
     margin: 0;
-    -webkit-transition:  width 2s, opacity 2s;
     transition:  width 2s, opacity 2s;
 
   }
@@ -2262,7 +2183,6 @@ button.remove-file:hover {
 
 .dd-search .dd-search-form .dd-search-input {
       padding: 0;
-      -webkit-transition: width 2s, opacity 2s;
       transition: width 2s, opacity 2s;
     }
 
@@ -2342,11 +2262,8 @@ button.remove-file:hover {
   }
 
   .archive-div table td:last-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
             .archive-div table td .flex-div img {
               margin: auto;
@@ -2364,7 +2281,6 @@ button.remove-file:hover {
             line-height: 1.618;
             cursor: pointer;
             font-weight: normal;
-            -webkit-transition: background 2s;
             transition: background 2s;
   }
 
@@ -2409,16 +2325,9 @@ button.remove-file:hover {
 }
 
 .archive-div table td .flex-div, .archive-div table th .flex-div {
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
 }
 
 .archive-div table td .flex-div img, .archive-div table th .flex-div img {
@@ -2494,11 +2403,8 @@ button.remove-file:hover {
   }
 
   #vcard-archive-div table td:last-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }/*
  style actions like buttons
 */
@@ -2513,7 +2419,6 @@ button.remove-file:hover {
             line-height: 1.618;
             cursor: pointer;
             font-weight: normal;
-            -webkit-transition: background 2s;
             transition: background 2s;
   }
 
@@ -2569,23 +2474,14 @@ button.remove-file:hover {
 }
 
 .support-page {
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
   padding-top: 2rem;
 }
 
 .dd-category {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   width: 32%;
 }
 
@@ -2667,15 +2563,15 @@ button.remove-file:hover {
 
 .site-footer .col-full .daisy-footer {
       font-size: 1rem;
+      align-items:flex-end;
 
     }
 
 .site-footer .col-full .daisy-footer .flex-item {
+
         padding: 0 1rem;
         text-align: center;
-        -webkit-box-flex: 1;
-            -ms-flex: 1 1 0px;
-                flex: 1 1 0;
+        flex: 1 1 0;
       }
 
 @media screen and (max-width: 568px) {
@@ -2684,6 +2580,11 @@ button.remove-file:hover {
     padding-top: 1rem;
   }
 }
+
+.site-footer .col-full .daisy-footer #web-design a:first-of-type {
+          padding-bottom: 1rem;
+
+        }
 
 .site-footer .col-full .daisy-footer a {
         display: block;
@@ -2696,17 +2597,13 @@ button.remove-file:hover {
 }
 
 .site-footer .col-full #daisy-footer-share .flex-div {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        justify-content: center;
 
       }
 
 @media screen and (max-width: 568px) {
 
   .site-footer .col-full #daisy-footer-share .flex-div {
-    display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
   }
 }
@@ -2722,9 +2619,7 @@ button.remove-file:hover {
 }
 
 .site-footer .col-full #daisy-footer-share .flex-div .flex-item {
-          -webkit-box-flex: 0;
-              -ms-flex: none;
-                  flex: none;
+          flex: none;
           padding: 1.6rem;
 }
 
@@ -2744,44 +2639,48 @@ button.remove-file:hover {
  * @since 0.2.0
  */
 
-.widget-area .widget.daisy-widget-area .widget-title {
+.daisy-widget-area .widget.daisy-widget .daisy-widget-title.widget-title {
         border-bottom: 1px solid rgba(0,0,0,.05);
         padding: 0 0 .5em;
         margin-bottom: .5em;
         color: black;
-        text-decoration: none
       }
 
-.widget-area .widget.daisy-widget-area .widget-title:hover {
+.daisy-widget-area .widget.daisy-widget .daisy-widget-title.widget-title a {
+
+          text-decoration: none
+        }
+
+.daisy-widget-area .widget.daisy-widget .daisy-widget-title.widget-title a:hover {
   text-decoration: underline;
 }
 
-.widget-area .widget.daisy-widget-area .daisy-widget-menu {
+.daisy-widget-area .widget.daisy-widget .daisy-widget-menu {
         margin-bottom: 1em;
       }
 
-.widget-area .widget.daisy-widget-area ul {
+.daisy-widget-area .widget.daisy-widget ul {
         margin: 0;
       }
 
-.widget-area .widget.daisy-widget-area ul li {
+.daisy-widget-area .widget.daisy-widget ul li {
           margin: 1rem 0
         }
 
-.widget-area .widget.daisy-widget-area ul li:before {
+.daisy-widget-area .widget.daisy-widget ul li:before {
   content: "";
 }
 
-.widget-area .widget.daisy-widget-area ul li .daisy-widget-anchor {
+.daisy-widget-area .widget.daisy-widget ul li a {
+            font-size: 1.2rem;
             text-decoration: none;
-            -webkit-transition: color .5s linear, -webkit-text-decoration .5s linear;
             transition: color .5s linear, -webkit-text-decoration .5s linear;
             transition: color .5s linear, text-decoration .5s linear;
             transition: color .5s linear, text-decoration .5s linear, -webkit-text-decoration .5s linear;
             color: rgb(5, 90, 165);
 }
 
-.widget-area .widget.daisy-widget-area ul li .daisy-widget-anchor:hover {
+.daisy-widget-area .widget.daisy-widget ul li a:hover {
   color: rgb(0, 174, 239);
   text-decoration: underline;
 }
@@ -2850,8 +2749,6 @@ button.remove-file:hover {
  */
 
 #splash-div{
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2860,20 +2757,15 @@ button.remove-file:hover {
   #splash-div {
     display: block;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
 #splash-div {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;/*
- height: 100vh;
-*/
+  justify-content: space-around;
+  align-items: flex-start;
   width: 80vw;
-  margin: auto;
+  font-size: 1.6rem;
   background-position: center center;
   background-size: cover;
   background-repeat:no-repeat;
@@ -2882,10 +2774,8 @@ button.remove-file:hover {
 @media screen and (max-width: 960px) {
 
   #splash-div {
-    width:100vw;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    width:100%;
+    justify-content: space-between;
   }
 }
 
@@ -2916,7 +2806,6 @@ button.remove-file:hover {
       background: rgb(0, 174, 239);
       color: white;
       border: 4px double white;
-      -webkit-transition: background-color .5s linear;
       transition: background-color .5s linear;
 }
 
@@ -2958,6 +2847,18 @@ button.remove-file:hover {
     margin-bottom: 1rem;
   }
 
+.gallery .gallery-item  {
+    min-width: 275px;
+    min-height: calc(275px*2/3.5);
+    margin: 1rem;
+    box-shadow: 4px 7px 29px -8px rgba(0,0,0,0.46);
+    /* height: 200px; */
+  }
+
+.gallery .gallery-item .gallery-icon img {
+        width: 100%;
+      }
+
 /**
  * Stylesheet for the restyling of edit-image frames.
  * plugin
@@ -2971,13 +2872,8 @@ button.remove-file:hover {
 
 [id^='imgedit-panel-']{
   padding-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 
 }
 
@@ -2985,7 +2881,6 @@ button.remove-file:hover {
     background: rgb(5, 90, 165);
     color: white;
     font-weight: normal;
-    -webkit-transition: background .5s linear;
     transition: background .5s linear
   }
 
@@ -3019,9 +2914,7 @@ button.remove-file:hover {
   max-height: 490px;
   overflow-x: hidden;
   overflow-y: scroll;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;/*
+  flex-grow: 1;/*
  end fieldset
 */
 }
@@ -3049,10 +2942,8 @@ button.remove-file:hover {
         font-size: 20px;
         line-height: 1;
         cursor: pointer;
-        -webkit-box-sizing: content-box;
-                box-sizing: content-box;
-        -webkit-box-shadow: none;
-                box-shadow: none;
+        box-sizing: content-box;
+        box-shadow: none;
         width: 20px;
         height: 20px;
         font-family: dashicons;
@@ -3061,7 +2952,6 @@ button.remove-file:hover {
         font-style: normal;
         vertical-align: top;
         text-align: center;
-        -webkit-transition: color .1s ease-in 0;
         transition: color .1s ease-in 0;
 }
 
@@ -3072,8 +2962,7 @@ button.remove-file:hover {
         background: 0 0;
         border: none;
         border-bottom: 1px solid #ddd;
-        -webkit-box-shadow: none;
-                box-shadow: none;
+        box-shadow: none;
         margin: 0 0 16px;
         padding: 0 0 16px;
         position: relative;
@@ -3146,13 +3035,8 @@ button.remove-file:hover {
 */
 
 [id^='imgedit-panel-'] .imgedit-save-target fieldset {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
 }
 
 [id^='imgedit-panel-'] .imgedit-save-target fieldset input[type=radius] {
@@ -3175,9 +3059,7 @@ button.remove-file:hover {
         width: 16px;
         min-width: 16px;
         -webkit-appearance: none;
-        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-                box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-        -webkit-transition: .05s border-color ease-in-out;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
         transition: .05s border-color ease-in-out;
       }
 
@@ -3187,20 +3069,14 @@ button.remove-file:hover {
 
 [id^='imgedit-panel-'] .imgedit-panel-content {
       padding: 16px;
-      -webkit-box-flex: 2;
-          -ms-flex-positive: 2;
-              flex-grow: 2;
+      flex-grow: 2;
       max-height: 490px;
 }
 
 [id^='imgedit-panel-'] .imgedit-panel-content .imgedit-menu {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         clear: none;
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        justify-content: flex-start;
         min-width: 300px;
         margin: 0 0 12px;
       }

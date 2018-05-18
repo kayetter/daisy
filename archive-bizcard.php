@@ -19,14 +19,14 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header flex-div">
-				<h1 class="page-title">My Bizcards</h1><h1><a title="Add a new Bizcard" href="<?php echo get_permalink(get_page_by_path("new-bizcard")) ?>"><i class="fa fa-plus" aria-hidden="true"></i></a> </h1>
+				<h1 class="page-title">My Bizcards</h1><h1><a title="Add a new Bizcard digital business card" href="<?php echo get_permalink(get_page_by_path("new-bizcard")) ?>"><i class="fa fa-plus" aria-hidden="true"></i></a> </h1>
 			</header><!-- .page-header -->
 
-			<?php get_template_part( 'loop', 'bizcards' ); ?>
+			<?php get_template_part( 'loop', 'bizcard' ); ?>
 			<h3>
 
 
-				<a href="<?php echo home_url("new-bizcard") ?>"><i class="fa fa-plus" aria-hidden="true"></i></a> Add another <a href="<?php echo home_url("new-bizcard") ?>">Bizcard</a>.
+				<a href="<?php echo home_url("new-bizcard") ?>"><i class="fa fa-plus" aria-hidden="true"></i> Add another Bizcard digital business card</a>.
 			</h3>
 
 		<?php
@@ -36,7 +36,7 @@ get_header(); ?>
 		?>
 
 			<h3>
-				Click <a href="<?php echo home_url("new-bizcard") ?>">here</a> to get started.
+				To get started <a href="<?php echo home_url("new-bizcard") ?>">create a new Bizcard digital business card.</a>
 			</h3>
 
 

@@ -5,13 +5,21 @@
 
     .daisy-footer {
       font-size: 1rem;
-
+      align-items:flex-end;
       .flex-item {
+
         padding: 0 1rem;
         text-align: center;
         flex: 1 1 0;
         @media $m_screen {
           padding-top: 1rem;
+        }
+      }
+
+      #web-design {
+        a:first-of-type {
+          padding-bottom: 1rem;
+
         }
       }
 

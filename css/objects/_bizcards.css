@@ -17,7 +17,7 @@
   }
 }
 
-.bizcards {
+.bizcard {
   position: relative;
 }
 
@@ -44,6 +44,7 @@
    &:hover {
     background: $hoverblue !important;
   }
+
 }
 
 
@@ -130,7 +131,7 @@
 
 
 
-  .bizcards-gui {
+  .bizcard-gui {
     position: relative;
     padding: .5rem 2rem 2rem;
     min-height: 7rem;
@@ -217,4 +218,11 @@
 
 
 
+}
+
+.fa-camera:before {
+  font-size: x-large;
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
 }

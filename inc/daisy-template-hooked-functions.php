@@ -13,7 +13,7 @@
  *
  * Displays content navigation menu
  * @hook action daisy_primary_nav
- * @see header-bizcards.php
+ * @see header-bizcard.php
  * @package daisy
  */
 function daisy_primary_nav(){
@@ -21,9 +21,12 @@ function daisy_primary_nav(){
 	          "bizcards-templates" => array(
 	          "title" => "Templates"
 	        ),
-	        "bizcards-custom" => array(
-	          "title" => "Custom Bizcards"
-	        )
+	        "bizcards-enterprise" => array(
+	          "title" => "Enterprise"
+	        ),
+					"bizcards-custom" => array(
+						"title" => "Design Services"
+					)
 	      );
 
 
@@ -36,7 +39,9 @@ function daisy_primary_nav(){
 	     'manage-vcards'=>array(),
 	     'manage-bizimgs'=>array()
 	   );
+		 if ( class_exists( 'WooCommerce' ) ) {
 		 require_once(get_stylesheet_directory()."/partials/daisy_primary_nav.php");
+	 }
 }
 
 
@@ -99,7 +104,7 @@ function daisy_cat_post_submenu($cat=""){
 	$category = get_the_category_by_ID($cat);
 
 	$title = ucwords($category); ?>
-	<div id="daisy-cat-posts" class="daisy-menu daisy-vt-menu daisy-widget widget">
+	<div id="daisy-cat-posts" class="daisy-menu daisy-verticle-menu daisy-widget widget">
 		<span class="gamma daisy-widget-title widget-title">
 			<a href="<?php echo get_category_link($cat) ?>" > <?php echo $title ?></a>
 		</span>

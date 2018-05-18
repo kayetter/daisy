@@ -44,16 +44,19 @@ class Daisy_Help_Widget extends WP_Widget {
     $tips = new WP_Query($args);
 
     if($tips->have_posts()): ?>
-    <ul>
+    <div class="daisy-verticle-menu daisy-menu daisy-widget widget">
+
+
+    <ul class="">
 
       <?php  while($tips->have_posts()):  $tips->the_post(); ?>
 
-        <li><a class="daisy-widget-anchor" href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a> </li>
+        <li ><a class="daisy-widget-anchor" href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a> </li>
 
       <?php
         endwhile;
       endif;
-      ?>    </ul></div> <?php
+      ?>    </ul></div></div> <?php
       wp_reset_query();
   }
 

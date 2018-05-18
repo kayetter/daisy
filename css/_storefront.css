@@ -115,3 +115,17 @@ embed, iframe, object, video {
 .embed-youtube {
   margin-bottom: 3rem;
 }
+
+@media (min-width: 768px)
+.storefront-full-width-content .content-area {
+    width: 73.9130434783%;
+    float: left;
+    margin-right: 4.347826087%;
+}
+
+@media (min-width: 768px)
+.right-sidebar .content-area {
+    width: 73.9130434783%;
+    float: left;
+    margin-right: 4.347826087%;
+}

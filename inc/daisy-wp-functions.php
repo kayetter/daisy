@@ -16,11 +16,18 @@
   */
  add_action( 'wp_enqueue_scripts', 'load_daisy_styles');
  function load_daisy_styles(){
-     wp_enqueue_style('daisy-fonts', daisy_fonts_url(), DAISY_THEME_VERSION);
+
      wp_enqueue_style('storefront', get_template_directory_uri()."/style.css", DAISY_THEME_VERSION);
-     wp_enqueue_style( 'load-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',DAISY_THEME_VERSION
+        wp_enqueue_script('daisy_theme_scripts', get_stylesheet_directory_uri()."/inc/js/daisy_theme_scripts.js",DAISY_THEME_VERSION,true);
+
+ }
+
+ add_action('get_footer', 'load_late_styles');
+ function load_late_styles(){
+   wp_enqueue_style( 'load-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',DAISY_THEME_VERSION
     );
-     wp_enqueue_script('daisy_theme_scripts', get_stylesheet_directory_uri()."/inc/js/daisy_theme_scripts.js",DAISY_THEME_VERSION);
+    wp_enqueue_style('daisy-fonts', daisy_fonts_url(), DAISY_THEME_VERSION);
+
  }
 
 
@@ -107,14 +114,14 @@ add_filter('the_excerpt', 'daisy_excerpt_tags', 10);
 
 // add_filter('loop_shop_columns', 'loop_columns',999);
 /**
- 	 * Wraps post content in h1 tags if post_type = bizcards
+ 	 * Wraps post content in h1 tags if post_type = bizcard
  	 *
  	 * @hook filter 'the_content'
  	 * @param $content
  	 * @return $content
 	 */
 	function daisy_content_tags($content){
-  if('bizcards'== get_post_type(get_the_ID())){
+  if('bizcard'== get_post_type(get_the_ID())){
     $content = stripslashes($content);
     $elem_s = "<h1 class='bizcard-entry-title'>";
     $elem_e = "</h1>";
@@ -132,21 +139,21 @@ add_filter('the_excerpt', 'daisy_excerpt_tags', 10);
  	 * @return $content the modified content
 	 */
 function daisy_remove_p_tags($content){
-  if('bizcards'==get_post_type(get_the_ID())){
+  if('bizcard'==get_post_type(get_the_ID())){
   remove_filter('the_content', 'wpautop');
   }
   return $content;
 }
 
 /**
- 	 * Wraps post excerpt in h2 tags if post_type = bizcards
+ 	 * Wraps post excerpt in h2 tags if post_type = bizcard
  	 *
  	 * @hook filter 'the_excerpt'
  	 * @param $content
  	 * @return $content
 	 */
 function daisy_excerpt_tags($content){
-  if('bizcards'== get_post_type(get_the_ID()) && in_the_loop()){
+  if('bizcard'== get_post_type(get_the_ID()) && in_the_loop()){
     $content = stripslashes($content);
     $elem_s = "<h2 class='bizcard-entry-excerpt'>";
     $elem_e = "</h2>";
@@ -164,31 +171,27 @@ function daisy_excerpt_tags($content){
  	 * @return $content the modified content
 	 */
 function daisy_remove_excerpt_p_tags($content){
-  if('bizcards'==get_post_type(get_the_ID()) && in_the_loop()){
+  if('bizcard'==get_post_type(get_the_ID()) && in_the_loop()){
   remove_filter('the_excerpt', 'wpautop');
   }
   return $content;
 }
 
-
 /**
- 	 * Sort Category pages on meta tag dd_sort
- 	 *
- 	 * @hook filter 'posts_orderby'
- 	 * @return void
+ 	 * Apply sort order by meta_key 'dd_sort' for category pages
+ 	 * @hook 'pre_get_posts'
+ 	 * @param $query
+ 	 * @return $query
 	 */
-function sort_category_on_meta() {
-  if(is_category()){
+function apply_sort_order($query){
+  if(!is_category() || is_admin() || !$query->is_main_query()) return;
 
-    set_query_var('meta_key','dd_sort');
-    set_query_var('orderby', 'tax_query');
-    // set_query_var('orderby', 'meta_value_num');
-    set_query_var('order', 'ASC');
-  }
+    $query->set('meta_key','dd_sort');
+    $query->set('orderby','meta_value_num');
+    $query->set('order','ASC');
 
 }
-add_action('pre_get_posts', 'sort_category_on_meta', 10);
-
+add_action('pre_get_posts', 'apply_sort_order');
 
 /**
  	 * Applies category.php template to single.
@@ -206,11 +209,17 @@ function apply_category_single($single_template){
 }
 add_filter( "single_template", "apply_category_single");
 
-// function jetpackme_remove_rp() {
-//     if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-//         $jprp = Jetpack_RelatedPosts::init();
-//         $callback = array( $jprp, 'filter_add_target_to_dom' );
-//         remove_filter( 'the_content', $callback, 40 );
-//     }
-// }
-// add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+/**
+ 	 * Remove jetpack related posts widget
+ 	 *
+ 	 * @hook filter  'wp'
+ 	 * @return void
+	 */
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );

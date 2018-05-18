@@ -45,15 +45,17 @@ get_header(); ?>
 							'cat'=>$cat->term_id,
 							'meta_key'=>'dd_sort',
 							'orderby'=>'meta_value_num',
-							'order'=>'DESC'
+							'order'=>'ASC'
 						);
 						query_posts($args);
 
 						get_template_part( 'loop', 'category' );
 					} //end foreach
 				else: // else if does not have children
+
 					get_template_part( 'loop', 'category' );
 				endif;
+
 			 elseif(is_single()):
 				$category = get_the_category();
 				$parent_id = $category[0]->term_id;
@@ -65,7 +67,12 @@ get_header(); ?>
 
 			endif;
 				?>
-
+				<pre>
+					<?php
+							global $wp_query;
+							print_r($wp_query->query_vars);
+					 ?>
+				</pre>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
