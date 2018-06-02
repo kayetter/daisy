@@ -64,3 +64,14 @@ remove_action('woocommerce_single_product_summary','woocommerce_template_single_
      return $recipient;
  }
 add_filter( 'woocommerce_email_recipient_cancelled_subscription', 'wc_cancelled_order_add_customer_email', 10, 2 );
+
+/*
+* remove action this scrip to improve performance
+*
+*/
+add_action( 'wp_print_scripts', 'de_script', 100 );
+function de_script() {
+    wp_dequeue_script( 'wc-cart-fragments' );
+
+    return true;
+}

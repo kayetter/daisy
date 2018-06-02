@@ -17,6 +17,7 @@
 			 *
 			 * @hooked daisy_post_header          - 10
 			 * @hooked storefront_post_content    - 20
+			 * @hooked 'daisy_related_links'			- 30
 			 */
 			do_action('daisy_cat_post_content');
 

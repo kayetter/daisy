@@ -140,10 +140,26 @@
    <?php
  }
 
- // remove default sorting dropdown in StoreFront Theme
+ /**
+  * remove default sorting dropdown in StoreFront Theme
+  *
+  * @since 1.0.0
+  */
  add_action('init','remove_storefront_sorting');
-
  function remove_storefront_sorting() {
- remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
- remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+   remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+   remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+   }
+
+
+/**
+ * Dequeue storefront fonts to load later and improve performance
+ * @see daisy_fonts_url
+ * @since 1.0.0
+ */
+ add_action( 'wp_enqueue_scripts', 'remove_storefront_fonts', 999);
+ function remove_storefront_fonts(){
+
+   wp_dequeue_style('storefront-fonts');
+
  }

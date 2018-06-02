@@ -225,3 +225,7 @@ ol, ul {
     padding-left: 1rem;
   }
 }
+
+.gallery-caption{
+    display:none;
+}

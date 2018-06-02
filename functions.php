@@ -2,13 +2,13 @@
 /**
  * Functions for daisy theme
  *
- *
+ * @version 2.5.0
  * @package Daisy theme
  * @since 0.2.0
  */
 
 
-$version = "2.3.0";
+$version = "2.6.0";
 define("DAISY_THEME_VERSION", $version);
 
 require_once( 'inc/wp-class-functions.php');

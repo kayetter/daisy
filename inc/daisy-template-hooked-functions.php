@@ -270,6 +270,25 @@ function daisy_post_header() {
 }
 
 /**
+ * Display the related links meta
+ *
+ * @hook daisy_cat_post_content
+ * @since 2.4.0
+ */
+ function daisy_related_links(){
+	 global $post;
+	 $links = get_post_meta($post->ID,'related_links',true);
+	 if($links): ?>
+	 <ul class="post-ul"><strong>See related help topics:</strong>
+	 <?php foreach($links as $link):  ?>
+			 	<li> <a  href="<?php echo get_permalink($link) ?>" ><?php echo get_the_title($link) ?></a></li>
+		<?php endforeach; ?>
+		</ul>
+	<?php endif;
+
+ }
+
+/**
  * get adjacent post link by category
  * @see daisy_category_page_nav
  * @param string $link_type next | prev

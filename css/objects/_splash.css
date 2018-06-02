@@ -6,64 +6,87 @@
  * @since 2.0.0
  */
 
-#splash-div{
-  display: flex;
-  @media $s_screen{
+#primary.content-area.daisy-homepage {
+  width: 100%;
+}
+
+.splash-div{
+  /* display: flex; */
+  @media $m_screen{
     display: block;
     padding: 1rem;
     font-size: 1.4rem;
   }
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 80vw;
+
   font-size: 1.6rem;
-  background-position: center center;
-  background-size: cover;
-  background-repeat:no-repeat;
+
   @media $xl_screen {
     width:100%;
-    justify-content: space-between;
   }
   h1{
     text-align: left;
     padding: 0;
     margin: 1rem 0;
   }
-  .splash-button-wrap {
-    margin-top: 10rem;
-    @media $s_screen {
+  #splash-button-wrap {
+    @media $l_screen {
       margin-top: 5rem;
     }
-
-    .splash-button{
-      display: block;
-      margin: 2rem;
-      max-width: 200px;
-      font-size: 2.4rem;
-      border-radius: 20px;
-      text-align: center;
-      background: $hoverblue;
-      color: white;
-      border: 4px double white;
-      transition: background-color .5s linear;
-      &:hover {
-        text-decoration: none;
-        background-color: $blue;
-      }
-    }
   }
+
+
   .splash-panel{
-    width: 50%;
-    @media $s_screen{
+    width: 55%;
+    display: inline-block;
+
+    @media $l_screen {
+      width: 50%;
+    }
+
+    @media $m_screen{
       width: 100%;
     }
   }
+
+
+  #splash-excerpt {
+    text-align: justify;
+    @media $l_screen {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      width: 100%;
+      display: block;
+      clear: both;
+    }
+  }
+
   #splash-img {
     max-width: 400px;
     display: block;
-    @media $s_screen{
-      display: none;
+    float: right;
+
+    @media $m_screen{
+      float: none;
     }
+  }
+
+
+}
+
+.splash-button{
+  display: block;
+  margin: 2rem auto;
+  max-width: 200px;
+  font-size: 2.4rem;
+  border-radius: 20px;
+  text-align: center;
+  background: $hoverblue;
+  color: white;
+  border: 4px double white;
+  transition: background-color .5s linear;
+  &:hover {
+    text-decoration: none;
+    background-color: $blue;
   }
 }
 
@@ -76,5 +99,148 @@
   .site-main {
     margin-bottom: 1rem;
   }
+
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.offerings {
+  margin: 5rem auto 3rem;
+  max-width: 1000px;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  color: white;
+    .offering {
+      flex: 1 1 245px;
+      color: white;
+      min-height: 350px;
+      background: $blue;
+      margin: 1rem;
+      min-width: 260px;
+      max-width: 33%;
+      border-radius: 10px;
+      box-shadow:
+       0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.1), 0 9px 46px 8px rgba(0, 0, 0, 0.06);
+
+       a {
+         color: white;
+         &:hover {
+          text-decoration: none;
+          color: white;
+         }
+       }
+
+
+       ul {
+         list-style:none;
+         margin: 3rem 2rem 1rem;;
+         font-size: 1.6rem;
+          li{
+            text-indent: -2rem;
+            line-height: 1.2;
+            margin-top: 1rem;
+             &:before {
+               content: "\2714";
+               padding-right: .5rem;
+             }
+           }
+       }
+
+
+    &+.offering {
+      background: $yellow;
+
+
+    }
+
+    &+.offering + .offering {
+      background: $grn;
+    }
+
+    h2, h3, h4 {
+      color: white;
+      font-size: 2rem;
+      text-align: center;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h2 {
+      padding-top: 1.5rem;
+      border: none;
+       &+h3{
+         border: none;
+       }
+
+    }
+
+    h3 {
+      font-size: 4.6rem;
+       sup {
+         font-size: 50%;
+       }
+      span {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media $m_screen{
+        min-width: 310px;
+        margin: 2rem auto;
+
+    }
+
+
+  } /*end of .offering styling*/
+
+
+}
+
+
+#modal.daisy-special  {
+  background: $blue;
+    #modal-content{
+      background: $blue;
+    }
+
+     h2, h3, h4 {
+       color: white;
+       font-size: 2.4rem;
+       text-align: center;
+       line-height: 1.2;
+       margin: 0;
+       padding-left: inherit 1rem;
+     }
+
+     h2 {
+       padding-top: 1.5rem;
+       border: none;
+        &+h3{
+          border: none;
+        }
+
+     }
+
+     h3 {
+       font-size: 4.6rem;
+     }
+
+
+     h4 {
+       margin-top: 1rem;
+     }
+
+     p {
+       color: white;
+       text-align: center;
+     }
 
 }

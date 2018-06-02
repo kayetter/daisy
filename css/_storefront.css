@@ -129,3 +129,16 @@ embed, iframe, object, video {
     float: left;
     margin-right: 4.347826087%;
 }
+
+.pagination .page-numbers {
+  @media $m_screen {
+      padding: 0 20px;
+      font-size: 1.6rem;
+  }
+    &.prev, &.next {
+      @media $s_screen {
+        display: block;
+        margin: 20px auto;
+      }
+  }
+}

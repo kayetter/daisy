@@ -20,6 +20,7 @@
      wp_enqueue_style('storefront', get_template_directory_uri()."/style.css", DAISY_THEME_VERSION);
         wp_enqueue_script('daisy_theme_scripts', get_stylesheet_directory_uri()."/inc/js/daisy_theme_scripts.js",DAISY_THEME_VERSION,true);
 
+
  }
 
  add_action('get_footer', 'load_late_styles');
@@ -27,7 +28,7 @@
    wp_enqueue_style( 'load-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',DAISY_THEME_VERSION
     );
     wp_enqueue_style('daisy-fonts', daisy_fonts_url(), DAISY_THEME_VERSION);
-
+    wp_enqueue_style( 'dashicons' );
  }
 
 
@@ -58,6 +59,7 @@
      	$poppins = _x( 'on', 'Poppins font: on or off', 'daisy' );
      	$raleway = _x( 'on', 'Raleway font: on or off', 'daisy' );
      	$PTSans = _x( 'on', 'PTSans font: on or off', 'daisy' );
+      $sansPro = _x('on', 'SansPro font: on or off','daisy');
 
 
      		$font_families = array();
@@ -79,18 +81,22 @@
      		$font_families[] = 'PT+Sans:400,700';
      	}
 
+        if('off' !== $sansPro){
+          $font_families[] = 'Source+Sans+Pro:400,300,300i,400i,600,700,900';
+        }
 
 
-
-     	if ( in_array('on', array($poppins, $quicksand, $raleway, $PTSans)) ) {
+     	if ( in_array('on', array($poppins, $quicksand, $raleway, $PTSans, $sansPro)) ) {
 
      			$query_args = array(
      			'family' => urlencode( implode( '|', $font_families ) ),
      			'subset' => urlencode( 'latin,latin-ext' ),
      		);
 
+
      		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
      	}
+
 
      	return  $fonts_url;
      }

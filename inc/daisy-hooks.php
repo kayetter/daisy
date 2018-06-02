@@ -31,6 +31,7 @@ add_action('daisy_cat', 'daisy_list_categories', 10,3);
 //displays content of post
 add_action('daisy_cat_post_content', 'daisy_post_header', 10);
 add_action('daisy_cat_post_content', 'storefront_post_content', 20);
+add_action('daisy_cat_post_content', 'daisy_related_links', 30);
 
 
 //displays post excerpt on category loop
